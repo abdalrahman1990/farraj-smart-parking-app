@@ -1,0 +1,451 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.joud.smart_parking"
+4    android:versionCode="3"
+5    android:versionName="1.3" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="34" />
+9-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:3:5-67
+11-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:3:22-64
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:4:5-79
+12-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:4:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->[:react-native-firebase_app-check] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app-check\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:5-68
+13-->[:react-native-firebase_app-check] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app-check\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:22-65
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->[:react-native-firebase_app-check] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app-check\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:5-79
+14-->[:react-native-firebase_app-check] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app-check\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:22-76
+15    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+15-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:25:5-77
+15-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:25:22-74
+16    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+16-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:28:5-82
+16-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:28:22-79
+17
+18    <application
+18-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:5:5-24:19
+19        android:name="com.joud.smart_parking.MainApplication"
+19-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:6:7-38
+20        android:allowBackup="false"
+20-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:10:7-34
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.7.0] C:\Users\Joud\.gradle\caches\transforms-3\c11256ab856fe9af87528cc6c93bddb6\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+22        android:icon="@mipmap/ic_launcher"
+22-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:8:7-41
+23        android:label="@string/app_name"
+23-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:7:7-39
+24        android:roundIcon="@mipmap/ic_launcher_round"
+24-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:9:7-52
+25        android:theme="@style/AppTheme" >
+25-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:11:7-38
+26        <activity
+26-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:12:7-23:18
+27            android:name="com.joud.smart_parking.MainActivity"
+27-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:13:9-37
+28            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+28-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:15:9-118
+29            android:exported="true"
+29-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:18:9-32
+30            android:label="@string/app_name"
+30-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:14:9-41
+31            android:launchMode="singleTask"
+31-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:16:9-40
+32            android:windowSoftInputMode="adjustResize" >
+32-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:17:9-51
+33            <intent-filter>
+33-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:19:9-22:25
+34                <action android:name="android.intent.action.MAIN" />
+34-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:20:13-65
+34-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:20:21-62
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:21:13-73
+36-->C:\important\amartParking-final\new\farraj_smart_parking_app-main\android\app\src\main\AndroidManifest.xml:21:23-70
+37            </intent-filter>
+38        </activity>
+39
+40        <service
+40-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:9-14:40
+41            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingHeadlessService"
+41-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-103
+42            android:exported="false" />
+42-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-37
+43        <service
+43-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:9-21:19
+44            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
+44-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-95
+45            android:exported="false" >
+45-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:17:13-37
+46            <intent-filter>
+46-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:13-20:29
+47                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+47-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:17-78
+47-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:25-75
+48            </intent-filter>
+49        </service>
+50
+51        <receiver
+51-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:23:9-30:20
+52            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingReceiver"
+52-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:24:13-96
+53            android:exported="true"
+53-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:13-36
+54            android:permission="com.google.android.c2dm.permission.SEND" >
+54-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:26:13-73
+55            <intent-filter>
+55-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:13-29:29
+56                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+56-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:17-81
+56-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:25-78
+57            </intent-filter>
+58        </receiver>
+59
+60        <meta-data
+60-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:32:9-34:36
+61            android:name="firebase_messaging_auto_init_enabled"
+61-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:33:13-64
+62            android:value="true" />
+62-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:34:13-33
+63        <meta-data
+63-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:35:9-37:32
+64            android:name="com.google.firebase.messaging.default_notification_channel_id"
+64-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:36:13-89
+65            android:value="" />
+65-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:37:13-29
+66        <meta-data
+66-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:38:9-40:47
+67            android:name="com.google.firebase.messaging.default_notification_color"
+67-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:39:13-84
+68            android:resource="@color/white" />
+68-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:40:13-44
+69        <meta-data
+69-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:9-11:36
+70            android:name="app_data_collection_default_enabled"
+70-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:13-63
+71            android:value="true" />
+71-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-33
+72
+73        <service
+73-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:9-21:19
+74            android:name="com.google.firebase.components.ComponentDiscoveryService"
+74-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:13-84
+75            android:directBootAware="true"
+75-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:13-43
+76            android:exported="false" >
+76-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:16:13-37
+77            <meta-data
+77-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:13-20:85
+78                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+78-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:17-120
+79                android:value="com.google.firebase.components.ComponentRegistrar" />
+79-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:20:17-82
+80            <meta-data
+80-->[com.google.firebase:firebase-appcheck-debug:17.0.1] C:\Users\Joud\.gradle\caches\transforms-3\808cf21f6380342edb2465121dfb7a81\transformed\jetified-firebase-appcheck-debug-17.0.1\AndroidManifest.xml:27:13-29:85
+81                android:name="com.google.firebase.components:com.google.firebase.appcheck.debug.FirebaseAppCheckDebugRegistrar"
+81-->[com.google.firebase:firebase-appcheck-debug:17.0.1] C:\Users\Joud\.gradle\caches\transforms-3\808cf21f6380342edb2465121dfb7a81\transformed\jetified-firebase-appcheck-debug-17.0.1\AndroidManifest.xml:28:17-128
+82                android:value="com.google.firebase.components.ComponentRegistrar" />
+82-->[com.google.firebase:firebase-appcheck-debug:17.0.1] C:\Users\Joud\.gradle\caches\transforms-3\808cf21f6380342edb2465121dfb7a81\transformed\jetified-firebase-appcheck-debug-17.0.1\AndroidManifest.xml:29:17-82
+83            <meta-data
+83-->[com.google.firebase:firebase-appcheck-playintegrity:17.0.1] C:\Users\Joud\.gradle\caches\transforms-3\13b2e8f755865b8e50ff3fe3f13b4871\transformed\jetified-firebase-appcheck-playintegrity-17.0.1\AndroidManifest.xml:27:13-29:85
+84                android:name="com.google.firebase.components:com.google.firebase.appcheck.playintegrity.FirebaseAppCheckPlayIntegrityRegistrar"
+84-->[com.google.firebase:firebase-appcheck-playintegrity:17.0.1] C:\Users\Joud\.gradle\caches\transforms-3\13b2e8f755865b8e50ff3fe3f13b4871\transformed\jetified-firebase-appcheck-playintegrity-17.0.1\AndroidManifest.xml:28:17-144
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[com.google.firebase:firebase-appcheck-playintegrity:17.0.1] C:\Users\Joud\.gradle\caches\transforms-3\13b2e8f755865b8e50ff3fe3f13b4871\transformed\jetified-firebase-appcheck-playintegrity-17.0.1\AndroidManifest.xml:29:17-82
+86            <meta-data
+86-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:55:13-57:85
+87                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+87-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:56:17-119
+88                android:value="com.google.firebase.components.ComponentRegistrar" />
+88-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:57:17-82
+89            <meta-data
+89-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:69:13-71:85
+90                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+90-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:70:17-109
+91                android:value="com.google.firebase.components.ComponentRegistrar" />
+91-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:71:17-82
+92            <meta-data
+92-->[com.google.firebase:firebase-appcheck:17.0.1] C:\Users\Joud\.gradle\caches\transforms-3\c0dfd8d3885ba82f0848c032ec7ea00a\transformed\jetified-firebase-appcheck-17.0.1\AndroidManifest.xml:27:13-29:85
+93                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
+93-->[com.google.firebase:firebase-appcheck:17.0.1] C:\Users\Joud\.gradle\caches\transforms-3\c0dfd8d3885ba82f0848c032ec7ea00a\transformed\jetified-firebase-appcheck-17.0.1\AndroidManifest.xml:28:17-117
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[com.google.firebase:firebase-appcheck:17.0.1] C:\Users\Joud\.gradle\caches\transforms-3\c0dfd8d3885ba82f0848c032ec7ea00a\transformed\jetified-firebase-appcheck-17.0.1\AndroidManifest.xml:29:17-82
+95            <meta-data
+95-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Joud\.gradle\caches\transforms-3\00651557239fa75813426daa38dbe205\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:27:13-29:85
+96                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+96-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Joud\.gradle\caches\transforms-3\00651557239fa75813426daa38dbe205\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:28:17-115
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\Joud\.gradle\caches\transforms-3\00651557239fa75813426daa38dbe205\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:29:17-82
+98            <meta-data
+98-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\Joud\.gradle\caches\transforms-3\eb3ec10b3a9681e7148b75ce3e5bf689\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:17:13-19:85
+99                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+99-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\Joud\.gradle\caches\transforms-3\eb3ec10b3a9681e7148b75ce3e5bf689\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:18:17-127
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\Joud\.gradle\caches\transforms-3\eb3ec10b3a9681e7148b75ce3e5bf689\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:19:17-82
+101        </service>
+102
+103        <provider
+103-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:23:9-27:38
+104            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+104-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:24:13-88
+105            android:authorities="com.joud.smart_parking.reactnativefirebaseappinitprovider"
+105-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:25:13-86
+106            android:exported="false"
+106-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:26:13-37
+107            android:initOrder="99" />
+107-->[:react-native-firebase_app] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:13-35
+108        <provider
+108-->[:react-native-webview] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:8:9-16:20
+109            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+109-->[:react-native-webview] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:9:13-83
+110            android:authorities="com.joud.smart_parking.fileprovider"
+110-->[:react-native-webview] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:10:13-64
+111            android:exported="false"
+111-->[:react-native-webview] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-37
+112            android:grantUriPermissions="true" >
+112-->[:react-native-webview] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-47
+113            <meta-data
+113-->[:react-native-webview] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-15:63
+114                android:name="android.support.FILE_PROVIDER_PATHS"
+114-->[:react-native-webview] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:14:17-67
+115                android:resource="@xml/file_provider_paths" />
+115-->[:react-native-webview] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\react-native-webview\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:15:17-60
+116        </provider>
+117
+118        <activity
+118-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:23:9-27:75
+119            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+119-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:24:13-93
+120            android:excludeFromRecents="true"
+120-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:25:13-46
+121            android:exported="false"
+121-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:26:13-37
+122            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+122-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:27:13-72
+123        <!--
+124            Service handling Google Sign-In user revocation. For apps that do not integrate with
+125            Google Sign-In, this service will never be started.
+126        -->
+127        <service
+127-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:33:9-37:51
+128            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+128-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:34:13-89
+129            android:exported="true"
+129-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:35:13-36
+130            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+130-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:36:13-107
+131            android:visibleToInstantApps="true" />
+131-->[com.google.android.gms:play-services-auth:20.5.0] C:\Users\Joud\.gradle\caches\transforms-3\d670b1f1e15cbf46565786b886532fcc\transformed\jetified-play-services-auth-20.5.0\AndroidManifest.xml:37:13-48
+132
+133        <receiver
+133-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:31:9-38:20
+134            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+134-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:32:13-78
+135            android:exported="true"
+135-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:33:13-36
+136            android:permission="com.google.android.c2dm.permission.SEND" >
+136-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:34:13-73
+137            <intent-filter>
+137-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:27:13-29:29
+138                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+138-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:17-81
+138-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:28:25-78
+139            </intent-filter>
+140        </receiver>
+141        <!--
+142             FirebaseMessagingService performs security checks at runtime,
+143             but set to not exported to explicitly avoid allowing another app to call it.
+144        -->
+145        <service
+145-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:44:9-51:19
+146            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+146-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:45:13-82
+147            android:directBootAware="true"
+147-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:46:13-43
+148            android:exported="false" >
+148-->[com.google.firebase:firebase-messaging:23.1.2] C:\Users\Joud\.gradle\caches\transforms-3\5831aa7db76517cab76513640a324554\transformed\jetified-firebase-messaging-23.1.2\AndroidManifest.xml:47:13-37
+149            <intent-filter android:priority="-500" >
+149-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:18:13-20:29
+150                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+150-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:17-78
+150-->[:react-native-firebase_messaging] C:\important\amartParking-final\new\farraj_smart_parking_app-main\node_modules\@react-native-firebase\messaging\android\build\intermediates\merged_manifest\release\AndroidManifest.xml:19:25-75
+151            </intent-filter>
+152        </service>
+153
+154        <activity
+154-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:29:9-46:20
+155            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+155-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:30:13-80
+156            android:excludeFromRecents="true"
+156-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:31:13-46
+157            android:exported="true"
+157-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:32:13-36
+158            android:launchMode="singleTask"
+158-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:33:13-44
+159            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+159-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:34:13-72
+160            <intent-filter>
+160-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:35:13-45:29
+161                <action android:name="android.intent.action.VIEW" />
+161-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:36:17-69
+161-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:36:25-66
+162
+163                <category android:name="android.intent.category.DEFAULT" />
+163-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:38:17-76
+163-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:38:27-73
+164                <category android:name="android.intent.category.BROWSABLE" />
+164-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:39:17-78
+164-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:39:27-75
+165
+166                <data
+166-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:41:17-44:51
+167                    android:host="firebase.auth"
+167-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:42:21-49
+168                    android:path="/"
+168-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:43:21-37
+169                    android:scheme="genericidp" />
+169-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:44:21-48
+170            </intent-filter>
+171        </activity>
+172        <activity
+172-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:47:9-64:20
+173            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+173-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:48:13-79
+174            android:excludeFromRecents="true"
+174-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:49:13-46
+175            android:exported="true"
+175-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:50:13-36
+176            android:launchMode="singleTask"
+176-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:51:13-44
+177            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+177-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:52:13-72
+178            <intent-filter>
+178-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:53:13-63:29
+179                <action android:name="android.intent.action.VIEW" />
+179-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:36:17-69
+179-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:36:25-66
+180
+181                <category android:name="android.intent.category.DEFAULT" />
+181-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:38:17-76
+181-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:38:27-73
+182                <category android:name="android.intent.category.BROWSABLE" />
+182-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:39:17-78
+182-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:39:27-75
+183
+184                <data
+184-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:41:17-44:51
+185                    android:host="firebase.auth"
+185-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:42:21-49
+186                    android:path="/"
+186-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:43:21-37
+187                    android:scheme="recaptcha" />
+187-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\Joud\.gradle\caches\transforms-3\cd87d03224da58588c8f4d34f22a7d20\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:44:21-48
+188            </intent-filter>
+189        </activity>
+190        <activity
+190-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Joud\.gradle\caches\transforms-3\dcf426ef84b079a62f273a4871ddea93\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+191            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+191-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Joud\.gradle\caches\transforms-3\dcf426ef84b079a62f273a4871ddea93\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+192            android:exported="false"
+192-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Joud\.gradle\caches\transforms-3\dcf426ef84b079a62f273a4871ddea93\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+193            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+193-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Joud\.gradle\caches\transforms-3\dcf426ef84b079a62f273a4871ddea93\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+194
+195        <provider
+195-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Joud\.gradle\caches\transforms-3\0856526e37ae71a46e746a74945526d2\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
+196            android:name="com.google.firebase.provider.FirebaseInitProvider"
+196-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Joud\.gradle\caches\transforms-3\0856526e37ae71a46e746a74945526d2\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
+197            android:authorities="com.joud.smart_parking.firebaseinitprovider"
+197-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Joud\.gradle\caches\transforms-3\0856526e37ae71a46e746a74945526d2\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
+198            android:directBootAware="true"
+198-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Joud\.gradle\caches\transforms-3\0856526e37ae71a46e746a74945526d2\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43
+199            android:exported="false"
+199-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Joud\.gradle\caches\transforms-3\0856526e37ae71a46e746a74945526d2\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:29:13-37
+200            android:initOrder="100" />
+200-->[com.google.firebase:firebase-common:20.3.2] C:\Users\Joud\.gradle\caches\transforms-3\0856526e37ae71a46e746a74945526d2\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:30:13-36
+201
+202        <meta-data
+202-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\Joud\.gradle\caches\transforms-3\b86c9e08b5094e975cf317249cc2c97a\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
+203            android:name="com.google.android.gms.version"
+203-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\Joud\.gradle\caches\transforms-3\b86c9e08b5094e975cf317249cc2c97a\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
+204            android:value="@integer/google_play_services_version" />
+204-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\Joud\.gradle\caches\transforms-3\b86c9e08b5094e975cf317249cc2c97a\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
+205
+206        <provider
+206-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Joud\.gradle\caches\transforms-3\4aa4e460fe95defb81a5b795af96a7bf\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+207            android:name="androidx.startup.InitializationProvider"
+207-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Joud\.gradle\caches\transforms-3\4aa4e460fe95defb81a5b795af96a7bf\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+208            android:authorities="com.joud.smart_parking.androidx-startup"
+208-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Joud\.gradle\caches\transforms-3\4aa4e460fe95defb81a5b795af96a7bf\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+209            android:exported="false" >
+209-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Joud\.gradle\caches\transforms-3\4aa4e460fe95defb81a5b795af96a7bf\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+210            <meta-data
+210-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Joud\.gradle\caches\transforms-3\4aa4e460fe95defb81a5b795af96a7bf\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+211                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+211-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Joud\.gradle\caches\transforms-3\4aa4e460fe95defb81a5b795af96a7bf\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+212                android:value="androidx.startup" />
+212-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Joud\.gradle\caches\transforms-3\4aa4e460fe95defb81a5b795af96a7bf\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+213            <meta-data
+213-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Joud\.gradle\caches\transforms-3\0e153da89bdba9ee3c80ce8fef0a172b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+214                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+214-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Joud\.gradle\caches\transforms-3\0e153da89bdba9ee3c80ce8fef0a172b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+215                android:value="androidx.startup" />
+215-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Joud\.gradle\caches\transforms-3\0e153da89bdba9ee3c80ce8fef0a172b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+216        </provider>
+217
+218        <meta-data
+218-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Joud\.gradle\caches\transforms-3\1790525d4b21f48ee73bee65084f0bab\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+219            android:name="com.facebook.soloader.enabled"
+219-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Joud\.gradle\caches\transforms-3\1790525d4b21f48ee73bee65084f0bab\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+220            android:value="false" />
+220-->[com.facebook.soloader:soloader:0.10.5] C:\Users\Joud\.gradle\caches\transforms-3\1790525d4b21f48ee73bee65084f0bab\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+221
+222        <service
+222-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\bbb8e72f3d43daa9ec935c1eb956b7a8\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:28:9-34:19
+223            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+223-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\bbb8e72f3d43daa9ec935c1eb956b7a8\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:29:13-103
+224            android:exported="false" >
+224-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\bbb8e72f3d43daa9ec935c1eb956b7a8\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:30:13-37
+225            <meta-data
+225-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\bbb8e72f3d43daa9ec935c1eb956b7a8\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:31:13-33:39
+226                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+226-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\bbb8e72f3d43daa9ec935c1eb956b7a8\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:32:17-94
+227                android:value="cct" />
+227-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\bbb8e72f3d43daa9ec935c1eb956b7a8\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:33:17-36
+228        </service>
+229        <service
+229-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\ee69e718b7802238bb332c9a0b19fd69\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:26:9-30:19
+230            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+230-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\ee69e718b7802238bb332c9a0b19fd69\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:27:13-117
+231            android:exported="false"
+231-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\ee69e718b7802238bb332c9a0b19fd69\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:28:13-37
+232            android:permission="android.permission.BIND_JOB_SERVICE" >
+232-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\ee69e718b7802238bb332c9a0b19fd69\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:29:13-69
+233        </service>
+234
+235        <receiver
+235-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\ee69e718b7802238bb332c9a0b19fd69\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:32:9-34:40
+236            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+236-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\ee69e718b7802238bb332c9a0b19fd69\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:33:13-132
+237            android:exported="false" />
+237-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\Joud\.gradle\caches\transforms-3\ee69e718b7802238bb332c9a0b19fd69\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:34:13-37
+238
+239        <activity
+239-->[com.jakewharton:process-phoenix:2.1.2] C:\Users\Joud\.gradle\caches\transforms-3\ff7c9167233b48a28f00b4d4a99daa7c\transformed\jetified-process-phoenix-2.1.2\AndroidManifest.xml:8:9-12:75
+240            android:name="com.jakewharton.processphoenix.ProcessPhoenix"
+240-->[com.jakewharton:process-phoenix:2.1.2] C:\Users\Joud\.gradle\caches\transforms-3\ff7c9167233b48a28f00b4d4a99daa7c\transformed\jetified-process-phoenix-2.1.2\AndroidManifest.xml:9:13-73
+241            android:exported="false"
+241-->[com.jakewharton:process-phoenix:2.1.2] C:\Users\Joud\.gradle\caches\transforms-3\ff7c9167233b48a28f00b4d4a99daa7c\transformed\jetified-process-phoenix-2.1.2\AndroidManifest.xml:10:13-37
+242            android:process=":phoenix"
+242-->[com.jakewharton:process-phoenix:2.1.2] C:\Users\Joud\.gradle\caches\transforms-3\ff7c9167233b48a28f00b4d4a99daa7c\transformed\jetified-process-phoenix-2.1.2\AndroidManifest.xml:11:13-39
+243            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+243-->[com.jakewharton:process-phoenix:2.1.2] C:\Users\Joud\.gradle\caches\transforms-3\ff7c9167233b48a28f00b4d4a99daa7c\transformed\jetified-process-phoenix-2.1.2\AndroidManifest.xml:12:13-72
+244    </application>
+245
+246</manifest>

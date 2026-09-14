@@ -1,0 +1,7 @@
+#Sun Nov 03 17:16:35 SGT 2024
+base.1=C\:\\important\\amartParking-final\\new\\farraj_smart_parking_app-main\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex
+path.1=classes2.dex
+base.0=C\:\\important\\amartParking-final\\new\\farraj_smart_parking_app-main\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

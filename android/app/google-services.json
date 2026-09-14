@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1015558529034",
+    "project_id": "smartparkingapp-d53f3",
+    "storage_bucket": "smartparkingapp-d53f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015558529034:android:3832566585ac3b3d06fff3",
+        "android_client_info": {
+          "package_name": "com.joud.smart_parking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015558529034-7qjqp456ddutnp2d1cv0ffjg9tc7u2v9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAoE-UTg6wUYpHmHNaoPzziu3JBfJDIi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015558529034-7qjqp456ddutnp2d1cv0ffjg9tc7u2v9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1015558529034-bno65kutnvnm5aq9pnvap0gs3lo1j7qr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ebaa.app.smartparking",
+                "app_store_id": "6448015698"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

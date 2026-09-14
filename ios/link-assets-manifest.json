@@ -1,0 +1,41 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Cairo-Black.ttf",
+      "sha1": "c6e74ed642575b329af68f9c047e5a82daf18a56"
+    },
+    {
+      "path": "assets/fonts/Cairo-Bold.ttf",
+      "sha1": "66d7178700f68bf1b977675fb28e5c1ed3e7c42d"
+    },
+    {
+      "path": "assets/fonts/Cairo-ExtraBold.ttf",
+      "sha1": "b108cf1c3b867e6e1adbe55b314f019a7f34d195"
+    },
+    {
+      "path": "assets/fonts/Cairo-ExtraLight.ttf",
+      "sha1": "3b2a6f2c5878e419a2389dab9f4438692111fe24"
+    },
+    {
+      "path": "assets/fonts/Cairo-Light.ttf",
+      "sha1": "988da945c9fcff0dcf0c89b9623fa4d533d314db"
+    },
+    {
+      "path": "assets/fonts/Cairo-Medium.ttf",
+      "sha1": "400c10b6b6e55b1c18f6cf698d2afb346eec6128"
+    },
+    {
+      "path": "assets/fonts/Cairo-Regular.ttf",
+      "sha1": "9457acad819e3f1d8acb569355d6bcb2759bf144"
+    },
+    {
+      "path": "assets/fonts/Cairo-SemiBold.ttf",
+      "sha1": "24439f13e088e4a6cee82c556c021460a97c91a9"
+    },
+    {
+      "path": "assets/fonts/Droid Sans Arabic.ttf",
+      "sha1": "c9e89e81e6b020096bca00e9a37e8ad34b9bec33"
+    }
+  ]
+}

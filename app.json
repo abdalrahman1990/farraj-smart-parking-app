@@ -1,0 +1,25 @@
+{
+  "name": "kic",
+  "displayName": "kic",
+  "expo": {
+    "name": "kic",
+    "slug": "kic",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "android": {
+      "package": "com.joud.smart_parking",
+      "versionCode": 1
+    },
+    "ios": {
+      "bundleIdentifier": "com.ebaa.app.smartparking",
+      "buildNumber": "1"
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
