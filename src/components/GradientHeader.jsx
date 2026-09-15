@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 100,
-    backgroundColor: 'rgba(14,165,233,0.28)',
+    backgroundColor: 'rgba(8,148,158,0.28)',
   },
   orb2: {
     position: 'absolute',

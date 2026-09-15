@@ -1,9 +1,9 @@
-import { Text, Button } from "@rneui/themed";
+import { Text } from "@rneui/themed";
 import React, { useEffect, useState, useRef } from "react";
 import { View, ScrollView, I18nManager, Linking, Pressable, Platform, Animated, Easing } from 'react-native';
 import { useStore } from "react-redux";
 import Icon from 'react-native-vector-icons/Ionicons';
-import { toggleLED, closeParkingBarrier, sendDeviceCommand } from './../apis/apis';
+import { sendDeviceCommand } from './../apis/apis';
 import LocationImage from '../components/LocationImage';
 import BrandLoader from '../components/BrandLoader';
 import { useTheme } from '../utils/useTheme';
@@ -86,8 +86,6 @@ const ViewParking = (props) => {
     const [gateOpen, setGateOpen] = useState(false);
     const [flow, setFlow] = useState(-1);
     const [flowOk, setFlowOk] = useState(null);
-    const [testStatus, setTestStatus] = useState('light');
-    const [testing, setTesting] = useState(false);
     const [lastReply, setLastReply] = useState(null);
     const fade = useRef(new Animated.Value(0)).current;
     const rise = useRef(new Animated.Value(14)).current;
@@ -183,26 +181,6 @@ const ViewParking = (props) => {
             })
             .catch(() => {
                 setOpening(false);
-                setFlowOk(false);
-                setFlow(-1);
-                toast.error(tmsg(lables, lang, 'gate_failed'));
-            });
-    };
-
-    const handleTest = () => {
-        if (testing) return;
-        setTesting(true);
-        runCommand(testStatus)
-            .then((res) => {
-                setTesting(false);
-                if (res && res.code === 200) {
-                    toast.success(String((res.data && res.data.msg) || 'Command sent to device.').replace(/MQTT/gi, 'WiFi'));
-                } else {
-                    toast.error((res && res.msg) || tmsg(lables, lang, 'gate_failed'));
-                }
-            })
-            .catch(() => {
-                setTesting(false);
                 setFlowOk(false);
                 setFlow(-1);
                 toast.error(tmsg(lables, lang, 'gate_failed'));
@@ -374,54 +352,6 @@ const ViewParking = (props) => {
                                 )}
                             </View>
 
-                            {/* Command tester */}
-                            <View style={{ marginTop: 12, backgroundColor: T.background, borderRadius: RADIUS.lg, borderWidth: 1, borderColor: T.border, padding: 14 }}>
-                                <Text style={{ fontSize: 12, fontWeight: '800', color: T.textSecondary, letterSpacing: 0.6, fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
-                                    {lang === 'ar' ? 'مختبِر الأوامر' : 'COMMAND TESTER'}
-                                </Text>
-                                <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 10 }}>
-                                    {['up', 'down', 'stop', 'light'].map((s) => {
-                                        const selected = testStatus === s;
-                                        return (
-                                            <Pressable
-                                                key={s}
-                                                onPress={() => setTestStatus(s)}
-                                                style={{
-                                                    paddingVertical: 9,
-                                                    paddingHorizontal: 18,
-                                                    borderRadius: 13,
-                                                    backgroundColor: selected ? T.primary : T.card,
-                                                    borderWidth: 1.5,
-                                                    borderColor: selected ? T.primary : T.border,
-                                                    ...(selected ? { shadowColor: T.primary, shadowOffset: { width: 0, height: 3 }, shadowOpacity: 0.4, shadowRadius: 8, elevation: 4 } : {}),
-                                                }}
-                                            >
-                                                <Text style={{ fontWeight: '800', fontSize: 13.5, fontFamily: 'Cairo', color: selected ? '#FFFFFF' : T.textSecondary }}>
-                                                    {s.toUpperCase()}
-                                                </Text>
-                                            </Pressable>
-                                        );
-                                    })}
-                                </View>
-                                <Button
-                                    title={lang === 'ar' ? `إرسال ${testStatus}` : `Send ${testStatus}`}
-                                    loading={testing}
-                                    onPress={handleTest}
-                                    buttonStyle={{
-                                        backgroundColor: T.primary,
-                                        borderRadius: RADIUS.lg,
-                                        paddingVertical: 14,
-                                        marginTop: 12,
-                                        shadowColor: T.primary,
-                                        shadowOffset: { width: 0, height: 4 },
-                                        shadowOpacity: 0.4,
-                                        shadowRadius: 10,
-                                        elevation: 5,
-                                    }}
-                                    titleStyle={{ fontWeight: '800', fontSize: 15, fontFamily: 'Cairo' }}
-                                    icon={<Icon name="send-outline" size={18} color="#FFFFFF" style={{ marginEnd: 8 }} />}
-                                />
-                            </View>
                         </SoftCard>
                     )}
                 </Animated.View>

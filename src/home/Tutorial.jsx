@@ -11,8 +11,8 @@ import { fontSize } from '../utils/responsive';
 const STEPS = [
     {
         icon: 'location-outline',
-        tint: '#1899D6',
-        bg: '#E3F2FA',
+        tint: '#08949E',
+        bg: '#D7F0F2',
         en: { title: 'Find a nearby spot', body: 'Open Nearby Locations to see live parking around you with distance, price per hour, and free spots.' },
         ar: { title: 'اعثر على موقف قريب', body: 'افتح المواقف القريبة لرؤية المواقف المتاحة حولك مع المسافة والسعر والشواغر.' },
     },

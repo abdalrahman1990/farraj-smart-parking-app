@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image } from 'react-native';
+import { Image, Platform } from 'react-native';
 import urls from '../apis/urls';
 
 const ASSET_HOST = (urls.host || '').replace(/\/$/, '');
@@ -10,6 +10,8 @@ export const absolutizeUrl = (u) => {
   return ASSET_HOST + (u.startsWith('/') ? u : '/' + u);
 };
 
+const FALLBACK = require('../assets/images/default-location.jpg');
+
 const LocationImage = ({ uri, name, style }) => {
   const [broken, setBroken] = useState(false);
   const cleanUri = uri ? String(uri).trim() : '';
@@ -18,7 +20,7 @@ const LocationImage = ({ uri, name, style }) => {
   if (broken || !finalUri) {
     return (
       <Image
-        source={require('../assets/images/default-location.jpg')}
+        source={FALLBACK}
         style={style}
         resizeMode="cover"
       />
@@ -27,7 +29,10 @@ const LocationImage = ({ uri, name, style }) => {
 
   return (
     <Image
-      source={{ uri: finalUri }}
+      source={Platform.OS === 'android'
+        ? { uri: finalUri, headers: { 'User-Agent': 'FarrajSmartParking/1.0 (Android)', Referer: 'https://nextgen6th.com/' } }
+        : { uri: finalUri }}
+      defaultSource={Platform.OS === 'android' ? FALLBACK : undefined}
       onError={() => setBroken(true)}
       style={style}
       resizeMode="cover"

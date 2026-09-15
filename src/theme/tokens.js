@@ -1,8 +1,8 @@
 export const LIGHT = {
-  primary: '#1899D6',
-  primaryDark: '#0E7AB3',
-  primaryLight: '#0E7AB3',
-  primaryBg: '#E3F2FA',
+  primary: '#08949E',
+  primaryDark: '#066F77',
+  primaryLight: '#0BB5C0',
+  primaryBg: '#D7F0F2',
   background: '#F4F6FB',
   surface: '#FFFFFF',
   surfaceLight: '#F1F5F9',
@@ -17,8 +17,8 @@ export const LIGHT = {
   warningBg: '#FEF3C7',
   error: '#EF4444',
   errorBg: '#FEE2E2',
-  info: '#0284C7',
-  infoBg: '#E0F2FE',
+  info: '#08949E',
+  infoBg: '#D7F0F2',
   white: '#FFFFFF',
   card: '#FFFFFF',
   glass: 'rgba(255,255,255,0.70)',
@@ -28,10 +28,10 @@ export const LIGHT = {
 };
 
 export const DARK = {
-  primary: '#38BDF8',
-  primaryDark: '#1899D6',
-  primaryLight: '#BAE6FD',
-  primaryBg: '#0C3A54',
+  primary: '#2CCED8',
+  primaryDark: '#08949E',
+  primaryLight: '#A5F0F5',
+  primaryBg: '#073E43',
   background: '#0F172A',
   surface: '#1E293B',
   surfaceLight: '#334155',
@@ -46,8 +46,8 @@ export const DARK = {
   warningBg: '#78350F',
   error: '#F87171',
   errorBg: '#7F1D1D',
-  info: '#38BDF8',
-  infoBg: '#0C4A6E',
+  info: '#2CCED8',
+  infoBg: '#073E43',
   white: '#FFFFFF',
   card: '#1E293B',
   glass: 'rgba(30,41,59,0.70)',
@@ -59,15 +59,15 @@ export const DARK = {
 export const COLORS = LIGHT;
 
 export const GRADIENT = {
-  start: '#1899D6',
-  end: '#0EA5E9',
+  start: '#08949E',
+  end: '#0AB3BE',
   purple: '#7C3AED',
   pink: '#EC4899',
   cyan: '#06B6D4',
   success: '#10B981',
   warm: '#F59E0B',
   dark: '#F4F6FB',
-  header: ['#0E7AB3', '#1899D6', '#0EA5E9'],
+  header: ['#066F77', '#08949E', '#0AB3BE'],
 };
 
 export const RADIUS = {

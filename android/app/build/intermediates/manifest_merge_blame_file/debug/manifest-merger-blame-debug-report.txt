@@ -34,7 +34,7 @@
 18-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:22-79
 19
 20    <application
-20-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:5:5-25:19
+20-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:5:5-26:19
 21        android:name="com.joud.smart_parking.MainApplication"
 21-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:6:7-38
 22        android:allowBackup="false"
@@ -49,9 +49,9 @@
 27        android:roundIcon="@mipmap/ic_launcher_round"
 27-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:9:7-52
 28        android:theme="@style/AppTheme"
-28-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:11:7-38
+28-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:12:7-38
 29        android:usesCleartextTraffic="true" >
-29-->/Users/mac/farraj_smart_parking_app/android/app/src/debug/AndroidManifest.xml:8:9-44
+29-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:11:7-42
 30        <activity
 30-->/Users/mac/farraj_smart_parking_app/android/app/src/debug/AndroidManifest.xml:11:9-111
 31            android:name="com.facebook.react.devsupport.DevSettingsActivity"
@@ -59,30 +59,30 @@
 32            android:exported="false" />
 32-->/Users/mac/farraj_smart_parking_app/android/app/src/debug/AndroidManifest.xml:11:84-108
 33        <activity
-33-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:12:7-24:18
+33-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:13:7-25:18
 34            android:name="com.joud.smart_parking.MainActivity"
-34-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:13:9-37
+34-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:14:9-37
 35            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-35-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:16:9-118
+35-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:17:9-118
 36            android:exported="true"
-36-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:19:9-32
+36-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:20:9-32
 37            android:label="@string/app_name"
-37-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:14:9-41
+37-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:15:9-41
 38            android:launchMode="singleTask"
-38-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:17:9-40
+38-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:18:9-40
 39            android:theme="@style/SplashTheme"
-39-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:15:9-43
+39-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:16:9-43
 40            android:windowSoftInputMode="adjustResize" >
-40-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:18:9-51
+40-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:19:9-51
 41            <intent-filter>
-41-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:20:9-23:25
+41-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:21:9-24:25
 42                <action android:name="android.intent.action.MAIN" />
-42-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:21:13-65
-42-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:21:21-62
+42-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:22:13-65
+42-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:22:21-62
 43
 44                <category android:name="android.intent.category.LAUNCHER" />
-44-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:22:13-73
-44-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:22:23-70
+44-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:23:13-73
+44-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:23:23-70
 45            </intent-filter>
 46        </activity>
 47

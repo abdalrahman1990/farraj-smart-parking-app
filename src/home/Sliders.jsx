@@ -39,7 +39,7 @@ const HowToUseSlide = ({ lables }) => {
                     width: 150,
                     height: 150,
                     borderRadius: 75,
-                    backgroundColor: 'rgba(14,165,233,0.35)',
+                    backgroundColor: 'rgba(8,148,158,0.35)',
                 }}
             />
             <Text style={{ color: '#FFFFFF', fontSize: 18, fontWeight: '800', marginBottom: 14 }}>

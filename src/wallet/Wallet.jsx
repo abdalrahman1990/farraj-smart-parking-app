@@ -73,7 +73,7 @@ const Wallet = (props) => {
                             style={{ position: 'absolute', left: 0, right: 0, bottom: 0, width: '100%', height: 90, opacity: 0.32 }}
                             resizeMode="cover"
                         />
-                        <View style={{ position: 'absolute', top: -50, right: -50, width: 160, height: 160, borderRadius: 80, backgroundColor: 'rgba(14,165,233,0.35)' }} />
+                        <View style={{ position: 'absolute', top: -50, right: -50, width: 160, height: 160, borderRadius: 80, backgroundColor: 'rgba(8,148,158,0.35)' }} />
                         <View style={{ position: 'absolute', bottom: -40, left: 30, width: 110, height: 110, borderRadius: 55, backgroundColor: 'rgba(255,255,255,0.08)' }} />
                         <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: 14, fontWeight: '600', fontFamily: 'Cairo' }}>
                             {lables['balance'] || (lang === 'ar' ? 'الرصيد' : 'Balance')}

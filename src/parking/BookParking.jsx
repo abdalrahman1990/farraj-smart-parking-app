@@ -447,8 +447,8 @@ const BookParking = (props) => {
                 </Dialog>
                 <TimerPickerModal
                     visible={showStartTimeDialog}
-                    hourLabel={lang === 'ar' ? 'ساعة' : 'Hr'}
-                    minuteLabel={lang === 'ar' ? 'دقيقة' : 'Min'}
+                    hourLabel={lang === 'ar' ? ' ساعة' : ' Hr'}
+                    minuteLabel={lang === 'ar' ? ' دقيقة' : ' Min'}
                     hideSeconds
                     minuteInterval={5}
                     setIsVisible={setShowStartTimeDialog}
@@ -480,8 +480,8 @@ const BookParking = (props) => {
                 />
                 <TimerPickerModal
                     visible={showEndTimeDialog}
-                    hourLabel={lang === 'ar' ? 'ساعة' : 'Hr'}
-                    minuteLabel={lang === 'ar' ? 'دقيقة' : 'Min'}
+                    hourLabel={lang === 'ar' ? ' ساعة' : ' Hr'}
+                    minuteLabel={lang === 'ar' ? ' دقيقة' : ' Min'}
                     hideSeconds
                     minuteInterval={5}
                     setIsVisible={setShowEndTimeDialog}

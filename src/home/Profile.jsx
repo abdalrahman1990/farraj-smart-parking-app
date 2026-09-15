@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView, StyleSheet, I18nManager, Alert, Image } from 'react-native';
 import { useStore } from 'react-redux';
-import { Avatar, ListItem, Text, Input, Button } from '@rneui/themed';
+import { ListItem, Text, Input, Button } from '@rneui/themed';
+import UserAvatar from '../components/UserAvatar';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -75,19 +76,10 @@ const Profile = (props) => {
                             opacity: 0.35,
                         }}
                     />
-                    <View style={{ position: 'absolute', top: -60, right: -60, width: 180, height: 180, borderRadius: 90, backgroundColor: 'rgba(14,165,233,0.18)' }} />
-                    <Avatar
-                        containerStyle={{
-                            alignSelf: 'center',
-                            borderWidth: 4,
-                            borderColor: 'rgba(255,255,255,0.6)',
-                        }}
-                        size={100}
-                        rounded
-                        source={{
-                            uri: user.avatar ? user.avatar : "https://www.w3schools.com/w3images/avatar3.png",
-                        }}
-                    />
+                    <View style={{ position: 'absolute', top: -60, right: -60, width: 180, height: 180, borderRadius: 90, backgroundColor: 'rgba(8,148,158,0.18)' }} />
+                    <View style={{ alignSelf: 'center' }}>
+                        <UserAvatar uri={user.avatar} size={100} borderWidth={4} borderColor="rgba(255,255,255,0.6)" />
+                    </View>
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14 }}>
                         <Icon name='person' size={18} color="rgba(255,255,255,0.9)" />
                         <Text style={{ color: '#FFF', fontSize: 22, fontWeight: '700', marginStart: 8 }}>

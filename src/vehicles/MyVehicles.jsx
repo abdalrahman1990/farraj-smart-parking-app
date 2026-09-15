@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { View, ScrollView, Pressable, RefreshControl, StyleSheet, Text as RNText, Image } from 'react-native';
+import { View, ScrollView, Pressable, RefreshControl, StyleSheet, Text as RNText, Image, Platform } from 'react-native';
 import { useStore } from "react-redux";
 import { Avatar, ListItem, Text, Button } from '@rneui/themed';
 import { getVehicles } from './../apis/apis';
@@ -140,7 +140,7 @@ const VehicleAvatar = ({ uri }) => {
     }
     return (
         <Avatar
-            source={{ uri: src }}
+            source={Platform.OS === 'android' ? { uri: src, headers: { 'User-Agent': 'FarrajSmartParking/1.0 (Android)' } } : { uri: src }}
             size={60}
             rounded
             containerStyle={{

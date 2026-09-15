@@ -5,6 +5,7 @@ import { useTheme } from '../utils/useTheme';
 import { useLang } from '../utils/useLabels';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { fontSize, isSmallScreen } from '../utils/responsive';
+import { FadeIn, Pulse } from './Entrance';
 
 const AuthLayout = ({ title, subtitle, children, footer }) => {
   const T = useTheme();
@@ -51,6 +52,7 @@ const AuthLayout = ({ title, subtitle, children, footer }) => {
           <View style={{ position: 'absolute', top: -70, end: -70, width: 200, height: 200, borderRadius: 100, backgroundColor: 'rgba(255,255,255,0.10)' }} />
           <View style={{ position: 'absolute', bottom: -60, start: -40, width: 150, height: 150, borderRadius: 75, backgroundColor: 'rgba(0,0,0,0.12)' }} />
           <View style={{ alignItems: 'center' }}>
+            <Pulse>
             <View
               style={{
                 width: compact ? 76 : 84, height: compact ? 76 : 84, borderRadius: 26,
@@ -70,6 +72,7 @@ const AuthLayout = ({ title, subtitle, children, footer }) => {
                 resizeMode="contain"
               />
             </View>
+            </Pulse>
             <Text style={{ color: '#FFFFFF', fontSize: compact ? fontSize(21) : fontSize(23), fontWeight: '800', fontFamily: 'Cairo', marginTop: 12, textAlign: 'center' }}>
               {title}
             </Text>
@@ -86,20 +89,20 @@ const AuthLayout = ({ title, subtitle, children, footer }) => {
           </View>
         </View>
 
+        <FadeIn delay={120} style={{ marginHorizontal: compact ? 16 : 20, marginTop: -44 }}>
         <View
           style={{
             backgroundColor: T.card,
             borderRadius: 28,
             borderWidth: 1,
             borderColor: T.border,
-            marginHorizontal: compact ? 16 : 20,
-            marginTop: -44,
             padding: compact ? 18 : 22,
             ...SHADOW.card,
           }}
         >
           {children}
         </View>
+        </FadeIn>
         {!!footer && (
           <Text style={{ textAlign: 'center', color: T.inactive, fontSize: 11.5, marginTop: 16, fontFamily: 'Cairo', paddingHorizontal: 32 }}>
             {footer}

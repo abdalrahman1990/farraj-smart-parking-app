@@ -6,6 +6,7 @@ import { getNearByLocations } from '../apis/apis';
 import { Avatar, ListItem, Text } from '@rneui/themed';
 import Geolocation from '@react-native-community/geolocation';
 import LocationImage from '../components/LocationImage';
+import { FadeIn } from '../components/Entrance';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
 import { useLabels, useLang } from '../utils/useLabels';
@@ -53,8 +54,11 @@ const NearByLocations = (props) => {
                     filtered.map((item, index) => {
                         const spots = item.free_spots ?? 0;
                         return (
-                            <Pressable
+                            <FadeIn
                                 key={'loc_' + (item.id != null ? item.id : index)}
+                                delay={Math.min(index, 6) * 70}
+                            >
+                            <Pressable
                                 style={({ pressed, hovered }) => [
                                     styles.card,
                                     {
@@ -117,6 +121,7 @@ const NearByLocations = (props) => {
                                     </View>
                                 </View>
                             </Pressable>
+                            </FadeIn>
                         );
                     })
                 }

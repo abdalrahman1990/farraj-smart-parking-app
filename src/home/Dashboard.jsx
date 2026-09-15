@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView, Dimensions, Pressable, StatusBar, Image } from 'react-native';
-import { Text, Avatar } from '@rneui/themed';
+import { Text } from '@rneui/themed';
+import UserAvatar from '../components/UserAvatar';
 import Sliders from './Sliders';
 import NearByLocations from './../locations/NearByLocations';
 import { useStore } from 'react-redux';
@@ -12,7 +13,6 @@ import { useTheme } from '../utils/useTheme';
 import { useFocusEffect } from '@react-navigation/native';
 import { drawerBus } from '../utils/drawerBus';
 import { useLabels, useLang } from '../utils/useLabels';
-import urls from '../apis/urls';
 import { fontSize, isSmallScreen } from '../utils/responsive';
 
 const { width } = Dimensions.get('window');
@@ -149,7 +149,7 @@ const Dashboard = (props) => {
                             width: 220,
                             height: 220,
                             borderRadius: 110,
-                            backgroundColor: 'rgba(14,165,233,0.22)',
+                            backgroundColor: 'rgba(8,148,158,0.22)',
                         }}
                     />
                     <View
@@ -215,13 +215,7 @@ const Dashboard = (props) => {
                     </View>
                     {/* Identity */}
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: isSmallScreen() ? 14 : 20 }}>
-                        <Avatar
-                            size={isSmall ? 40 : 52}
-                            rounded
-                            containerStyle={{ borderWidth: 2.5, borderColor: 'rgba(255,255,255,0.45)', backgroundColor: 'rgba(255,255,255,0.15)' }}
-                            source={{ uri: (()=>{const a=user.avatar; if(!a) return "https://www.w3schools.com/w3images/avatar3.png"; if(/^https?:\/\//.test(a)) return a; const h=(urls.host||'').replace(/\/$/,''); return h+(a.startsWith('/')?a:'/'+a);})() }}
-                            onError={() => {}}
-                        />
+                        <UserAvatar uri={user.avatar} size={isSmall ? 40 : 52} />
                         <View style={{ marginStart: 13, flex: 1 }}>
                             <Text style={{ fontSize: 13, color: 'rgba(255,255,255,0.80)', fontFamily: 'Cairo' }}>
                                 {lang === 'ar' ? 'مرحبًا بعودتك 👋' : 'Welcome back 👋'}
