@@ -101,7 +101,7 @@ const Sidemenu = (props) => {
           <View style={[styles.brandRow, { flexDirection: isRTL ? "row-reverse" : "row" }]}>
             <View style={[styles.logoTile, { backgroundColor: '#FFFFFF', padding: 6 }]}>
               <Image
-                source={require('./../assets/images/farraj-logo.png')}
+                source={require('./../assets/images/smart-parking-logo.png')}
                 style={styles.brandLogo}
                 resizeMode="contain"
               />

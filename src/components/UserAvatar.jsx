@@ -11,7 +11,7 @@ export const absolutizeAvatar = (u) => {
   return base ? base + (s.startsWith('/') ? s : '/' + s) : s;
 };
 
-const FALLBACK = require('../assets/images/farraj-logo.png');
+const FALLBACK = require('../assets/images/smart-parking-logo.png');
 
 const UserAvatar = ({ uri, size = 52, borderColor = 'rgba(255,255,255,0.45)', borderWidth = 2.5 }) => {
   const [failed, setFailed] = useState(false);
@@ -34,7 +34,7 @@ const UserAvatar = ({ uri, size = 52, borderColor = 'rgba(255,255,255,0.45)', bo
   return (
     <Image
       source={Platform.OS === 'android'
-        ? { uri: finalUri, headers: { 'User-Agent': 'FarrajSmartParking/1.0 (Android)' } }
+        ? { uri: finalUri, headers: { 'User-Agent': 'SmartParking/1.0 (Android)' } }
         : { uri: finalUri }}
       defaultSource={Platform.OS === 'android' ? FALLBACK : undefined}
       onError={() => setFailed(true)}

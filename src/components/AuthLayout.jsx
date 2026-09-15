@@ -67,7 +67,7 @@ const AuthLayout = ({ title, subtitle, children, footer }) => {
               }}
             >
               <Image
-                source={require('../assets/images/farraj-logo.png')}
+                source={require('../assets/images/smart-parking-logo.png')}
                 style={{ width: '100%', height: '100%' }}
                 resizeMode="contain"
               />

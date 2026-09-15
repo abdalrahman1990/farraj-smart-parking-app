@@ -99,7 +99,7 @@ const Landing = (props) => {
                         elevation: 12,
                     }}
                 >
-                    <Image source={require('./../assets/images/farraj-logo.png')}
+                    <Image source={require('./../assets/images/smart-parking-logo.png')}
                         style={{
                             width: '100%',
                             height: '100%',

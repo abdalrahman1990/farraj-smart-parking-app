@@ -140,7 +140,7 @@ const VehicleAvatar = ({ uri }) => {
     }
     return (
         <Avatar
-            source={Platform.OS === 'android' ? { uri: src, headers: { 'User-Agent': 'FarrajSmartParking/1.0 (Android)' } } : { uri: src }}
+            source={Platform.OS === 'android' ? { uri: src, headers: { 'User-Agent': 'SmartParking/1.0 (Android)' } } : { uri: src }}
             size={60}
             rounded
             containerStyle={{

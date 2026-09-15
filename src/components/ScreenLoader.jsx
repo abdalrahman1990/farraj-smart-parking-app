@@ -37,7 +37,7 @@ const ScreenLoader = ({ message }) => {
                 }}
             >
                 <Image
-                    source={require('../assets/images/farraj-logo.png')}
+                    source={require('../assets/images/smart-parking-logo.png')}
                     style={{ width: 88, height: 88 }}
                     resizeMode="contain"
                 />
