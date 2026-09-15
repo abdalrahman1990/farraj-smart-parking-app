@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.joud.smart_parking"
+    package="com.bluebyte.smart_parking"
     android:versionCode="3"
     android:versionName="1.3" >
 
@@ -18,7 +18,7 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
-        android:name="com.joud.smart_parking.MainApplication"
+        android:name="com.bluebyte.smart_parking.MainApplication"
         android:allowBackup="false"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -31,7 +31,7 @@
             android:name="com.facebook.react.devsupport.DevSettingsActivity"
             android:exported="false" />
         <activity
-            android:name="com.joud.smart_parking.MainActivity"
+            android:name="com.bluebyte.smart_parking.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
             android:exported="true"
             android:label="@string/app_name"
@@ -110,12 +110,12 @@
 
         <provider
             android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
-            android:authorities="com.joud.smart_parking.reactnativefirebaseappinitprovider"
+            android:authorities="com.bluebyte.smart_parking.reactnativefirebaseappinitprovider"
             android:exported="false"
             android:initOrder="99" />
         <provider
             android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
-            android:authorities="com.joud.smart_parking.fileprovider"
+            android:authorities="com.bluebyte.smart_parking.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -202,7 +202,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.joud.smart_parking.firebaseinitprovider"
+            android:authorities="com.bluebyte.smart_parking.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
             android:initOrder="100" />
@@ -213,7 +213,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.joud.smart_parking.androidx-startup"
+            android:authorities="com.bluebyte.smart_parking.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

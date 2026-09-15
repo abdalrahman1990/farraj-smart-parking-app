@@ -7,7 +7,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "android": {
-      "package": "com.joud.smart_parking",
+      "package": "com.bluebyte.smart_parking",
       "versionCode": 1
     },
     "ios": {

@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.joud.smart_parking"
+3    package="com.bluebyte.smart_parking"
 4    android:versionCode="3"
 5    android:versionName="1.3" >
 6
@@ -35,7 +35,7 @@
 19
 20    <application
 20-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:5:5-26:19
-21        android:name="com.joud.smart_parking.MainApplication"
+21        android:name="com.bluebyte.smart_parking.MainApplication"
 21-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:6:7-38
 22        android:allowBackup="false"
 22-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:10:7-34
@@ -60,7 +60,7 @@
 32-->/Users/mac/farraj_smart_parking_app/android/app/src/debug/AndroidManifest.xml:11:84-108
 33        <activity
 33-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:13:7-25:18
-34            android:name="com.joud.smart_parking.MainActivity"
+34            android:name="com.bluebyte.smart_parking.MainActivity"
 34-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:14:9-37
 35            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
 35-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:17:9-118
@@ -209,7 +209,7 @@
 111-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-27:38
 112            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
 112-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-88
-113            android:authorities="com.joud.smart_parking.reactnativefirebaseappinitprovider"
+113            android:authorities="com.bluebyte.smart_parking.reactnativefirebaseappinitprovider"
 113-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-86
 114            android:exported="false"
 114-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-37
@@ -219,7 +219,7 @@
 116-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-16:20
 117            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
 117-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-83
-118            android:authorities="com.joud.smart_parking.fileprovider"
+118            android:authorities="com.bluebyte.smart_parking.fileprovider"
 118-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-64
 119            android:exported="false"
 119-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-37
@@ -376,7 +376,7 @@
 203-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
 204            android:name="com.google.firebase.provider.FirebaseInitProvider"
 204-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
-205            android:authorities="com.joud.smart_parking.firebaseinitprovider"
+205            android:authorities="com.bluebyte.smart_parking.firebaseinitprovider"
 205-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
 206            android:directBootAware="true"
 206-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
@@ -396,7 +396,7 @@
 214-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
 215            android:name="androidx.startup.InitializationProvider"
 215-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-216            android:authorities="com.joud.smart_parking.androidx-startup"
+216            android:authorities="com.bluebyte.smart_parking.androidx-startup"
 216-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
 217            android:exported="false" >
 217-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.joud.smart_parking.app-mergeDebugResources-36:/values-or/values-or.xml",
+            "outputFile": "com.bluebyte.smart_parking.app-mergeDebugResources-36:/values-or/values-or.xml",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/transforms-3/dcf426ef84b079a62f273a4871ddea93/transformed/jetified-play-services-base-18.0.1/res/values-or/values.xml",

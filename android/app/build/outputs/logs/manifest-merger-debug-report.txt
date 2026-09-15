@@ -259,7 +259,7 @@ MERGED from [com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/tr
 	android:name
 		ADDED from /Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:6:7-38
 		ADDED from /Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:6:7-38
-activity#com.joud.smart_parking.MainActivity
+activity#com.bluebyte.smart_parking.MainActivity
 ADDED from /Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:13:7-25:18
 	android:label
 		ADDED from /Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:15:9-41

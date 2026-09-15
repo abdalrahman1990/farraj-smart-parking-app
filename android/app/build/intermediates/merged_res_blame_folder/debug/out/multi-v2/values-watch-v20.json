@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.joud.smart_parking.app-mergeDebugResources-36:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.bluebyte.smart_parking.app-mergeDebugResources-36:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/res/values-watch-v20/values.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.joud.smart_parking.app-mergeDebugResources-36:/values-mn/values-mn.xml",
+            "outputFile": "com.bluebyte.smart_parking.app-mergeDebugResources-36:/values-mn/values-mn.xml",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/transforms-3/409e62b836a32335f7def64272f8e020/transformed/appcompat-1.4.1/res/values-mn/values-mn.xml",

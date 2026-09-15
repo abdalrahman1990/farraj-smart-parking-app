@@ -74,9 +74,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.joud.smart_parking"
+    namespace "com.bluebyte.smart_parking"
     defaultConfig {
-        applicationId "com.joud.smart_parking"
+        applicationId "com.bluebyte.smart_parking"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 3
