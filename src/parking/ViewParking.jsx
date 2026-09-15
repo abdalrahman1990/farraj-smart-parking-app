@@ -134,7 +134,7 @@ const ViewParking = (props) => {
         setLastReply({
             ok,
             text: ok
-                ? (clean(res.data && res.data.msg) || 'Command sent to device.')
+                ? tmsg(lables, lang, 'request_sent')
                 : (clean(res && res.msg) || tmsg(lables, lang, 'gate_failed')),
             at: new Date().toLocaleTimeString(),
             status,
@@ -150,7 +150,7 @@ const ViewParking = (props) => {
         runCommand('light')
             .then((res) => {
                 if (res && res.code === 200) {
-                    toast.info(tmsg(lables, lang, 'led_blinking'));
+                    toast.success(tmsg(lables, lang, 'request_sent'));
                     setTimeout(() => setLedOn(false), 5000);
                 } else {
                     setLedOn(false);
@@ -173,7 +173,7 @@ const ViewParking = (props) => {
                 setOpening(false);
                 if (res && res.code === 200) {
                     setGateOpen(true);
-                    toast.success(tmsg(lables, lang, 'gate_opened'));
+                    toast.success(tmsg(lables, lang, 'request_sent'));
                     setTimeout(() => setGateOpen(false), 8000);
                 } else {
                     toast.error((res && res.msg) || tmsg(lables, lang, 'gate_failed'));

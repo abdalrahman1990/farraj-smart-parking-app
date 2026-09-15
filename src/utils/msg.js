@@ -12,6 +12,7 @@ const FALLBACK = {
   led_blinking: { en: 'Spot light blinking…', ar: 'ضوء الموقف يومض…' },
   gate_failed: { en: 'Could not reach the device. Please try again.', ar: 'تعذر الاتصال بالجهاز. يرجى المحاولة مرة أخرى.' },
   gate_opened: { en: 'Gate opening…', ar: 'جارٍ فتح البوابة…' },
+  request_sent: { en: 'Your request has been sent successfully', ar: 'تم ارسال طلبك بنجاح' },
   generic_error: { en: 'Something went wrong. Please try again.', ar: 'حدث خطأ ما. يرجى المحاولة مرة أخرى.' },
   no_records: { en: 'No records found', ar: 'لا توجد سجلات' },
   delete_confirm: { en: 'Delete this notification?', ar: 'حذف هذا الإشعار؟' },
