@@ -173,7 +173,7 @@ const getStyles = (T) => StyleSheet.create({
         color: '#FFFFFF',
         fontWeight: '700',
         fontSize: 12,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     floatPanel: {
         backgroundColor: T.card,
@@ -200,14 +200,14 @@ const getStyles = (T) => StyleSheet.create({
         color: T.text,
         fontWeight: '800',
         fontSize: 17,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     subtitle: {
         color: T.textSecondary,
         fontSize: 12.5,
         marginStart: 5,
         flexShrink: 1,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     priceRow: {
         flexDirection: 'row',
@@ -228,19 +228,19 @@ const getStyles = (T) => StyleSheet.create({
         color: T.primary,
         fontWeight: '800',
         fontSize: 16,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     perHour: {
         color: T.primary,
         fontSize: 11.5,
         fontWeight: '600',
         marginStart: 4,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     freeText: {
         fontSize: 13,
         fontWeight: '800',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     goBtn: {
         width: 48, height: 48, borderRadius: 24,

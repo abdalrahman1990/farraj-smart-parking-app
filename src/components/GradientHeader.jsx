@@ -17,7 +17,7 @@ export const gradientHeaderOptions = (titleColor = '#FFFFFF') => ({
   headerTitleStyle: {
     fontWeight: '800',
     fontSize: 20,
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
     color: titleColor,
   },
   headerStyle: {

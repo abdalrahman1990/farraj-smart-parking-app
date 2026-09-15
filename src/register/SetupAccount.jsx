@@ -58,7 +58,7 @@ const SetupAccount = (props) => {
                             fontWeight: '800',
                             textAlign: 'center',
                             color: T.primaryLight,
-                            fontFamily: 'Cairo, sans-serif',
+                            fontFamily: 'Cairo',
                         }}
                     >
                         {lables['hello']}
@@ -121,7 +121,7 @@ const SetupAccount = (props) => {
                             fontSize: 17,
                             fontWeight: '800',
                             color: T.text,
-                            fontFamily: 'Cairo, sans-serif',
+                            fontFamily: 'Cairo',
                         }}
                     >{lables['Select_Handicap_Option']}</Text>
                     <Icon name='wheelchair'
@@ -171,7 +171,7 @@ const SetupAccount = (props) => {
                             shadowRadius: 14,
                             elevation: 8,
                         }}
-                        titleStyle={{ fontWeight: '800', fontSize: 17, fontFamily: 'Cairo, sans-serif' }}
+                        titleStyle={{ fontWeight: '800', fontSize: 17, fontFamily: 'Cairo' }}
                         onPress={() => {
                             if (username.length !== 0 && email.length > 4) {
                                 let data = {

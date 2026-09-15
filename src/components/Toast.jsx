@@ -68,7 +68,7 @@ const Toast = () => {
                                 fontSize: 14,
                                 marginStart: 10,
                                 flex: 1,
-                                fontFamily: 'Cairo, sans-serif',
+                                fontFamily: 'Cairo',
                             }}
                         >
                             {i.message}

@@ -183,7 +183,7 @@ const getStyles = (T) => StyleSheet.create({
         fontSize: 18,
         fontWeight: '800',
         color: '#FFF',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     headerSubtitle: {
         fontSize: 13,
@@ -231,7 +231,7 @@ const getStyles = (T) => StyleSheet.create({
         fontWeight: '700',
         color: T.text,
         marginBottom: 5,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     plateBadge: {
         flexDirection: 'row',

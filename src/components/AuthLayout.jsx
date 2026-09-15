@@ -1,36 +1,32 @@
 import React from 'react';
-import { View, ScrollView, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { View, ScrollView, Image, Platform } from 'react-native';
 import { Text } from '@rneui/themed';
 import { useTheme } from '../utils/useTheme';
 import { useLang } from '../utils/useLabels';
 import { RADIUS, SHADOW } from '../theme/tokens';
-import { fontSize } from '../utils/responsive';
+import { fontSize, isSmallScreen } from '../utils/responsive';
 
-const AuthLayout = ({ title, subtitle, children }) => {
+const AuthLayout = ({ title, subtitle, children, footer }) => {
   const T = useTheme();
   const lang = useLang();
   const rtl = lang === 'ar';
+  const compact = isSmallScreen();
   return (
     <View style={{ flex: 1, backgroundColor: T.background }}>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1, paddingBottom: 36 }}
+        contentContainerStyle={{ flexGrow: 1, paddingBottom: 28 }}
+        keyboardShouldPersistTaps="handled"
       >
         <View
           style={{
             backgroundColor: T.primary,
-            borderBottomLeftRadius: 30,
-            borderBottomRightRadius: 30,
-            paddingTop: 44,
-            paddingBottom: 64,
-            paddingHorizontal: 26,
+            borderBottomLeftRadius: 32,
+            borderBottomRightRadius: 32,
+            paddingTop: compact ? 34 : 44,
+            paddingBottom: 72,
+            paddingHorizontal: compact ? 20 : 24,
             overflow: 'hidden',
-            shadowColor: T.primary,
-            shadowOffset: { width: 0, height: 8 },
-            shadowOpacity: 0.35,
-            shadowRadius: 18,
-            elevation: 10,
           }}
         >
           <Image
@@ -39,8 +35,8 @@ const AuthLayout = ({ title, subtitle, children }) => {
               position: 'absolute',
               left: 0, right: 0, bottom: 0,
               width: '100%',
-              height: 130,
-              opacity: 0.65,
+              height: 148,
+              opacity: 0.5,
             }}
             resizeMode="cover"
           />
@@ -49,35 +45,43 @@ const AuthLayout = ({ title, subtitle, children }) => {
               position: 'absolute',
               left: 0, right: 0, top: 0, bottom: 0,
               backgroundColor: T.primary,
-              opacity: 0.65,
+              opacity: 0.55,
             }}
           />
-          <View style={{ position: 'absolute', top: -56, end: -56, width: 170, height: 170, borderRadius: 85, backgroundColor: 'rgba(255,255,255,0.10)' }} />
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{ position: 'absolute', top: -70, end: -70, width: 200, height: 200, borderRadius: 100, backgroundColor: 'rgba(255,255,255,0.10)' }} />
+          <View style={{ position: 'absolute', bottom: -60, start: -40, width: 150, height: 150, borderRadius: 75, backgroundColor: 'rgba(0,0,0,0.12)' }} />
+          <View style={{ alignItems: 'center' }}>
             <View
               style={{
-                width: 62, height: 62, borderRadius: 20,
+                width: compact ? 76 : 84, height: compact ? 76 : 84, borderRadius: 26,
                 backgroundColor: '#FFFFFF',
-                alignItems: 'center', justifyContent: 'center', padding: 9,
-                flexShrink: 0,
+                alignItems: 'center', justifyContent: 'center', padding: 10,
                 shadowColor: '#000',
-                shadowOffset: { width: 0, height: 3 },
-                shadowOpacity: 0.25,
-                shadowRadius: 8,
-                elevation: 5,
+                shadowOffset: { width: 0, height: 6 },
+                shadowOpacity: 0.3,
+                shadowRadius: 12,
+                elevation: 8,
+                overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
               }}
             >
-              <Icon name="car-sport" size={34} color={T.primary} />
+              <Image
+                source={require('../assets/images/farraj-logo.png')}
+                style={{ width: '100%', height: '100%' }}
+                resizeMode="contain"
+              />
             </View>
-            <View style={{ flex: 1, flexShrink: 1, marginStart: 14 }}>
-              <Text style={{ color: '#FFFFFF', fontSize: fontSize(23), fontWeight: '800', fontFamily: 'Cairo, sans-serif', textAlign: rtl ? 'right' : 'left' }}>
-                {title}
+            <Text style={{ color: '#FFFFFF', fontSize: compact ? fontSize(21) : fontSize(23), fontWeight: '800', fontFamily: 'Cairo', marginTop: 12, textAlign: 'center' }}>
+              {title}
+            </Text>
+            {!!subtitle && (
+              <Text style={{ color: 'rgba(255,255,255,0.88)', fontSize: compact ? 12.5 : 13.5, marginTop: 6, lineHeight: 19, fontFamily: 'Cairo', textAlign: 'center', paddingHorizontal: 12 }}>
+                {subtitle}
               </Text>
-              {!!subtitle && (
-                <Text style={{ color: 'rgba(255,255,255,0.85)', fontSize: 13.5, marginTop: 4, lineHeight: 19, fontFamily: 'Cairo, sans-serif', textAlign: rtl ? 'right' : 'left' }}>
-                  {subtitle}
-                </Text>
-              )}
+            )}
+            <View style={{ flexDirection: rtl ? 'row-reverse' : 'row', alignItems: 'center', marginTop: 12, gap: 6 }}>
+              <View style={{ width: 28, height: 3, borderRadius: 2, backgroundColor: 'rgba(255,255,255,0.9)' }} />
+              <View style={{ width: 10, height: 3, borderRadius: 2, backgroundColor: 'rgba(255,255,255,0.5)' }} />
+              <View style={{ width: 10, height: 3, borderRadius: 2, backgroundColor: 'rgba(255,255,255,0.5)' }} />
             </View>
           </View>
         </View>
@@ -85,17 +89,22 @@ const AuthLayout = ({ title, subtitle, children }) => {
         <View
           style={{
             backgroundColor: T.card,
-            borderRadius: RADIUS.xl,
+            borderRadius: 28,
             borderWidth: 1,
             borderColor: T.border,
-            marginHorizontal: 20,
-            marginTop: -38,
-            padding: 22,
+            marginHorizontal: compact ? 16 : 20,
+            marginTop: -44,
+            padding: compact ? 18 : 22,
             ...SHADOW.card,
           }}
         >
           {children}
         </View>
+        {!!footer && (
+          <Text style={{ textAlign: 'center', color: T.inactive, fontSize: 11.5, marginTop: 16, fontFamily: 'Cairo', paddingHorizontal: 32 }}>
+            {footer}
+          </Text>
+        )}
       </ScrollView>
     </View>
   );

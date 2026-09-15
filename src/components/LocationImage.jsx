@@ -12,8 +12,10 @@ export const absolutizeUrl = (u) => {
 
 const LocationImage = ({ uri, name, style }) => {
   const [broken, setBroken] = useState(false);
+  const cleanUri = uri ? String(uri).trim() : '';
+  const finalUri = cleanUri ? absolutizeUrl(cleanUri) : '';
 
-  if (broken || !uri) {
+  if (broken || !finalUri) {
     return (
       <Image
         source={require('../assets/images/default-location.jpg')}
@@ -25,9 +27,10 @@ const LocationImage = ({ uri, name, style }) => {
 
   return (
     <Image
-      source={{ uri: absolutizeUrl(uri) }}
+      source={{ uri: finalUri }}
       onError={() => setBroken(true)}
       style={style}
+      resizeMode="cover"
     />
   );
 };

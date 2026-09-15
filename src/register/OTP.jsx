@@ -74,7 +74,7 @@ const OTP = (props) => {
                             fontWeight: '800',
                             textAlign: 'center',
                             color: T.text,
-                            fontFamily: 'Cairo, sans-serif',
+                            fontFamily: 'Cairo',
                         }}
                     >{lables['Enter_otp']}</Text>
                     <Text
@@ -84,7 +84,7 @@ const OTP = (props) => {
                             textAlign: 'center',
                             padding: 10,
                             color: T.primaryLight,
-                            fontFamily: 'Cairo, sans-serif',
+                            fontFamily: 'Cairo',
                         }}
                     >{phone} </Text>
                     <Input
@@ -121,7 +121,7 @@ const OTP = (props) => {
                             shadowRadius: 14,
                             elevation: 8,
                         }}
-                        titleStyle={{ fontWeight: '800', fontSize: 17, fontFamily: 'Cairo, sans-serif' }}
+                        titleStyle={{ fontWeight: '800', fontSize: 17, fontFamily: 'Cairo' }}
                         onPress={() => {
                             confirmCode();
                         }}

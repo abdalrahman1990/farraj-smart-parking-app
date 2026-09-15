@@ -34,7 +34,7 @@
 18-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:22-79
 19
 20    <application
-20-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:5:5-24:19
+20-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:5:5-25:19
 21        android:name="com.joud.smart_parking.MainApplication"
 21-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:6:7-38
 22        android:allowBackup="false"
@@ -59,406 +59,408 @@
 32            android:exported="false" />
 32-->/Users/mac/farraj_smart_parking_app/android/app/src/debug/AndroidManifest.xml:11:84-108
 33        <activity
-33-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:12:7-23:18
+33-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:12:7-24:18
 34            android:name="com.joud.smart_parking.MainActivity"
 34-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:13:9-37
 35            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-35-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:15:9-118
+35-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:16:9-118
 36            android:exported="true"
-36-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:18:9-32
+36-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:19:9-32
 37            android:label="@string/app_name"
 37-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:14:9-41
 38            android:launchMode="singleTask"
-38-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:16:9-40
-39            android:windowSoftInputMode="adjustResize" >
-39-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:17:9-51
-40            <intent-filter>
-40-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:19:9-22:25
-41                <action android:name="android.intent.action.MAIN" />
-41-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:20:13-65
-41-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:20:21-62
-42
-43                <category android:name="android.intent.category.LAUNCHER" />
-43-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:21:13-73
-43-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:21:23-70
-44            </intent-filter>
-45        </activity>
-46
-47        <service
-47-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-14:40
-48            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingHeadlessService"
-48-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-103
-49            android:exported="false" />
-49-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-37
-50        <service
-50-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-21:19
-51            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
-51-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-95
-52            android:exported="false" >
-52-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-37
-53            <intent-filter>
-53-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:29
-54                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-54-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-78
-54-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:25-75
-55            </intent-filter>
-56        </service>
-57
-58        <receiver
-58-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-30:20
-59            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingReceiver"
-59-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-96
-60            android:exported="true"
-60-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-36
-61            android:permission="com.google.android.c2dm.permission.SEND" >
-61-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-73
-62            <intent-filter>
-62-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-29:29
-63                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-63-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-81
-63-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-78
-64            </intent-filter>
-65        </receiver>
-66
-67        <meta-data
-67-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:9-34:36
-68            android:name="firebase_messaging_auto_init_enabled"
-68-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-64
-69            android:value="true" />
-69-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:13-33
-70        <meta-data
-70-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:9-37:32
-71            android:name="com.google.firebase.messaging.default_notification_channel_id"
-71-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-89
-72            android:value="" />
-72-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-29
-73        <meta-data
-73-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:9-40:47
-74            android:name="com.google.firebase.messaging.default_notification_color"
-74-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-84
-75            android:resource="@color/white" />
-75-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-44
-76        <meta-data
-76-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:9-11:36
-77            android:name="app_data_collection_default_enabled"
-77-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-63
-78            android:value="true" />
-78-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-33
-79
-80        <service
-80-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-21:19
-81            android:name="com.google.firebase.components.ComponentDiscoveryService"
-81-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-84
-82            android:directBootAware="true"
-82-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-43
-83            android:exported="false" >
-83-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-37
-84            <meta-data
-84-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:85
-85                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
-85-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-120
-86                android:value="com.google.firebase.components.ComponentRegistrar" />
-86-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-82
-87            <meta-data
-87-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:69:13-71:85
-88                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-88-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:70:17-109
-89                android:value="com.google.firebase.components.ComponentRegistrar" />
-89-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:71:17-82
-90            <meta-data
-90-->[com.google.firebase:firebase-appcheck-debug:17.0.1] /Users/mac/.gradle/caches/transforms-3/808cf21f6380342edb2465121dfb7a81/transformed/jetified-firebase-appcheck-debug-17.0.1/AndroidManifest.xml:27:13-29:85
-91                android:name="com.google.firebase.components:com.google.firebase.appcheck.debug.FirebaseAppCheckDebugRegistrar"
-91-->[com.google.firebase:firebase-appcheck-debug:17.0.1] /Users/mac/.gradle/caches/transforms-3/808cf21f6380342edb2465121dfb7a81/transformed/jetified-firebase-appcheck-debug-17.0.1/AndroidManifest.xml:28:17-128
-92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[com.google.firebase:firebase-appcheck-debug:17.0.1] /Users/mac/.gradle/caches/transforms-3/808cf21f6380342edb2465121dfb7a81/transformed/jetified-firebase-appcheck-debug-17.0.1/AndroidManifest.xml:29:17-82
-93            <meta-data
-93-->[com.google.firebase:firebase-appcheck-playintegrity:17.0.1] /Users/mac/.gradle/caches/transforms-3/13b2e8f755865b8e50ff3fe3f13b4871/transformed/jetified-firebase-appcheck-playintegrity-17.0.1/AndroidManifest.xml:27:13-29:85
-94                android:name="com.google.firebase.components:com.google.firebase.appcheck.playintegrity.FirebaseAppCheckPlayIntegrityRegistrar"
-94-->[com.google.firebase:firebase-appcheck-playintegrity:17.0.1] /Users/mac/.gradle/caches/transforms-3/13b2e8f755865b8e50ff3fe3f13b4871/transformed/jetified-firebase-appcheck-playintegrity-17.0.1/AndroidManifest.xml:28:17-144
-95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[com.google.firebase:firebase-appcheck-playintegrity:17.0.1] /Users/mac/.gradle/caches/transforms-3/13b2e8f755865b8e50ff3fe3f13b4871/transformed/jetified-firebase-appcheck-playintegrity-17.0.1/AndroidManifest.xml:29:17-82
-96            <meta-data
-96-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:55:13-57:85
-97                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-97-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:56:17-119
-98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:57:17-82
-99            <meta-data
-99-->[com.google.firebase:firebase-appcheck:17.0.1] /Users/mac/.gradle/caches/transforms-3/c0dfd8d3885ba82f0848c032ec7ea00a/transformed/jetified-firebase-appcheck-17.0.1/AndroidManifest.xml:27:13-29:85
-100                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
-100-->[com.google.firebase:firebase-appcheck:17.0.1] /Users/mac/.gradle/caches/transforms-3/c0dfd8d3885ba82f0848c032ec7ea00a/transformed/jetified-firebase-appcheck-17.0.1/AndroidManifest.xml:28:17-117
-101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[com.google.firebase:firebase-appcheck:17.0.1] /Users/mac/.gradle/caches/transforms-3/c0dfd8d3885ba82f0848c032ec7ea00a/transformed/jetified-firebase-appcheck-17.0.1/AndroidManifest.xml:29:17-82
-102            <meta-data
-102-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/mac/.gradle/caches/transforms-3/00651557239fa75813426daa38dbe205/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
-103                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-103-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/mac/.gradle/caches/transforms-3/00651557239fa75813426daa38dbe205/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
-104                android:value="com.google.firebase.components.ComponentRegistrar" />
-104-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/mac/.gradle/caches/transforms-3/00651557239fa75813426daa38dbe205/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
-105            <meta-data
-105-->[com.google.firebase:firebase-installations:17.1.3] /Users/mac/.gradle/caches/transforms-3/eb3ec10b3a9681e7148b75ce3e5bf689/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:17:13-19:85
-106                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-106-->[com.google.firebase:firebase-installations:17.1.3] /Users/mac/.gradle/caches/transforms-3/eb3ec10b3a9681e7148b75ce3e5bf689/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:18:17-127
-107                android:value="com.google.firebase.components.ComponentRegistrar" />
-107-->[com.google.firebase:firebase-installations:17.1.3] /Users/mac/.gradle/caches/transforms-3/eb3ec10b3a9681e7148b75ce3e5bf689/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:19:17-82
-108        </service>
-109
-110        <provider
-110-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-27:38
-111            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
-111-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-88
-112            android:authorities="com.joud.smart_parking.reactnativefirebaseappinitprovider"
-112-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-86
-113            android:exported="false"
-113-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-37
-114            android:initOrder="99" />
-114-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-35
-115        <provider
-115-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-16:20
-116            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
-116-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-83
-117            android:authorities="com.joud.smart_parking.fileprovider"
-117-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-64
-118            android:exported="false"
-118-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-37
-119            android:grantUriPermissions="true" >
-119-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-47
-120            <meta-data
-120-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-15:63
-121                android:name="android.support.FILE_PROVIDER_PATHS"
-121-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:17-67
-122                android:resource="@xml/file_provider_paths" />
-122-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:17-60
-123        </provider>
-124
-125        <activity
-125-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:29:9-46:20
-126            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-126-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:30:13-80
-127            android:excludeFromRecents="true"
-127-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:31:13-46
-128            android:exported="true"
-128-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:32:13-36
-129            android:launchMode="singleTask"
-129-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:33:13-44
-130            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-130-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:34:13-72
-131            <intent-filter>
-131-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:35:13-45:29
-132                <action android:name="android.intent.action.VIEW" />
-132-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
-132-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
-133
-134                <category android:name="android.intent.category.DEFAULT" />
-134-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
-134-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
-135                <category android:name="android.intent.category.BROWSABLE" />
-135-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
-135-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
-136
-137                <data
-137-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
-138                    android:host="firebase.auth"
-138-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
-139                    android:path="/"
-139-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
-140                    android:scheme="genericidp" />
-140-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
-141            </intent-filter>
-142        </activity>
-143        <activity
-143-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:47:9-64:20
-144            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-144-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:48:13-79
-145            android:excludeFromRecents="true"
-145-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:49:13-46
-146            android:exported="true"
-146-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:50:13-36
-147            android:launchMode="singleTask"
-147-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:51:13-44
-148            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-148-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:52:13-72
-149            <intent-filter>
-149-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:53:13-63:29
-150                <action android:name="android.intent.action.VIEW" />
-150-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
-150-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
-151
-152                <category android:name="android.intent.category.DEFAULT" />
-152-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
-152-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
-153                <category android:name="android.intent.category.BROWSABLE" />
-153-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
-153-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
-154
-155                <data
-155-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
-156                    android:host="firebase.auth"
-156-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
-157                    android:path="/"
-157-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
-158                    android:scheme="recaptcha" />
-158-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
-159            </intent-filter>
-160        </activity>
-161        <activity
-161-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
-162            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-162-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
-163            android:excludeFromRecents="true"
-163-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
-164            android:exported="false"
-164-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
-165            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-165-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
-166        <!--
-167            Service handling Google Sign-In user revocation. For apps that do not integrate with
-168            Google Sign-In, this service will never be started.
-169        -->
-170        <service
-170-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
-171            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-171-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
-172            android:exported="true"
-172-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
-173            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-173-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
-174            android:visibleToInstantApps="true" />
-174-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
-175
-176        <receiver
-176-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:31:9-38:20
-177            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-177-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:32:13-78
-178            android:exported="true"
-178-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:33:13-36
-179            android:permission="com.google.android.c2dm.permission.SEND" >
-179-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:34:13-73
-180            <intent-filter>
-180-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-29:29
-181                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-181-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-81
-181-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-78
-182            </intent-filter>
-183        </receiver>
-184        <!--
-185             FirebaseMessagingService performs security checks at runtime,
-186             but set to not exported to explicitly avoid allowing another app to call it.
-187        -->
-188        <service
-188-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:44:9-51:19
-189            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-189-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:45:13-82
-190            android:directBootAware="true"
-190-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:46:13-43
-191            android:exported="false" >
-191-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:47:13-37
-192            <intent-filter android:priority="-500" >
-192-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:29
-193                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-193-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-78
-193-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:25-75
-194            </intent-filter>
-195        </service>
-196
-197        <activity
-197-->[com.google.android.gms:play-services-base:18.0.1] /Users/mac/.gradle/caches/transforms-3/dcf426ef84b079a62f273a4871ddea93/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-198            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-198-->[com.google.android.gms:play-services-base:18.0.1] /Users/mac/.gradle/caches/transforms-3/dcf426ef84b079a62f273a4871ddea93/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-199            android:exported="false"
-199-->[com.google.android.gms:play-services-base:18.0.1] /Users/mac/.gradle/caches/transforms-3/dcf426ef84b079a62f273a4871ddea93/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-200            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-200-->[com.google.android.gms:play-services-base:18.0.1] /Users/mac/.gradle/caches/transforms-3/dcf426ef84b079a62f273a4871ddea93/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-201
-202        <provider
-202-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
-203            android:name="com.google.firebase.provider.FirebaseInitProvider"
-203-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
-204            android:authorities="com.joud.smart_parking.firebaseinitprovider"
-204-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
-205            android:directBootAware="true"
-205-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
-206            android:exported="false"
-206-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
-207            android:initOrder="100" />
-207-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
-208
-209        <meta-data
-209-->[com.google.android.gms:play-services-basement:18.2.0] /Users/mac/.gradle/caches/transforms-3/b86c9e08b5094e975cf317249cc2c97a/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
-210            android:name="com.google.android.gms.version"
-210-->[com.google.android.gms:play-services-basement:18.2.0] /Users/mac/.gradle/caches/transforms-3/b86c9e08b5094e975cf317249cc2c97a/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
-211            android:value="@integer/google_play_services_version" />
-211-->[com.google.android.gms:play-services-basement:18.2.0] /Users/mac/.gradle/caches/transforms-3/b86c9e08b5094e975cf317249cc2c97a/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
-212
-213        <provider
-213-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-214            android:name="androidx.startup.InitializationProvider"
-214-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-215            android:authorities="com.joud.smart_parking.androidx-startup"
-215-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-216            android:exported="false" >
-216-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-217            <meta-data
-217-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-218                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-218-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-219                android:value="androidx.startup" />
-219-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-220            <meta-data
-220-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/mac/.gradle/caches/transforms-3/0e153da89bdba9ee3c80ce8fef0a172b/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-221                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-221-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/mac/.gradle/caches/transforms-3/0e153da89bdba9ee3c80ce8fef0a172b/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-222                android:value="androidx.startup" />
-222-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/mac/.gradle/caches/transforms-3/0e153da89bdba9ee3c80ce8fef0a172b/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-223        </provider>
-224
-225        <service
-225-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:28:9-34:19
-226            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-226-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:29:13-103
-227            android:exported="false" >
-227-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:30:13-37
-228            <meta-data
-228-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:31:13-33:39
-229                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-229-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:32:17-94
-230                android:value="cct" />
-230-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:33:17-36
-231        </service>
-232        <service
-232-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:26:9-30:19
-233            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-233-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:27:13-117
-234            android:exported="false"
-234-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:28:13-37
-235            android:permission="android.permission.BIND_JOB_SERVICE" >
-235-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:29:13-69
-236        </service>
-237
-238        <receiver
-238-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:32:9-34:40
-239            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-239-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:33:13-132
-240            android:exported="false" />
-240-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:34:13-37
-241
-242        <meta-data
-242-->[com.facebook.soloader:soloader:0.10.5] /Users/mac/.gradle/caches/transforms-3/1790525d4b21f48ee73bee65084f0bab/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:12:9-14:37
-243            android:name="com.facebook.soloader.enabled"
-243-->[com.facebook.soloader:soloader:0.10.5] /Users/mac/.gradle/caches/transforms-3/1790525d4b21f48ee73bee65084f0bab/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:13:13-57
-244            android:value="false" />
-244-->[com.facebook.soloader:soloader:0.10.5] /Users/mac/.gradle/caches/transforms-3/1790525d4b21f48ee73bee65084f0bab/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:14:13-34
-245
-246        <activity
-246-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:8:9-12:75
-247            android:name="com.jakewharton.processphoenix.ProcessPhoenix"
-247-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:9:13-73
-248            android:exported="false"
-248-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:10:13-37
-249            android:process=":phoenix"
-249-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:11:13-39
-250            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-250-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:12:13-72
-251    </application>
-252
-253</manifest>
+38-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:17:9-40
+39            android:theme="@style/SplashTheme"
+39-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:15:9-43
+40            android:windowSoftInputMode="adjustResize" >
+40-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:18:9-51
+41            <intent-filter>
+41-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:20:9-23:25
+42                <action android:name="android.intent.action.MAIN" />
+42-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:21:13-65
+42-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:21:21-62
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:22:13-73
+44-->/Users/mac/farraj_smart_parking_app/android/app/src/main/AndroidManifest.xml:22:23-70
+45            </intent-filter>
+46        </activity>
+47
+48        <service
+48-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-14:40
+49            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingHeadlessService"
+49-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-103
+50            android:exported="false" />
+50-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-37
+51        <service
+51-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-21:19
+52            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
+52-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-95
+53            android:exported="false" >
+53-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-37
+54            <intent-filter>
+54-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:29
+55                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+55-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-78
+55-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:25-75
+56            </intent-filter>
+57        </service>
+58
+59        <receiver
+59-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-30:20
+60            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingReceiver"
+60-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-96
+61            android:exported="true"
+61-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-36
+62            android:permission="com.google.android.c2dm.permission.SEND" >
+62-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-73
+63            <intent-filter>
+63-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-29:29
+64                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+64-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-81
+64-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-78
+65            </intent-filter>
+66        </receiver>
+67
+68        <meta-data
+68-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:9-34:36
+69            android:name="firebase_messaging_auto_init_enabled"
+69-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-64
+70            android:value="true" />
+70-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:13-33
+71        <meta-data
+71-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:9-37:32
+72            android:name="com.google.firebase.messaging.default_notification_channel_id"
+72-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-89
+73            android:value="" />
+73-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-29
+74        <meta-data
+74-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:9-40:47
+75            android:name="com.google.firebase.messaging.default_notification_color"
+75-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-84
+76            android:resource="@color/white" />
+76-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-44
+77        <meta-data
+77-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:9-11:36
+78            android:name="app_data_collection_default_enabled"
+78-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-63
+79            android:value="true" />
+79-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-33
+80
+81        <service
+81-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:9-21:19
+82            android:name="com.google.firebase.components.ComponentDiscoveryService"
+82-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-84
+83            android:directBootAware="true"
+83-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-43
+84            android:exported="false" >
+84-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-37
+85            <meta-data
+85-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:85
+86                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+86-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-120
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:17-82
+88            <meta-data
+88-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:69:13-71:85
+89                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+89-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:70:17-109
+90                android:value="com.google.firebase.components.ComponentRegistrar" />
+90-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:71:17-82
+91            <meta-data
+91-->[com.google.firebase:firebase-appcheck-debug:17.0.1] /Users/mac/.gradle/caches/transforms-3/808cf21f6380342edb2465121dfb7a81/transformed/jetified-firebase-appcheck-debug-17.0.1/AndroidManifest.xml:27:13-29:85
+92                android:name="com.google.firebase.components:com.google.firebase.appcheck.debug.FirebaseAppCheckDebugRegistrar"
+92-->[com.google.firebase:firebase-appcheck-debug:17.0.1] /Users/mac/.gradle/caches/transforms-3/808cf21f6380342edb2465121dfb7a81/transformed/jetified-firebase-appcheck-debug-17.0.1/AndroidManifest.xml:28:17-128
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-appcheck-debug:17.0.1] /Users/mac/.gradle/caches/transforms-3/808cf21f6380342edb2465121dfb7a81/transformed/jetified-firebase-appcheck-debug-17.0.1/AndroidManifest.xml:29:17-82
+94            <meta-data
+94-->[com.google.firebase:firebase-appcheck-playintegrity:17.0.1] /Users/mac/.gradle/caches/transforms-3/13b2e8f755865b8e50ff3fe3f13b4871/transformed/jetified-firebase-appcheck-playintegrity-17.0.1/AndroidManifest.xml:27:13-29:85
+95                android:name="com.google.firebase.components:com.google.firebase.appcheck.playintegrity.FirebaseAppCheckPlayIntegrityRegistrar"
+95-->[com.google.firebase:firebase-appcheck-playintegrity:17.0.1] /Users/mac/.gradle/caches/transforms-3/13b2e8f755865b8e50ff3fe3f13b4871/transformed/jetified-firebase-appcheck-playintegrity-17.0.1/AndroidManifest.xml:28:17-144
+96                android:value="com.google.firebase.components.ComponentRegistrar" />
+96-->[com.google.firebase:firebase-appcheck-playintegrity:17.0.1] /Users/mac/.gradle/caches/transforms-3/13b2e8f755865b8e50ff3fe3f13b4871/transformed/jetified-firebase-appcheck-playintegrity-17.0.1/AndroidManifest.xml:29:17-82
+97            <meta-data
+97-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:55:13-57:85
+98                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+98-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:56:17-119
+99                android:value="com.google.firebase.components.ComponentRegistrar" />
+99-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:57:17-82
+100            <meta-data
+100-->[com.google.firebase:firebase-appcheck:17.0.1] /Users/mac/.gradle/caches/transforms-3/c0dfd8d3885ba82f0848c032ec7ea00a/transformed/jetified-firebase-appcheck-17.0.1/AndroidManifest.xml:27:13-29:85
+101                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
+101-->[com.google.firebase:firebase-appcheck:17.0.1] /Users/mac/.gradle/caches/transforms-3/c0dfd8d3885ba82f0848c032ec7ea00a/transformed/jetified-firebase-appcheck-17.0.1/AndroidManifest.xml:28:17-117
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[com.google.firebase:firebase-appcheck:17.0.1] /Users/mac/.gradle/caches/transforms-3/c0dfd8d3885ba82f0848c032ec7ea00a/transformed/jetified-firebase-appcheck-17.0.1/AndroidManifest.xml:29:17-82
+103            <meta-data
+103-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/mac/.gradle/caches/transforms-3/00651557239fa75813426daa38dbe205/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
+104                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+104-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/mac/.gradle/caches/transforms-3/00651557239fa75813426daa38dbe205/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/mac/.gradle/caches/transforms-3/00651557239fa75813426daa38dbe205/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
+106            <meta-data
+106-->[com.google.firebase:firebase-installations:17.1.3] /Users/mac/.gradle/caches/transforms-3/eb3ec10b3a9681e7148b75ce3e5bf689/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:17:13-19:85
+107                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+107-->[com.google.firebase:firebase-installations:17.1.3] /Users/mac/.gradle/caches/transforms-3/eb3ec10b3a9681e7148b75ce3e5bf689/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:18:17-127
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.firebase:firebase-installations:17.1.3] /Users/mac/.gradle/caches/transforms-3/eb3ec10b3a9681e7148b75ce3e5bf689/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:19:17-82
+109        </service>
+110
+111        <provider
+111-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-27:38
+112            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+112-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-88
+113            android:authorities="com.joud.smart_parking.reactnativefirebaseappinitprovider"
+113-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-86
+114            android:exported="false"
+114-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-37
+115            android:initOrder="99" />
+115-->[:react-native-firebase_app] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-35
+116        <provider
+116-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-16:20
+117            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+117-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-83
+118            android:authorities="com.joud.smart_parking.fileprovider"
+118-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-64
+119            android:exported="false"
+119-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-37
+120            android:grantUriPermissions="true" >
+120-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-47
+121            <meta-data
+121-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-15:63
+122                android:name="android.support.FILE_PROVIDER_PATHS"
+122-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:17-67
+123                android:resource="@xml/file_provider_paths" />
+123-->[:react-native-webview] /Users/mac/farraj_smart_parking_app/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:17-60
+124        </provider>
+125
+126        <activity
+126-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:29:9-46:20
+127            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+127-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:30:13-80
+128            android:excludeFromRecents="true"
+128-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:31:13-46
+129            android:exported="true"
+129-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:32:13-36
+130            android:launchMode="singleTask"
+130-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:33:13-44
+131            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+131-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:34:13-72
+132            <intent-filter>
+132-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:35:13-45:29
+133                <action android:name="android.intent.action.VIEW" />
+133-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
+133-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
+134
+135                <category android:name="android.intent.category.DEFAULT" />
+135-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
+135-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
+136                <category android:name="android.intent.category.BROWSABLE" />
+136-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
+136-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
+137
+138                <data
+138-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
+139                    android:host="firebase.auth"
+139-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
+140                    android:path="/"
+140-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
+141                    android:scheme="genericidp" />
+141-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
+142            </intent-filter>
+143        </activity>
+144        <activity
+144-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:47:9-64:20
+145            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+145-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:48:13-79
+146            android:excludeFromRecents="true"
+146-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:49:13-46
+147            android:exported="true"
+147-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:50:13-36
+148            android:launchMode="singleTask"
+148-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:51:13-44
+149            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+149-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:52:13-72
+150            <intent-filter>
+150-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:53:13-63:29
+151                <action android:name="android.intent.action.VIEW" />
+151-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:17-69
+151-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:36:25-66
+152
+153                <category android:name="android.intent.category.DEFAULT" />
+153-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:17-76
+153-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:38:27-73
+154                <category android:name="android.intent.category.BROWSABLE" />
+154-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:17-78
+154-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:39:27-75
+155
+156                <data
+156-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:41:17-44:51
+157                    android:host="firebase.auth"
+157-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:42:21-49
+158                    android:path="/"
+158-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:43:21-37
+159                    android:scheme="recaptcha" />
+159-->[com.google.firebase:firebase-auth:22.0.0] /Users/mac/.gradle/caches/transforms-3/cd87d03224da58588c8f4d34f22a7d20/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:44:21-48
+160            </intent-filter>
+161        </activity>
+162        <activity
+162-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
+163            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+163-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
+164            android:excludeFromRecents="true"
+164-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
+165            android:exported="false"
+165-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
+166            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+166-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
+167        <!--
+168            Service handling Google Sign-In user revocation. For apps that do not integrate with
+169            Google Sign-In, this service will never be started.
+170        -->
+171        <service
+171-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
+172            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+172-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
+173            android:exported="true"
+173-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
+174            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+174-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
+175            android:visibleToInstantApps="true" />
+175-->[com.google.android.gms:play-services-auth:20.5.0] /Users/mac/.gradle/caches/transforms-3/d670b1f1e15cbf46565786b886532fcc/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
+176
+177        <receiver
+177-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:31:9-38:20
+178            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+178-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:32:13-78
+179            android:exported="true"
+179-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:33:13-36
+180            android:permission="com.google.android.c2dm.permission.SEND" >
+180-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:34:13-73
+181            <intent-filter>
+181-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-29:29
+182                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+182-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:17-81
+182-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:25-78
+183            </intent-filter>
+184        </receiver>
+185        <!--
+186             FirebaseMessagingService performs security checks at runtime,
+187             but set to not exported to explicitly avoid allowing another app to call it.
+188        -->
+189        <service
+189-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:44:9-51:19
+190            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+190-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:45:13-82
+191            android:directBootAware="true"
+191-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:46:13-43
+192            android:exported="false" >
+192-->[com.google.firebase:firebase-messaging:23.1.2] /Users/mac/.gradle/caches/transforms-3/5831aa7db76517cab76513640a324554/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:47:13-37
+193            <intent-filter android:priority="-500" >
+193-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-20:29
+194                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+194-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:17-78
+194-->[:react-native-firebase_messaging] /Users/mac/farraj_smart_parking_app/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:25-75
+195            </intent-filter>
+196        </service>
+197
+198        <activity
+198-->[com.google.android.gms:play-services-base:18.0.1] /Users/mac/.gradle/caches/transforms-3/dcf426ef84b079a62f273a4871ddea93/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+199            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+199-->[com.google.android.gms:play-services-base:18.0.1] /Users/mac/.gradle/caches/transforms-3/dcf426ef84b079a62f273a4871ddea93/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+200            android:exported="false"
+200-->[com.google.android.gms:play-services-base:18.0.1] /Users/mac/.gradle/caches/transforms-3/dcf426ef84b079a62f273a4871ddea93/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+201            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+201-->[com.google.android.gms:play-services-base:18.0.1] /Users/mac/.gradle/caches/transforms-3/dcf426ef84b079a62f273a4871ddea93/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+202
+203        <provider
+203-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
+204            android:name="com.google.firebase.provider.FirebaseInitProvider"
+204-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
+205            android:authorities="com.joud.smart_parking.firebaseinitprovider"
+205-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
+206            android:directBootAware="true"
+206-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
+207            android:exported="false"
+207-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
+208            android:initOrder="100" />
+208-->[com.google.firebase:firebase-common:20.3.2] /Users/mac/.gradle/caches/transforms-3/0856526e37ae71a46e746a74945526d2/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
+209
+210        <meta-data
+210-->[com.google.android.gms:play-services-basement:18.2.0] /Users/mac/.gradle/caches/transforms-3/b86c9e08b5094e975cf317249cc2c97a/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+211            android:name="com.google.android.gms.version"
+211-->[com.google.android.gms:play-services-basement:18.2.0] /Users/mac/.gradle/caches/transforms-3/b86c9e08b5094e975cf317249cc2c97a/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+212            android:value="@integer/google_play_services_version" />
+212-->[com.google.android.gms:play-services-basement:18.2.0] /Users/mac/.gradle/caches/transforms-3/b86c9e08b5094e975cf317249cc2c97a/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+213
+214        <provider
+214-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+215            android:name="androidx.startup.InitializationProvider"
+215-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+216            android:authorities="com.joud.smart_parking.androidx-startup"
+216-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+217            android:exported="false" >
+217-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+218            <meta-data
+218-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+219                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+219-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+220                android:value="androidx.startup" />
+220-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/4aa4e460fe95defb81a5b795af96a7bf/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+221            <meta-data
+221-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/mac/.gradle/caches/transforms-3/0e153da89bdba9ee3c80ce8fef0a172b/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+222                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+222-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/mac/.gradle/caches/transforms-3/0e153da89bdba9ee3c80ce8fef0a172b/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+223                android:value="androidx.startup" />
+223-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/mac/.gradle/caches/transforms-3/0e153da89bdba9ee3c80ce8fef0a172b/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+224        </provider>
+225
+226        <service
+226-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:28:9-34:19
+227            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+227-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:29:13-103
+228            android:exported="false" >
+228-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:30:13-37
+229            <meta-data
+229-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:31:13-33:39
+230                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+230-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:32:17-94
+231                android:value="cct" />
+231-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/mac/.gradle/caches/transforms-3/bbb8e72f3d43daa9ec935c1eb956b7a8/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:33:17-36
+232        </service>
+233        <service
+233-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:26:9-30:19
+234            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+234-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:27:13-117
+235            android:exported="false"
+235-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:28:13-37
+236            android:permission="android.permission.BIND_JOB_SERVICE" >
+236-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:29:13-69
+237        </service>
+238
+239        <receiver
+239-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:32:9-34:40
+240            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+240-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:33:13-132
+241            android:exported="false" />
+241-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/mac/.gradle/caches/transforms-3/ee69e718b7802238bb332c9a0b19fd69/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:34:13-37
+242
+243        <meta-data
+243-->[com.facebook.soloader:soloader:0.10.5] /Users/mac/.gradle/caches/transforms-3/1790525d4b21f48ee73bee65084f0bab/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:12:9-14:37
+244            android:name="com.facebook.soloader.enabled"
+244-->[com.facebook.soloader:soloader:0.10.5] /Users/mac/.gradle/caches/transforms-3/1790525d4b21f48ee73bee65084f0bab/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:13:13-57
+245            android:value="false" />
+245-->[com.facebook.soloader:soloader:0.10.5] /Users/mac/.gradle/caches/transforms-3/1790525d4b21f48ee73bee65084f0bab/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:14:13-34
+246
+247        <activity
+247-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:8:9-12:75
+248            android:name="com.jakewharton.processphoenix.ProcessPhoenix"
+248-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:9:13-73
+249            android:exported="false"
+249-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:10:13-37
+250            android:process=":phoenix"
+250-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:11:13-39
+251            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+251-->[com.jakewharton:process-phoenix:2.1.2] /Users/mac/.gradle/caches/transforms-3/ff7c9167233b48a28f00b4d4a99daa7c/transformed/jetified-process-phoenix-2.1.2/AndroidManifest.xml:12:13-72
+252    </application>
+253
+254</manifest>

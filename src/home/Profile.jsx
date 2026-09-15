@@ -107,12 +107,13 @@ const Profile = (props) => {
                         <ListItem containerStyle={style.listItemInner}>
                             <Icon name='call-outline' size={22} color={T.primary} />
                             <ListItem.Content>
-                                <ListItem.Title style={{ fontSize: 16, fontWeight: '500' }}>{user.phone}</ListItem.Title>
+                                <ListItem.Title style={{ fontSize: 16, fontWeight: '600', color: T.text, fontFamily: 'Cairo' }}>{user.phone || '-'}</ListItem.Title>
+                                <ListItem.Subtitle style={{ fontSize: 12, color: T.textSecondary, marginTop: 2 }}>{lables['mobile'] || 'Mobile'}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     </View>
 
-                    <Text style={{ fontSize: 16, fontWeight: '700', color: T.text, marginTop: 24, marginBottom: 8, marginStart: 4, fontFamily: 'Cairo, sans-serif' }}>
+                    <Text style={{ fontSize: 16, fontWeight: '700', color: T.text, marginTop: 24, marginBottom: 8, marginStart: 4, fontFamily: 'Cairo' }}>
                         {lables['settings'] || 'Settings'}
                     </Text>
 
@@ -122,27 +123,27 @@ const Profile = (props) => {
                         >
                             <Icon name='heart-outline' size={24} color={T.primary} />
                             <ListItem.Content>
-                                <ListItem.Title>{lables['my_devices']}</ListItem.Title>
+                                <ListItem.Title style={{ color: T.text, fontFamily: 'Cairo', fontWeight: '600' }}>{lables['my_devices'] || 'My Devices'}</ListItem.Title>
                             </ListItem.Content>
-                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color="#94A3B8" />
+                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                         </ListItem>
                         <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0 }]}
                             onPress={() => props.navigation.navigate('MyParkings')}
                         >
                             <Icon name='calendar-outline' size={24} color={T.primary} />
                             <ListItem.Content>
-                                <ListItem.Title>{lables['history']}</ListItem.Title>
+                                <ListItem.Title style={{ color: T.text, fontFamily: 'Cairo', fontWeight: '600' }}>{lables['history'] || 'History'}</ListItem.Title>
                             </ListItem.Content>
-                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color="#94A3B8" />
+                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                         </ListItem>
                         <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0 }]}
                             onPress={() => props.navigation.navigate('notifications')}
                         >
                             <Icon name='notifications-outline' size={24} color={T.primary} />
                             <ListItem.Content>
-                                <ListItem.Title>{lables['notifications']}</ListItem.Title>
+                                <ListItem.Title style={{ color: T.text, fontFamily: 'Cairo', fontWeight: '600' }}>{lables['notifications'] || 'Notifications'}</ListItem.Title>
                             </ListItem.Content>
-                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color="#94A3B8" />
+                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                         </ListItem>
                         {user.role === "admin" &&
                             <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0 }]}
@@ -150,14 +151,14 @@ const Profile = (props) => {
                             >
                                 <Icon name='options-outline' size={24} color={T.primary} />
                                 <ListItem.Content>
-                                    <ListItem.Title>{lables['admin']}</ListItem.Title>
+                                    <ListItem.Title style={{ color: T.text, fontFamily: 'Cairo', fontWeight: '600' }}>{lables['admin'] || 'Admin'}</ListItem.Title>
                                 </ListItem.Content>
-                                <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color="#94A3B8" />
+                                <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                             </ListItem>
                         }
                     </View>
 
-                    <Text style={{ fontSize: 16, fontWeight: '700', color: T.text, marginTop: 24, marginBottom: 8, marginStart: 4, fontFamily: 'Cairo, sans-serif' }}>
+                    <Text style={{ fontSize: 16, fontWeight: '700', color: T.text, marginTop: 24, marginBottom: 8, marginStart: 4, fontFamily: 'Cairo' }}>
                         {lables['account'] || 'Account'}
                     </Text>
 
@@ -167,9 +168,9 @@ const Profile = (props) => {
                         >
                             <Icon name='lock-closed-outline' size={24} color={T.primary} />
                             <ListItem.Content>
-                                <ListItem.Title>{lables['reset_password'] || 'Reset Password'}</ListItem.Title>
+                                <ListItem.Title style={{ color: T.text, fontFamily: 'Cairo', fontWeight: '600' }}>{lables['reset_password'] || 'Reset Password'}</ListItem.Title>
                             </ListItem.Content>
-                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color="#94A3B8" />
+                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                         </ListItem>
                         <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0 }]}
                             onPress={() => {
@@ -193,9 +194,9 @@ const Profile = (props) => {
                         >
                             <Icon name='trash-outline' size={24} color="#EF4444" />
                             <ListItem.Content>
-                                <ListItem.Title style={{ color: '#EF4444' }}>{lables['delete_account']}</ListItem.Title>
+                                <ListItem.Title style={{ color: '#EF4444', fontFamily: 'Cairo', fontWeight: '600' }}>{lables['delete_account'] || 'Delete Account'}</ListItem.Title>
                             </ListItem.Content>
-                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color="#94A3B8" />
+                            <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                         </ListItem>
                     </View>
                 </View>

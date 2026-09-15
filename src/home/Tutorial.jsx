@@ -81,10 +81,10 @@ const Tutorial = (props) => {
                     }}
                 >
                     <View style={{ position: 'absolute', top: -40, right: -40, width: 130, height: 130, borderRadius: 65, backgroundColor: 'rgba(255,255,255,0.12)' }} />
-                    <Text style={{ color: '#FFFFFF', fontSize: fontSize(20), fontWeight: '800', fontFamily: 'Cairo, sans-serif', textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                    <Text style={{ color: '#FFFFFF', fontSize: fontSize(20), fontWeight: '800', fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
                         {lang === 'ar' ? '🚗 Park في ٥ خطوات' : '🚗 Park in 5 steps'}
                     </Text>
-                    <Text style={{ color: 'rgba(255,255,255,0.85)', fontSize: 13.5, marginTop: 6, lineHeight: 20, fontFamily: 'Cairo, sans-serif', textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                    <Text style={{ color: 'rgba(255,255,255,0.85)', fontSize: 13.5, marginTop: 6, lineHeight: 20, fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
                         {lang === 'ar'
                             ? 'اتبع هذه الخطوات لحجز موقفك الأول والوصول إليه بدون أي عناء.'
                             : 'Follow these steps to book your first spot and reach it hassle-free.'}
@@ -132,10 +132,10 @@ const Tutorial = (props) => {
                                 </View>
                             </View>
                             <View style={{ flex: 1, flexShrink: 1 }}>
-                                <Text style={{ fontSize: 15.5, fontWeight: '800', color: T.text, fontFamily: 'Cairo, sans-serif', textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                                <Text style={{ fontSize: 15.5, fontWeight: '800', color: T.text, fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                     {copy.title}
                                 </Text>
-                                <Text style={{ fontSize: 13, color: T.textSecondary, marginTop: 5, lineHeight: 19, fontFamily: 'Cairo, sans-serif', textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                                <Text style={{ fontSize: 13, color: T.textSecondary, marginTop: 5, lineHeight: 19, fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                     {copy.body}
                                 </Text>
                             </View>
@@ -157,11 +157,11 @@ const Tutorial = (props) => {
                         shadowRadius: 14,
                         elevation: 8,
                     }}
-                    titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo, sans-serif' }}
+                    titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo' }}
                     icon={<Icon name="search-outline" size={20} color="#FFFFFF" style={{ marginEnd: 8 }} />}
                 />
                 <Pressable onPress={() => props.navigation.navigate('support')} style={{ marginTop: 14, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 13.5, color: T.textSecondary, fontFamily: 'Cairo, sans-serif' }}>
+                    <Text style={{ fontSize: 13.5, color: T.textSecondary, fontFamily: 'Cairo' }}>
                         {lang === 'ar' ? 'تحتاج مساعدة؟ تواصل مع الدعم' : 'Need help? Contact support'}
                     </Text>
                 </Pressable>

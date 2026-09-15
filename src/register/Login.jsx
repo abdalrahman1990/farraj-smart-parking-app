@@ -13,6 +13,7 @@ import { tmsg } from '../utils/msg';
 import AuthLayout from '../components/AuthLayout';
 import ScreenLoader from '../components/ScreenLoader';
 import { Overlay } from '@rneui/themed';
+import { isSmallScreen, fontSize } from '../utils/responsive';
 
 const Login = (props) => {
     const T = useTheme();
@@ -63,36 +64,50 @@ const Login = (props) => {
             title={lables['login']}
             subtitle={lables['welcome_back'] || (lang === 'ar' ? 'مرحباً بعودتك! سجل الدخول للمتابعة' : 'Welcome back! Sign in to continue')}
         >
+            <Text style={{ fontSize: 12.5, fontWeight: '800', color: T.textSecondary, marginBottom: 6, marginStart: 4, fontFamily: 'Cairo', letterSpacing: 0.4 }}>
+              {(lables['Email'] || (lang === 'ar' ? 'البريد الإلكتروني' : 'Email')).toUpperCase()}
+            </Text>
             <Input
                 value={email}
                 onChangeText={(e) => setEmail(e)}
-                placeholder={lables['Email']}
+                placeholder={lang === 'ar' ? 'name@mail.com' : 'name@mail.com'}
+                placeholderTextColor={T.inactive}
                 keyboardType="email-address"
                 autoCapitalize="none"
-                leftIcon={<Icon name="mail-outline" size={22} color={T.inactive} style={{ marginEnd: 8 }} />}
+                containerStyle={{ paddingHorizontal: 0 }}
+                inputStyle={{ color: T.text, fontSize: 15, fontFamily: 'Cairo' }}
+                inputContainerStyle={{ backgroundColor: T.background, borderWidth: 1.5, borderColor: T.border, borderRadius: 14, paddingHorizontal: 12, height: 52, borderBottomWidth: 1.5 }}
+                leftIcon={<Icon name="mail-outline" size={20} color={T.primary} style={{ marginEnd: 6 }} />}
             />
+            <Text style={{ fontSize: 12.5, fontWeight: '800', color: T.textSecondary, marginBottom: 6, marginStart: 4, fontFamily: 'Cairo', letterSpacing: 0.4 }}>
+              {(lables['password'] || (lang === 'ar' ? 'كلمة المرور' : 'Password')).toUpperCase()}
+            </Text>
             <Input
                 rightIcon={
                     <Pressable onPress={() => setShowPassword(!showPassword)}>
-                        <Icon name={showPassword ? 'eye-outline' : 'eye-off-outline'} size={24} color={T.inactive} />
+                        <Icon name={showPassword ? 'eye-outline' : 'eye-off-outline'} size={22} color={T.inactive} />
                     </Pressable>
                 }
                 value={password}
                 onChangeText={(e) => setPassword(e)}
-                placeholder={lables['password']}
+                placeholder="••••••••"
+                placeholderTextColor={T.inactive}
                 secureTextEntry={!showPassword}
-                leftIcon={<Icon name="lock-closed-outline" size={22} color={T.inactive} style={{ marginEnd: 8 }} />}
+                containerStyle={{ paddingHorizontal: 0 }}
+                inputStyle={{ color: T.text, fontSize: 15, fontFamily: 'Cairo' }}
+                inputContainerStyle={{ backgroundColor: T.background, borderWidth: 1.5, borderColor: T.border, borderRadius: 14, paddingHorizontal: 12, height: 52, borderBottomWidth: 1.5 }}
+                leftIcon={<Icon name="lock-closed-outline" size={20} color={T.primary} style={{ marginEnd: 6 }} />}
             />
 
             <Button
                 loading={false}
-                title={lables['login']}
+                title={lables['login'] || (lang === 'ar' ? 'تسجيل الدخول' : 'Sign In')}
                 onPress={() => handleLogin()}
                 buttonStyle={{
                     backgroundColor: T.primary,
-                    paddingVertical: 16,
-                    borderRadius: 18,
-                    marginTop: 8,
+                    paddingVertical: isSmallScreen() ? 12 : 14,
+                    borderRadius: 14,
+                    marginTop: 6,
                     shadowColor: T.primary,
                     shadowOffset: { width: 0, height: 6 },
                     shadowOpacity: 0.45,
@@ -100,10 +115,10 @@ const Login = (props) => {
                     elevation: 8,
                 }}
                 titleStyle={{
-                    fontSize: 17,
+                    fontSize: isSmallScreen() ? 15 : 16,
                     fontWeight: '800',
                     letterSpacing: 0.3,
-                    fontFamily: 'Cairo, sans-serif',
+                    fontFamily: 'Cairo',
                 }}
             />
 
@@ -111,14 +126,14 @@ const Login = (props) => {
                 onPress={() => props.navigation.navigate('ForgotPassword')}
                 style={{ marginTop: 18, alignItems: 'center' }}
             >
-                <Text style={{ fontSize: 14, fontWeight: '600', color: T.primary, fontFamily: 'Cairo, sans-serif' }}>
+                <Text style={{ fontSize: 14, fontWeight: '600', color: T.primary, fontFamily: 'Cairo' }}>
                     {lables['forgot_password']}
                 </Text>
             </Pressable>
 
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 22 }}>
                 <View style={{ flex: 1, height: 1, backgroundColor: T.border }} />
-                <Text style={{ fontSize: 12, color: T.inactive, marginHorizontal: 12, fontFamily: 'Cairo, sans-serif' }}>
+                <Text style={{ fontSize: 12, color: T.inactive, marginHorizontal: 12, fontFamily: 'Cairo' }}>
                     {lang === 'ar' ? 'أو' : 'OR'}
                 </Text>
                 <View style={{ flex: 1, height: 1, backgroundColor: T.border }} />
@@ -136,7 +151,7 @@ const Login = (props) => {
                     paddingVertical: 14,
                 }}
             >
-                <Text style={{ fontSize: 15, fontWeight: '800', color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+                <Text style={{ fontSize: 15, fontWeight: '800', color: T.text, fontFamily: 'Cairo' }}>
                     {lables['signup']}
                 </Text>
             </Pressable>

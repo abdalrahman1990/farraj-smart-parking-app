@@ -122,7 +122,7 @@ const PaymemtStatus = (props) => {
                                 paddingVertical: 15,
                                 marginTop: 14,
                             }}
-                            titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo, sans-serif' }}
+                            titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo' }}
                         />
                     </View>
                 </ScrollView>

@@ -99,7 +99,7 @@ const Landing = (props) => {
                         elevation: 12,
                     }}
                 >
-                    <Image source={require('./../assets/images/logo.gif')}
+                    <Image source={require('./../assets/images/farraj-logo.png')}
                         style={{
                             width: '100%',
                             height: '100%',
@@ -107,10 +107,10 @@ const Landing = (props) => {
                         resizeMode="contain"
                     />
                 </View>
-                <Text style={{ color: '#FFFFFF', marginTop: 22, fontSize: 18, fontWeight: '800', letterSpacing: 1, fontFamily: 'Cairo, sans-serif', textShadowColor: 'rgba(0,0,0,0.5)', textShadowOffset: { width: 0, height: 1 }, textShadowRadius: 6 }}>
+                <Text style={{ color: '#FFFFFF', marginTop: 22, fontSize: 18, fontWeight: '800', letterSpacing: 1, fontFamily: 'Cairo', textShadowColor: 'rgba(0,0,0,0.5)', textShadowOffset: { width: 0, height: 1 }, textShadowRadius: 6 }}>
                     المملكة العربية السعودية
                 </Text>
-                <Text style={{ color: 'rgba(255,255,255,0.85)', marginTop: 4, fontSize: 14, fontFamily: 'Cairo, sans-serif', textShadowColor: 'rgba(0,0,0,0.5)', textShadowOffset: { width: 0, height: 1 }, textShadowRadius: 6 }}>
+                <Text style={{ color: 'rgba(255,255,255,0.85)', marginTop: 4, fontSize: 14, fontFamily: 'Cairo', textShadowColor: 'rgba(0,0,0,0.5)', textShadowOffset: { width: 0, height: 1 }, textShadowRadius: 6 }}>
                     Riyadh • Saudi Arabia
                 </Text>
             </View>

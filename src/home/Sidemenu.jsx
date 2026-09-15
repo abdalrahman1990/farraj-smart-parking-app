@@ -83,7 +83,7 @@ const Sidemenu = (props) => {
   };
 
   const labelOf = (item) =>
-    lables[item.labelKey] || (item.key === 'CurrentBookings' ? 'Current Bookings' : item.key);
+    lables[item.labelKey] || (item.key === 'CurrentBookings' ? (lang==='ar'?'الحجوزات الحالية':'Current Bookings') : item.key);
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: T.surface }]}>
@@ -99,9 +99,9 @@ const Sidemenu = (props) => {
           <View style={styles.skylineShade} />
           <View style={styles.orbA} />
           <View style={[styles.brandRow, { flexDirection: isRTL ? "row-reverse" : "row" }]}>
-            <View style={styles.logoTile}>
+            <View style={[styles.logoTile, { backgroundColor: '#FFFFFF', padding: 6 }]}>
               <Image
-                source={require('./../assets/images/logowhite.png')}
+                source={require('./../assets/images/farraj-logo.png')}
                 style={styles.brandLogo}
                 resizeMode="contain"
               />
@@ -168,7 +168,7 @@ const Sidemenu = (props) => {
                           color={active || hovered ? '#FFFFFF' : T.primary}
                         />
                       </View>
-                      <Text style={[styles.sideLabel, { color: active ? '#FFFFFF' : T.text, textAlign: isRTL ? "right" : "left" }]}>
+                      <Text style={[styles.sideLabel, { color: active ? '#FFFFFF' : T.text, textAlign: isRTL ? "center" : "left" }]}>
                         {labelOf(item)}
                       </Text>
                       {active && <View style={styles.activeDot} />}
@@ -203,7 +203,7 @@ const Sidemenu = (props) => {
                 <View style={[styles.navIcon, { backgroundColor: hovered ? T.primary : T.primaryBg }]}>
                   <Icon name="language" size={20} color={hovered ? '#FFFFFF' : T.primary} />
                 </View>
-                <Text style={[styles.sideLabel, { color: T.text, textAlign: isRTL ? "right" : "left" }]}>
+                <Text style={[styles.sideLabel, { color: T.text, textAlign: isRTL ? "center" : "left" }]}>
                   {lang === 'ar' ? 'العربية' : 'English'}
                 </Text>
                 <Text style={[styles.prefValue, { color: T.textSecondary }]}>
@@ -233,7 +233,7 @@ const Sidemenu = (props) => {
                 <View style={[styles.navIcon, { backgroundColor: hovered ? T.primary : T.primaryBg }]}>
                   <Icon name={isDark ? 'sunny' : 'moon'} size={20} color={hovered ? '#FFFFFF' : T.primary} />
                 </View>
-                <Text style={[styles.sideLabel, { color: T.text, textAlign: isRTL ? "right" : "left" }]}>
+                <Text style={[styles.sideLabel, { color: T.text, textAlign: isRTL ? "center" : "left" }]}>
                   {lang === 'ar' ? 'المظهر' : 'Appearance'}
                 </Text>
                 <Switch
@@ -248,38 +248,8 @@ const Sidemenu = (props) => {
           </Pressable>
         </View>
 
-        {/* Footer — user panel + logout, like reference .sidebar-footer */}
+        {/* Footer — logout only */}
         <View style={[styles.footer, { borderTopColor: T.border }]}>
-          <View
-            style={[
-              styles.userPanel,
-              {
-                backgroundColor: T.card,
-                borderColor: T.border,
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 4 },
-                shadowOpacity: 0.14,
-                shadowRadius: 10,
-                elevation: 4,
-              },
-            ]}
-          >
-            <View style={[styles.avatarCircle, { backgroundColor: T.primary }]}>
-              <Text style={styles.avatarText}>
-                {(user.name || '?').trim().charAt(0).toUpperCase()}
-              </Text>
-            </View>
-            <View style={{ flex: 1, flexShrink: 1, marginStart: 10 }}>
-              <Text style={[styles.userName, { color: T.text }]} numberOfLines={1}>
-                {user.name || '—'}
-              </Text>
-              <Text style={[styles.signedAs, { color: T.textSecondary }]} numberOfLines={1}>
-                {user.role
-                  ? `${lables['signed_in_as'] || (lang === 'ar' ? 'مسجل الدخول باسم' : 'Signed in as')} • ${user.role}`
-                  : (lables['signed_in_as'] || (lang === 'ar' ? 'مسجل الدخول باسم' : 'Signed in as'))}
-              </Text>
-            </View>
-          </View>
           <Pressable
             onPress={() => {
               AsyncStorage.removeItem('_user');
@@ -381,14 +351,14 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: fontSize(19),
     fontWeight: '800',
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
   },
   brandTag: {
     color: 'rgba(255,255,255,0.82)',
     fontSize: fontSize(12),
     fontWeight: '600',
     marginTop: 2,
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
   },
   versionChip: {
     alignSelf: 'flex-start',
@@ -404,7 +374,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 10.5,
     fontWeight: '800',
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
     letterSpacing: 0.5,
   },
   closeBtn: {
@@ -458,7 +428,7 @@ const styles = StyleSheet.create({
     fontSize: fontSize(14),
     fontWeight: '700',
     marginStart: SPACING.sm,
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
     letterSpacing: 0.2,
   },
   activeDot: {
@@ -470,7 +440,7 @@ const styles = StyleSheet.create({
   prefValue: {
     fontSize: fontSize(12),
     fontWeight: '800',
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
   },
   footer: {
     marginTop: SPACING.sm,
@@ -499,16 +469,16 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: fontSize(16),
     fontWeight: '800',
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
   },
   signedAs: {
     fontSize: fontSize(11.5),
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
   },
   userName: {
     fontSize: fontSize(14),
     fontWeight: '700',
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
   },
   logoutBtn: {
     flexDirection: 'row',
@@ -523,6 +493,6 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: fontSize(15),
     fontWeight: '800',
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
   },
 });

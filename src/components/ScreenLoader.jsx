@@ -4,6 +4,7 @@ import { Text } from '@rneui/themed';
 import { useTheme } from '../utils/useTheme';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { fontSize } from '../utils/responsive';
+import BrandLoader from './BrandLoader';
 
 const ScreenLoader = ({ message }) => {
     const T = useTheme();
@@ -27,25 +28,28 @@ const ScreenLoader = ({ message }) => {
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 32 }}>
             <Animated.View
                 style={{
-                    width: 148, height: 108, borderRadius: 28,
-                    backgroundColor: T.card,
+                    width: 132, height: 132, borderRadius: 32,
+                    backgroundColor: '#FFFFFF',
                     borderWidth: 1, borderColor: T.border,
-                    alignItems: 'center', justifyContent: 'center', padding: 12,
+                    alignItems: 'center', justifyContent: 'center', padding: 16,
                     transform: [{ scale: tileScale }],
                     ...SHADOW.card,
                 }}
             >
                 <Image
-                    source={require('../assets/images/logo.gif')}
-                    style={{ width: '100%', height: '100%' }}
+                    source={require('../assets/images/farraj-logo.png')}
+                    style={{ width: 88, height: 88 }}
                     resizeMode="contain"
                 />
+                <View style={{ position: 'absolute', bottom: 10 }}>
+                    <BrandLoader size={22} color={T.primary} />
+                </View>
             </Animated.View>
             {!!message && (
                 <Animated.Text
                     style={{
                         marginTop: 16, fontSize: fontSize(14), fontWeight: '700',
-                        color: T.textSecondary, fontFamily: 'Cairo, sans-serif', opacity: msgOpacity,
+                        color: T.textSecondary, fontFamily: 'Cairo', opacity: msgOpacity,
                     }}
                 >
                     {message}

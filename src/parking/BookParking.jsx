@@ -175,40 +175,57 @@ const BookParking = (props) => {
             }}
         >
             <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
+                <View style={styles.dateHero}>
+                    <View style={{ flexDirection: lang === 'ar' ? 'row-reverse' : 'row', alignItems: 'center' }}>
+                        <View style={{ width: 38, height: 38, borderRadius: 13, backgroundColor: T.primary, alignItems: 'center', justifyContent: 'center' }}>
+                            <Icon name="calendar" size={19} color="#FFFFFF" />
+                        </View>
+                        <View style={{ flex: 1, marginStart: 10 }}>
+                            <Text style={{ fontSize: 15, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo' }}>{lables['date'] || (lang === 'ar' ? 'تاريخ الحجز' : 'Booking date')}</Text>
+                            <Text style={{ fontSize: 12.5, color: 'rgba(255,255,255,0.85)', fontFamily: 'Cairo', marginTop: 1 }}>{bookingDate} • {lables['select'] || (lang === 'ar' ? 'اختر اليوم' : 'Pick a day')}</Text>
+                        </View>
+                        <View style={{ backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: 12, paddingHorizontal: 12, paddingVertical: 8, borderWidth: 1, borderColor: 'rgba(255,255,255,0.35)' }}>
+                            <Text style={{ color: '#FFF', fontWeight: '800', fontSize: 14, fontFamily: 'Cairo' }}>{String(bookingDate).slice(8, 10)}/{String(bookingDate).slice(5, 7)}</Text>
+                        </View>
+                    </View>
+                </View>
                 <View style={styles.calendarWrap}>
                     <Calendar
                         onDayPress={day => {
                             setBookingDate(day.dateString);
                         }}
                         minDate={new Date().toISOString().split('T')[0]}
+                        firstDay={6}
+                        enableSwipeMonths
                         markedDates={{
-                            [bookingDate]: { selected: true, disableTouchEvent: true, selectedColor: T.primary }
+                            [bookingDate]: { selected: true, disableTouchEvent: true, selectedColor: T.primary, selectedTextColor: '#FFFFFF' }
                         }}
                         theme={{
                             backgroundColor: T.card,
                             calendarBackground: T.card,
-                            textSectionTitleColor: T.textSecondary,
+                            textSectionTitleColor: T.primary,
                             textSectionTitleDisabledColor: T.inactive,
                             selectedDayBackgroundColor: T.primary,
                             selectedDayTextColor: '#FFFFFF',
-                            todayTextColor: T.primaryLight,
+                            todayBackgroundColor: T.primaryBg,
+                            todayTextColor: T.primary,
                             dayTextColor: T.text,
                             textDisabledColor: T.inactive,
                             dotColor: T.primary,
                             selectedDotColor: '#FFFFFF',
-                            arrowColor: T.primaryLight,
+                            arrowColor: T.primary,
                             disabledArrowColor: T.inactive,
                             monthTextColor: T.text,
                             indicatorColor: T.primary,
-                            textDayFontFamily: 'Cairo, sans-serif',
-                            textMonthFontFamily: 'Cairo, sans-serif',
-                            textDayHeaderFontFamily: 'Cairo, sans-serif',
-                            textDayFontWeight: '600',
+                            textDayFontFamily: 'Cairo',
+                            textMonthFontFamily: 'Cairo',
+                            textDayHeaderFontFamily: 'Cairo',
+                            textDayFontWeight: '700',
                             textMonthFontWeight: '800',
-                            textDayHeaderFontWeight: '700',
+                            textDayHeaderFontWeight: '800',
                             textDayFontSize: 15,
-                            textMonthFontSize: 17,
-                            textDayHeaderFontSize: 13,
+                            textMonthFontSize: 18,
+                            textDayHeaderFontSize: 12,
                         }}
                     />
                 </View>
@@ -226,13 +243,13 @@ const BookParking = (props) => {
                             flex: 1,
                         }}
                     >
-                        <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo, sans-serif' }}>{lables['start_time']}</Text>
+                        <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo' }}>{lables['start_time']}</Text>
                         <Pressable style={styles.pressableCard}
                             onPress={() => {
                                 setShowStartTimeDialog(true);
                             }}
                         >
-                            <Text style={{ fontWeight: '800', fontSize: 20, marginStart: 10, marginEnd: 10, color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+                            <Text style={{ fontWeight: '800', fontSize: 20, marginStart: 10, marginEnd: 10, color: T.text, fontFamily: 'Cairo' }}>
                                 {startTime}
                             </Text>
                             <Icon name='time-outline' size={28} color={T.primaryLight} />
@@ -243,14 +260,14 @@ const BookParking = (props) => {
                             flex: 1,
                         }}
                     >
-                        <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo, sans-serif' }}>{lables['end_time']}</Text>
+                        <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo' }}>{lables['end_time']}</Text>
                         <Pressable style={styles.pressableCard}
                             disabled={startTime === "00:00:00" ? true : false}
                             onPress={() => {
                                 setShowEndTimeDialog(true);
                             }}
                         >
-                            <Text style={{ fontWeight: '800', fontSize: 20, marginStart: 10, marginEnd: 10, color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+                            <Text style={{ fontWeight: '800', fontSize: 20, marginStart: 10, marginEnd: 10, color: T.text, fontFamily: 'Cairo' }}>
                                 {endTime}
                             </Text>
                             <Icon name='time-outline' size={28} color={T.primaryLight} />
@@ -291,7 +308,7 @@ const BookParking = (props) => {
                         shadowRadius: 14,
                         elevation: 8,
                     }}
-                    titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo, sans-serif' }}
+                    titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo' }}
                     title={lables['confirm_parking']}
                     onPress={() => {
                         try {
@@ -383,7 +400,7 @@ const BookParking = (props) => {
                         maxWidth: 420,
                     }}
                 >
-                    <Text style={{ fontSize: 19, fontWeight: '800', color: T.text, textAlign: 'center', fontFamily: 'Cairo, sans-serif' }}>
+                    <Text style={{ fontSize: 19, fontWeight: '800', color: T.text, textAlign: 'center', fontFamily: 'Cairo' }}>
                         {lables['confirm_parking']}
                     </Text>
                     <View style={{ marginTop: 16, backgroundColor: T.background, borderRadius: RADIUS.lg, padding: 14, borderWidth: 1, borderColor: T.border }}>
@@ -395,7 +412,7 @@ const BookParking = (props) => {
                         <ConfirmRow label={lables['vehicle']} value={vehicle?.name} T={T} />
                         <ConfirmRow label={lables['balance'] || 'Charge'} value={'SAR ' + (Number(hours) * (Number(location?.hour_charge) || 0)).toFixed(3)} T={T} last />
                     </View>
-                    <Text style={{ color: T.textSecondary, fontSize: 12, textAlign: 'center', marginTop: 12, fontFamily: 'Cairo, sans-serif' }}>
+                    <Text style={{ color: T.textSecondary, fontSize: 12, textAlign: 'center', marginTop: 12, fontFamily: 'Cairo' }}>
                         {lables['overtime_note'] || (lang === 'ar'
                             ? `لكل ساعة بعد الوقت المحجوز: SAR ${(Number(location?.additional_charge_per_hour) || 0).toFixed(3)}`
                             : `Per hour after reserved time: SAR ${(Number(location?.additional_charge_per_hour) || 0).toFixed(3)}`)}
@@ -406,7 +423,7 @@ const BookParking = (props) => {
                             onPress={() => setShowConfirmDialog(false)}
                             containerStyle={{ flex: 1 }}
                             buttonStyle={{ backgroundColor: T.background, borderWidth: 1.5, borderColor: T.border, borderRadius: RADIUS.lg, paddingVertical: 14 }}
-                            titleStyle={{ color: T.text, fontWeight: '700', fontSize: 15, fontFamily: 'Cairo, sans-serif' }}
+                            titleStyle={{ color: T.text, fontWeight: '700', fontSize: 15, fontFamily: 'Cairo' }}
                         />
                         <Button
                             title={lables['confirm']}
@@ -424,18 +441,19 @@ const BookParking = (props) => {
                             }}
                             containerStyle={{ flex: 1 }}
                             buttonStyle={{ backgroundColor: T.primary, borderRadius: RADIUS.lg, paddingVertical: 14, shadowColor: T.primary, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 10, elevation: 6 }}
-                            titleStyle={{ fontWeight: '800', fontSize: 15, fontFamily: 'Cairo, sans-serif' }}
+                            titleStyle={{ fontWeight: '800', fontSize: 15, fontFamily: 'Cairo' }}
                         />
                     </View>
                 </Dialog>
                 <TimerPickerModal
                     visible={showStartTimeDialog}
-                    hourLabel="H"
-                    minuteLabel="M"
-                    secondLabel="S"
+                    hourLabel={lang === 'ar' ? 'ساعة' : 'Hr'}
+                    minuteLabel={lang === 'ar' ? 'دقيقة' : 'Min'}
+                    hideSeconds
+                    minuteInterval={5}
                     setIsVisible={setShowStartTimeDialog}
                     onConfirm={(pickedDuration) => {
-                        let formatedTime = formatTime(pickedDuration);
+                        let formatedTime = formatTime({ ...pickedDuration, seconds: 0 });
                         let flag = checkStartTime(formatedTime);
                         if (!flag) {
                             toast.error(tmsg(lables, lang, 'mall_is_closed'));
@@ -447,22 +465,28 @@ const BookParking = (props) => {
                         }
 
                     }}
-                    modalTitle={lables['start_time']}
-                    confirmButtonText={lables['confirm']}
-                    cancelButtonText={lables['cancel']}
+                    modalTitle={lables['start_time'] || (lang === 'ar' ? 'وقت البدء' : 'Start time')}
+                    confirmButtonText={lables['confirm'] || (lang === 'ar' ? 'تأكيد' : 'Confirm')}
+                    cancelButtonText={lables['cancel'] || (lang === 'ar' ? 'إلغاء' : 'Cancel')}
                     closeOnOverlayPress
                     styles={{
-                        theme: "dark",
+                        theme: "light",
+                        backgroundColor: T.card,
+                        textColor: T.text,
+                        primaryColor: T.primary,
+                        confirmButtonColor: T.primary,
+                        cancelButtonColor: T.textSecondary,
                     }}
                 />
                 <TimerPickerModal
                     visible={showEndTimeDialog}
-                    hourLabel="H"
-                    minuteLabel="M"
-                    secondLabel="S"
+                    hourLabel={lang === 'ar' ? 'ساعة' : 'Hr'}
+                    minuteLabel={lang === 'ar' ? 'دقيقة' : 'Min'}
+                    hideSeconds
+                    minuteInterval={5}
                     setIsVisible={setShowEndTimeDialog}
                     onConfirm={(pickedDuration) => {
-                        let formatedTime = formatTime(pickedDuration);
+                        let formatedTime = formatTime({ ...pickedDuration, seconds: 0 });
                         let flag = checkEndTime(formatedTime);
                         if (!flag) {
                             toast.error(tmsg(lables, lang, 'mall_is_closed'));
@@ -473,12 +497,17 @@ const BookParking = (props) => {
                         }
 
                     }}
-                    modalTitle={lables['end_time']}
-                    confirmButtonText={lables['confirm']}
-                    cancelButtonText={lables['cancel']}
+                    modalTitle={lables['end_time'] || (lang === 'ar' ? 'وقت الانتهاء' : 'End time')}
+                    confirmButtonText={lables['confirm'] || (lang === 'ar' ? 'تأكيد' : 'Confirm')}
+                    cancelButtonText={lables['cancel'] || (lang === 'ar' ? 'إلغاء' : 'Cancel')}
                     closeOnOverlayPress
                     styles={{
-                        theme: "dark",
+                        theme: "light",
+                        backgroundColor: T.card,
+                        textColor: T.text,
+                        primaryColor: T.primary,
+                        confirmButtonColor: T.primary,
+                        cancelButtonColor: T.textSecondary,
                     }}
                 />
             </ScrollView>
@@ -490,19 +519,35 @@ export default BookParking;
 
 const ConfirmRow = ({ label, value, T, last, rtl }) => (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 7, borderBottomWidth: last ? 0 : 1, borderBottomColor: T.border }}>
-        <Text style={{ color: T.textSecondary, fontSize: 13, fontWeight: '600', fontFamily: 'Cairo, sans-serif' }}>{label}</Text>
-        <Text numberOfLines={1} style={{ color: T.text, fontSize: 14, fontWeight: '800', fontFamily: 'Cairo, sans-serif', marginStart: 12, flexShrink: 1, textAlign: rtl ? 'left' : 'right' }}>{value ?? '-'}</Text>
+        <Text style={{ color: T.textSecondary, fontSize: 13, fontWeight: '600', fontFamily: 'Cairo' }}>{label}</Text>
+        <Text numberOfLines={1} style={{ color: T.text, fontSize: 14, fontWeight: '800', fontFamily: 'Cairo', marginStart: 12, flexShrink: 1, textAlign: rtl ? 'left' : 'right' }}>{value ?? '-'}</Text>
     </View>
 );
 const getStyles = (T) => StyleSheet.create({
+    dateHero: {
+        backgroundColor: T.primary,
+        borderRadius: RADIUS.xl,
+        marginHorizontal: 18,
+        marginTop: 16,
+        padding: 16,
+        borderWidth: 1,
+        borderColor: T.primary,
+        shadowColor: T.primary,
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 0.35,
+        shadowRadius: 14,
+        elevation: 8,
+        overflow: 'hidden',
+    },
     calendarWrap: {
         backgroundColor: T.card,
         borderRadius: RADIUS.xl,
         margin: 18,
         marginBottom: 4,
-        padding: 8,
-        borderWidth: 1,
-        borderColor: T.border,
+        marginTop: 12,
+        padding: 10,
+        borderWidth: 1.5,
+        borderColor: T.primary,
         ...SHADOW.card,
         overflow: 'hidden',
     },

@@ -19,7 +19,7 @@ const LegendDot = ({ color, label, T, icon }) => (
         <View style={{ width: 22, height: 22, borderRadius: 8, backgroundColor: color, alignItems: 'center', justifyContent: 'center', marginEnd: 6, borderWidth: 1, borderColor: T.border }}>
             {!!icon && <Icon name={icon} size={13} color="#FFFFFF" />}
         </View>
-        <Text style={{ fontSize: 12, fontWeight: '600', color: T.textSecondary, fontFamily: 'Cairo, sans-serif' }}>{label}</Text>
+        <Text style={{ fontSize: 12, fontWeight: '600', color: T.textSecondary, fontFamily: 'Cairo' }}>{label}</Text>
     </View>
 );
 
@@ -31,7 +31,7 @@ const Meter = ({ free, total, T }) => {
             <View style={{ flex: 1, height: 8, borderRadius: 4, backgroundColor: T.background, borderWidth: 1, borderColor: T.border, overflow: 'hidden' }}>
                 <View style={{ width: `${pct}%`, height: '100%', borderRadius: 4, backgroundColor: barColor }} />
             </View>
-            <Text style={{ fontSize: 12, fontWeight: '800', color: T.text, marginStart: 8, fontFamily: 'Cairo, sans-serif' }}>
+            <Text style={{ fontSize: 12, fontWeight: '800', color: T.text, marginStart: 8, fontFamily: 'Cairo' }}>
                 {free}/{total}
             </Text>
         </View>
@@ -196,7 +196,7 @@ const ConfirmParking = (props) => {
                     }}
                 >
                     <View style={{ position: 'absolute', top: -50, end: -50, width: 150, height: 150, borderRadius: 75, backgroundColor: 'rgba(255,255,255,0.12)' }} />
-                    <Text numberOfLines={1} style={{ color: '#FFFFFF', fontSize: fontSize(18), fontWeight: '800', fontFamily: 'Cairo, sans-serif', textAlign: rtl ? 'right' : 'left' }}>
+                    <Text numberOfLines={1} style={{ color: '#FFFFFF', fontSize: fontSize(18), fontWeight: '800', fontFamily: 'Cairo', textAlign: rtl ? 'right' : 'left' }}>
                         {locName}
                     </Text>
                     <View style={{ flexDirection: 'row', marginTop: 14, gap: 8 }}>
@@ -208,7 +208,7 @@ const ConfirmParking = (props) => {
                         ].map((chip, i) => (
                             <View key={i} style={{ flex: 1, backgroundColor: 'rgba(255,255,255,0.16)', borderWidth: 1, borderColor: 'rgba(255,255,255,0.3)', borderRadius: 14, paddingVertical: 9, paddingHorizontal: 6, alignItems: 'center' }}>
                                 <Icon name={chip.icon} size={17} color="#FFFFFF" />
-                                <Text numberOfLines={1} style={{ color: '#FFFFFF', fontSize: 11.5, fontWeight: '700', marginTop: 5, fontFamily: 'Cairo, sans-serif' }}>
+                                <Text numberOfLines={1} style={{ color: '#FFFFFF', fontSize: 11.5, fontWeight: '700', marginTop: 5, fontFamily: 'Cairo' }}>
                                     {chip.value}
                                 </Text>
                             </View>
@@ -229,7 +229,7 @@ const ConfirmParking = (props) => {
                         ...SHADOW.card,
                     }}
                 >
-                    <Text style={{ fontSize: 13, fontWeight: '800', color: T.text, marginBottom: 10, letterSpacing: 0.5, fontFamily: 'Cairo, sans-serif', textAlign: rtl ? 'right' : 'left' }}>
+                    <Text style={{ fontSize: 13, fontWeight: '800', color: T.text, marginBottom: 10, letterSpacing: 0.5, fontFamily: 'Cairo', textAlign: rtl ? 'right' : 'left' }}>
                         {(lables['legend'] || (rtl ? 'دليل المواقف' : 'LEGEND')).toUpperCase?.() || ''}
                     </Text>
                     <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
@@ -246,7 +246,7 @@ const ConfirmParking = (props) => {
                 {/* Block segmented control */}
                 {blocks.length > 0 && (
                     <View style={{ paddingHorizontal: 16, marginTop: 12 }}>
-                        <Text style={{ fontSize: 13, fontWeight: '800', color: T.textSecondary, marginBottom: 8, letterSpacing: 0.5, fontFamily: 'Cairo, sans-serif', textAlign: rtl ? 'right' : 'left' }}>
+                        <Text style={{ fontSize: 13, fontWeight: '800', color: T.textSecondary, marginBottom: 8, letterSpacing: 0.5, fontFamily: 'Cairo', textAlign: rtl ? 'right' : 'left' }}>
                             {lables['block'] || (rtl ? 'البلوك' : 'BLOCK')}
                         </Text>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -266,7 +266,7 @@ const ConfirmParking = (props) => {
                                                 ...(active ? { shadowColor: T.primary, shadowOffset: { width: 0, height: 3 }, shadowOpacity: 0.4, shadowRadius: 8, elevation: 4 } : {}),
                                             }}
                                         >
-                                            <Text style={{ fontWeight: '800', fontSize: 14, fontFamily: 'Cairo, sans-serif', color: active ? '#FFFFFF' : T.textSecondary }}>
+                                            <Text style={{ fontWeight: '800', fontSize: 14, fontFamily: 'Cairo', color: active ? '#FFFFFF' : T.textSecondary }}>
                                                 {item}
                                             </Text>
                                         </Pressable>
@@ -304,11 +304,11 @@ const ConfirmParking = (props) => {
                             >
                                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                     <View style={{ backgroundColor: T.primaryBg, borderWidth: 1, borderColor: T.primary, paddingVertical: 6, paddingHorizontal: 18, borderRadius: 12 }}>
-                                        <Text style={{ fontWeight: '800', fontSize: 14, fontFamily: 'Cairo, sans-serif', color: T.primary }}>
+                                        <Text style={{ fontWeight: '800', fontSize: 14, fontFamily: 'Cairo', color: T.primary }}>
                                             {lvl}
                                         </Text>
                                     </View>
-                                    <Text style={{ fontSize: 12, fontWeight: '700', color: lvlFree > 0 ? T.success : T.error, marginStart: 10, fontFamily: 'Cairo, sans-serif' }}>
+                                    <Text style={{ fontSize: 12, fontWeight: '700', color: lvlFree > 0 ? T.success : T.error, marginStart: 10, fontFamily: 'Cairo' }}>
                                         {lvlFree > 0
                                             ? (rtl ? `${lvlFree} متاح` : `${lvlFree} free`)
                                             : (rtl ? 'ممتلئ' : 'Full')}
@@ -353,7 +353,7 @@ const ConfirmParking = (props) => {
                                                 ) : reserved ? (
                                                     <Icon name='lock-closed' size={26} color={T.inactive} />
                                                 ) : (
-                                                    <Text style={{ color: '#FFFFFF', fontWeight: '800', fontSize: 13, fontFamily: 'Cairo, sans-serif', padding: 4 }} numberOfLines={1}>
+                                                    <Text style={{ color: '#FFFFFF', fontWeight: '800', fontSize: 13, fontFamily: 'Cairo', padding: 4 }} numberOfLines={1}>
                                                         {d.device_name}
                                                     </Text>
                                                 )}
@@ -369,14 +369,14 @@ const ConfirmParking = (props) => {
                 {!loading && devices.length === 0 && (
                     <View style={{ margin: 20, padding: 24, borderRadius: RADIUS.xl, backgroundColor: T.card, borderWidth: 1, borderColor: T.border, alignItems: 'center' }}>
                         <Icon name="alert-circle-outline" size={48} color={T.textMuted} />
-                        <Text style={{ textAlign: 'center', color: T.textSecondary, marginTop: 10, fontWeight: '600', fontFamily: 'Cairo, sans-serif' }}>
+                        <Text style={{ textAlign: 'center', color: T.textSecondary, marginTop: 10, fontWeight: '600', fontFamily: 'Cairo' }}>
                             {lables['no_spots'] || (rtl ? 'لا توجد مواقف متاحة' : 'No available parking spots for the selected date/time')}
                         </Text>
                     </View>
                 )}
                 {feedback && (
                     <View style={{ margin: 16, padding: 14, borderRadius: RADIUS.lg, backgroundColor: feedback.type === 'error' ? T.errorBg : T.successBg, borderWidth: 1, borderColor: feedback.type === 'error' ? T.error : T.success }}>
-                        <Text style={{ color: feedback.type === 'error' ? T.error : T.success, fontWeight: '700', textAlign: 'center', fontFamily: 'Cairo, sans-serif' }}>
+                        <Text style={{ color: feedback.type === 'error' ? T.error : T.success, fontWeight: '700', textAlign: 'center', fontFamily: 'Cairo' }}>
                             {feedback.text}
                         </Text>
                     </View>
@@ -405,10 +405,10 @@ const ConfirmParking = (props) => {
                     }}
                 >
                     <View style={{ flex: 1, marginEnd: 12 }}>
-                        <Text style={{ fontSize: 12, color: T.textSecondary, fontWeight: '600', fontFamily: 'Cairo, sans-serif', textAlign: rtl ? 'right' : 'left' }}>
+                        <Text style={{ fontSize: 12, color: T.textSecondary, fontWeight: '600', fontFamily: 'Cairo', textAlign: rtl ? 'right' : 'left' }}>
                             {lables['selected_spot'] || (rtl ? 'الموقف المختار' : 'Selected spot')}
                         </Text>
-                        <Text style={{ fontSize: 17, fontWeight: '800', color: selectedDevice.id ? T.primary : T.inactive, fontFamily: 'Cairo, sans-serif', textAlign: rtl ? 'right' : 'left' }}>
+                        <Text style={{ fontSize: 17, fontWeight: '800', color: selectedDevice.id ? T.primary : T.inactive, fontFamily: 'Cairo', textAlign: rtl ? 'right' : 'left' }}>
                             {selectedDevice.id ? `${selectedDevice.device_name} • ${selectedDevice.block || activeBlock}` : '—'}
                         </Text>
                     </View>
@@ -427,7 +427,7 @@ const ConfirmParking = (props) => {
                             shadowRadius: 12,
                             elevation: selectedDevice.id ? 7 : 0,
                         }}
-                        titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo, sans-serif' }}
+                        titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo' }}
                     />
                 </View>
             )}

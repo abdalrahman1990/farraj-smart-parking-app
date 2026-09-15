@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BackHandler, Platform, View, Pressable } from 'react-native';
+import { BackHandler, Platform, View, Pressable, I18nManager } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -35,6 +35,7 @@ const Home = (props) => {
 }
 const SideBar = (props) => {
     const T = useTheme();
+    const isRTL = I18nManager.isRTL;
     const [drawerOpen, setDrawerOpen] = useState(drawerBus.open);
     useEffect(() => drawerBus.subscribe(() => setDrawerOpen(drawerBus.open)), []);
     return (
@@ -55,16 +56,16 @@ const SideBar = (props) => {
                 <View
                     style={{
                         position: 'absolute',
-                        top: 0, bottom: 0, end: 0,
+                        top: 0, bottom: 0,
+                        ...(isRTL ? { start: 0 } : { end: 0 }),
                         width: '82%',
                         maxWidth: 340,
                         backgroundColor: T.surface,
                         zIndex: 101,
-                        borderTopLeftRadius: 28,
-                        borderBottomLeftRadius: 28,
+                        ...(isRTL ? { borderTopRightRadius: 28, borderBottomRightRadius: 28 } : { borderTopLeftRadius: 28, borderBottomLeftRadius: 28 }),
                         overflow: 'hidden',
                         shadowColor: '#000',
-                        shadowOffset: { width: -8, height: 0 },
+                        shadowOffset: { width: isRTL ? 8 : -8, height: 0 },
                         shadowOpacity: 0.4,
                         shadowRadius: 24,
                         elevation: 16,
@@ -120,7 +121,7 @@ const BottomBar = () => {
                     fontSize: 11,
                     fontWeight: '700',
                     marginTop: 4,
-                    fontFamily: 'Cairo, sans-serif',
+                    fontFamily: 'Cairo',
                 },
                 headerShown: false,
             }}

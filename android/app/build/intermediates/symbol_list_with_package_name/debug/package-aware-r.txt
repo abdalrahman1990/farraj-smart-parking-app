@@ -1075,6 +1075,7 @@ color skyblue
 color slateblue
 color slategray
 color snow
+color splash_bg
 color springgreen
 color steelblue
 color switch_thumb_disabled_material_dark
@@ -1595,11 +1596,17 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable redbox_top_border_background
 drawable rn_edit_text_material
+drawable splash_logo
+drawable splash_screen
+drawable src_assets_images_addcar
+drawable src_assets_images_defaultlocation
+drawable src_assets_images_farrajlogo
 drawable src_assets_images_lock
 drawable src_assets_images_logo
 drawable src_assets_images_logowhite
 drawable src_assets_images_open
 drawable src_assets_images_pin
+drawable src_assets_images_riyadhskyline
 drawable src_assets_images_unlock
 drawable test_custom_background
 drawable test_level_drawable
@@ -2552,6 +2559,7 @@ style ShapeAppearanceOverlay_TopLeftCut
 style ShapeAppearanceOverlay_TopRightDifferentCornerSize
 style SpinnerDatePickerDialog
 style SpinnerDatePickerStyle
+style SplashTheme
 style Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style Test_Theme_MaterialComponents_MaterialCalendar
 style Test_Widget_MaterialComponents_MaterialCalendar

@@ -280,7 +280,7 @@ const NewVehicle = (props) => {
                         shadowRadius: 14,
                         elevation: 8,
                     }}
-                    titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo, sans-serif' }}
+                    titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo' }}
                     onPress={() => {
                         let data = {
                             plate_code: plateCode,
@@ -320,7 +320,7 @@ const getStyles = (T) => StyleSheet.create({
         alignItems: 'center',
     },
     inputText: {
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
         fontSize: 15,
         color: T.text,
         textAlign: 'center',

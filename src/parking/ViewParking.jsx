@@ -35,8 +35,8 @@ const SoftCard = ({ children, T, style }) => (
 
 const DetailRow = ({ label, value, T, last, rtl }) => (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 10, borderBottomWidth: last ? 0 : 1, borderBottomColor: T.border }}>
-        <Text style={{ fontSize: 13, color: T.textSecondary, fontWeight: '600', fontFamily: 'Cairo, sans-serif', flexShrink: 0 }}>{label}</Text>
-        <Text numberOfLines={1} style={{ fontSize: 14, color: T.text, fontWeight: '700', fontFamily: 'Cairo, sans-serif', marginStart: 12, flexShrink: 1, textAlign: rtl ? 'left' : 'right' }}>{value}</Text>
+        <Text style={{ fontSize: 13, color: T.textSecondary, fontWeight: '600', fontFamily: 'Cairo', flexShrink: 0 }}>{label}</Text>
+        <Text numberOfLines={1} style={{ fontSize: 14, color: T.text, fontWeight: '700', fontFamily: 'Cairo', marginStart: 12, flexShrink: 1, textAlign: rtl ? 'left' : 'right' }}>{value}</Text>
     </View>
 );
 
@@ -64,11 +64,11 @@ const ToolButton = ({ icon, label, hint, active, busy, onPress, tint, T }) => (
                 <View style={{ position: 'absolute', top: 7, end: 7, width: 10, height: 10, borderRadius: 5, backgroundColor: '#FFFFFF', borderWidth: 2, borderColor: tint }} />
             )}
         </Pressable>
-        <Text style={{ fontSize: 11.5, color: active ? T.text : T.textSecondary, fontWeight: active ? '800' : '600', marginTop: 8, fontFamily: 'Cairo, sans-serif', textAlign: 'center' }}>
+        <Text style={{ fontSize: 11.5, color: active ? T.text : T.textSecondary, fontWeight: active ? '800' : '600', marginTop: 8, fontFamily: 'Cairo', textAlign: 'center' }}>
             {label}
         </Text>
         {!!hint && (
-            <Text style={{ fontSize: 10, color: T.inactive, marginTop: 1, fontFamily: 'Cairo, sans-serif', textAlign: 'center' }}>
+            <Text style={{ fontSize: 10, color: T.inactive, marginTop: 1, fontFamily: 'Cairo', textAlign: 'center' }}>
                 {hint}
             </Text>
         )}
@@ -231,24 +231,24 @@ const ViewParking = (props) => {
                                 style={{ width: 62, height: 62, borderRadius: 18, flexShrink: 0 }}
                             />
                             <View style={{ flex: 1, flexShrink: 1, marginStart: 13, marginEnd: 10 }}>
-                                <Text numberOfLines={1} style={{ fontSize: 16.5, fontWeight: '800', color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+                                <Text numberOfLines={1} style={{ fontSize: 16.5, fontWeight: '800', color: T.text, fontFamily: 'Cairo' }}>
                                     {lang === "en" ? parking.location_name : parking.location_name_ar}
                                 </Text>
-                                <Text numberOfLines={1} style={{ fontSize: 12.5, color: T.textSecondary, marginTop: 3, fontFamily: 'Cairo, sans-serif' }}>
+                                <Text numberOfLines={1} style={{ fontSize: 12.5, color: T.textSecondary, marginTop: 3, fontFamily: 'Cairo' }}>
                                     {parking.device_name} • {parking.block}, {parking.level}
                                 </Text>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 7 }}>
                                     <View style={{ width: 7, height: 7, borderRadius: 3.5, backgroundColor: isToday ? T.success : T.inactive, marginEnd: 6 }} />
-                                    <Text numberOfLines={1} style={{ fontSize: 11.5, fontWeight: '700', color: isToday ? T.success : T.textSecondary, fontFamily: 'Cairo, sans-serif' }}>
+                                    <Text numberOfLines={1} style={{ fontSize: 11.5, fontWeight: '700', color: isToday ? T.success : T.textSecondary, fontFamily: 'Cairo' }}>
                                         {isToday ? (lables['active_today'] || (lang === 'ar' ? 'نشط اليوم' : 'ACTIVE TODAY')) : (lables['upcoming'] || (lang === 'ar' ? 'قادم' : 'UPCOMING'))} • {parking.reservation_date}
                                     </Text>
                                 </View>
                             </View>
                             <View style={{ backgroundColor: T.primaryBg, paddingHorizontal: 11, paddingVertical: 8, borderRadius: 14, borderWidth: 1, borderColor: T.border, alignItems: 'center', flexShrink: 0 }}>
-                                <Text style={{ fontSize: 15, fontWeight: '800', color: T.primary, fontFamily: 'Cairo, sans-serif' }}>
+                                <Text style={{ fontSize: 15, fontWeight: '800', color: T.primary, fontFamily: 'Cairo' }}>
                                     {String(parking.start_time).slice(0, 5)}
                                 </Text>
-                                <Text style={{ fontSize: 10.5, color: T.textSecondary, fontFamily: 'Cairo, sans-serif' }}>
+                                <Text style={{ fontSize: 10.5, color: T.textSecondary, fontFamily: 'Cairo' }}>
                                     {String(parking.end_time).slice(0, 5)}
                                 </Text>
                             </View>
@@ -272,14 +272,14 @@ const ViewParking = (props) => {
                                 <View style={{ width: 34, height: 34, borderRadius: 12, backgroundColor: T.primaryBg, alignItems: 'center', justifyContent: 'center', marginEnd: 10, borderWidth: 1, borderColor: T.border }}>
                                     <Icon name="hardware-chip-outline" size={18} color={T.primary} />
                                 </View>
-                                <Text style={{ fontSize: 14, fontWeight: '800', color: T.text, fontFamily: 'Cairo, sans-serif', flex: 1 }}>
+                                <Text style={{ fontSize: 14, fontWeight: '800', color: T.text, fontFamily: 'Cairo', flex: 1 }}>
                                     {lables['device_control'] || (lang === 'ar' ? 'التحكم بالجهاز' : 'Device Control')}
                                 </Text>
                                 <Text style={{ fontSize: 11, color: T.inactive, fontFamily: 'Courier' }}>
                                     {parking.device_id}
                                 </Text>
                             </View>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 12 }}>
+                            <View style={{ flexDirection: lang === 'ar' ? 'row-reverse' : 'row', justifyContent: lang === 'ar' ? 'flex-start' : 'flex-end', gap: 12, marginTop: 12 }}>
                                 <ToolButton
                                     icon="sunny-outline"
                                     label={lables['blink_led'] || (lang === 'ar' ? 'وميض' : 'Blink')}
@@ -314,7 +314,7 @@ const ViewParking = (props) => {
 
                             {/* Signal-flow infographic: App → Cloud → WiFi → Gate */}
                             <View style={{ marginTop: 18, backgroundColor: T.background, borderRadius: RADIUS.lg, borderWidth: 1, borderColor: T.border, padding: 14 }}>
-                                <Text style={{ fontSize: 12, fontWeight: '800', color: T.textSecondary, letterSpacing: 0.6, fontFamily: 'Cairo, sans-serif', textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                                <Text style={{ fontSize: 12, fontWeight: '800', color: T.textSecondary, letterSpacing: 0.6, fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                     {lang === 'ar' ? 'مسار الإشارة' : 'SIGNAL PATH'}
                                 </Text>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 12 }}>
@@ -346,7 +346,7 @@ const ViewParking = (props) => {
                                                     >
                                                         <Icon name={node.icon} size={20} color={reached ? '#FFFFFF' : T.inactive} />
                                                     </View>
-                                                    <Text style={{ fontSize: 10, fontWeight: '700', color: reached ? T.text : T.inactive, marginTop: 5, fontFamily: 'Cairo, sans-serif' }}>
+                                                    <Text style={{ fontSize: 10, fontWeight: '700', color: reached ? T.text : T.inactive, marginTop: 5, fontFamily: 'Cairo' }}>
                                                         {node.label}
                                                     </Text>
                                                 </View>
@@ -363,7 +363,7 @@ const ViewParking = (props) => {
                                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10, backgroundColor: T.card, borderRadius: 10, borderWidth: 1, borderColor: T.border, padding: 10 }}>
                                         <Icon name={lastReply.ok ? 'checkmark-circle' : 'alert-circle'} size={18} color={lastReply.ok ? T.success : T.error} />
                                         <View style={{ flex: 1, marginStart: 8 }}>
-                                            <Text numberOfLines={2} style={{ fontSize: 12, color: T.text, fontWeight: '600', fontFamily: 'Cairo, sans-serif', textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                                            <Text numberOfLines={2} style={{ fontSize: 12, color: T.text, fontWeight: '600', fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                                 [{lastReply.status}] {lastReply.text}
                                             </Text>
                                             <Text style={{ fontSize: 10.5, color: T.inactive, marginTop: 2 }}>
@@ -376,7 +376,7 @@ const ViewParking = (props) => {
 
                             {/* Command tester */}
                             <View style={{ marginTop: 12, backgroundColor: T.background, borderRadius: RADIUS.lg, borderWidth: 1, borderColor: T.border, padding: 14 }}>
-                                <Text style={{ fontSize: 12, fontWeight: '800', color: T.textSecondary, letterSpacing: 0.6, fontFamily: 'Cairo, sans-serif', textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                                <Text style={{ fontSize: 12, fontWeight: '800', color: T.textSecondary, letterSpacing: 0.6, fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                     {lang === 'ar' ? 'مختبِر الأوامر' : 'COMMAND TESTER'}
                                 </Text>
                                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 10 }}>
@@ -396,7 +396,7 @@ const ViewParking = (props) => {
                                                     ...(selected ? { shadowColor: T.primary, shadowOffset: { width: 0, height: 3 }, shadowOpacity: 0.4, shadowRadius: 8, elevation: 4 } : {}),
                                                 }}
                                             >
-                                                <Text style={{ fontWeight: '800', fontSize: 13.5, fontFamily: 'Cairo, sans-serif', color: selected ? '#FFFFFF' : T.textSecondary }}>
+                                                <Text style={{ fontWeight: '800', fontSize: 13.5, fontFamily: 'Cairo', color: selected ? '#FFFFFF' : T.textSecondary }}>
                                                     {s.toUpperCase()}
                                                 </Text>
                                             </Pressable>
@@ -418,7 +418,7 @@ const ViewParking = (props) => {
                                         shadowRadius: 10,
                                         elevation: 5,
                                     }}
-                                    titleStyle={{ fontWeight: '800', fontSize: 15, fontFamily: 'Cairo, sans-serif' }}
+                                    titleStyle={{ fontWeight: '800', fontSize: 15, fontFamily: 'Cairo' }}
                                     icon={<Icon name="send-outline" size={18} color="#FFFFFF" style={{ marginEnd: 8 }} />}
                                 />
                             </View>

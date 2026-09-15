@@ -120,7 +120,7 @@ export const SHADOW = {
 };
 
 export const FONT = {
-  family: 'Cairo, sans-serif',
+  family: 'Cairo',
   weight: {
     regular: '400',
     medium: '500',

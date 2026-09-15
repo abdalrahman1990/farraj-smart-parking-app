@@ -12,6 +12,8 @@ import { useTheme } from '../utils/useTheme';
 import { useFocusEffect } from '@react-navigation/native';
 import { drawerBus } from '../utils/drawerBus';
 import { useLabels, useLang } from '../utils/useLabels';
+import urls from '../apis/urls';
+import { fontSize, isSmallScreen } from '../utils/responsive';
 
 const { width } = Dimensions.get('window');
 const isSmall = width < 360;
@@ -57,12 +59,12 @@ const QuickAction = ({ icon, title, subtitle, onPress, accent }) => {
         >
             <Icon name={icon} size={23} color="#FFFFFF" />
         </View>
-        <Text style={{ fontSize: 14, fontWeight: '700', color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+        <Text style={{ fontSize: 14, fontWeight: '700', color: T.text, fontFamily: 'Cairo' }}>
             {title}
         </Text>
         <Text
             numberOfLines={1}
-            style={{ fontSize: 12, color: T.textSecondary, marginTop: 3, fontFamily: 'Cairo, sans-serif' }}
+            style={{ fontSize: 12, color: T.textSecondary, marginTop: 3, fontFamily: 'Cairo' }}
         >
             {subtitle}
         </Text>
@@ -190,7 +192,7 @@ const Dashboard = (props) => {
                                 }}
                             >
                                 <Icon name='wallet-outline' size={isSmall ? 15 : 17} color="#FFFFFF" />
-                                <Text style={{ marginStart: 6, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo, sans-serif', fontSize: isSmall ? 13 : 14 }}>
+                                <Text style={{ marginStart: 6, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', fontSize: isSmall ? 13 : 14 }}>
                                     {(Number(balance) || 0).toFixed(3)}
                                 </Text>
                             </Pressable>
@@ -212,18 +214,19 @@ const Dashboard = (props) => {
                         </View>
                     </View>
                     {/* Identity */}
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 20 }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: isSmallScreen() ? 14 : 20 }}>
                         <Avatar
-                            size={isSmall ? 48 : 56}
+                            size={isSmall ? 40 : 52}
                             rounded
-                            containerStyle={{ borderWidth: 2.5, borderColor: 'rgba(255,255,255,0.45)' }}
-                            source={{ uri: user.avatar ? user.avatar : "https://www.w3schools.com/w3images/avatar3.png" }}
+                            containerStyle={{ borderWidth: 2.5, borderColor: 'rgba(255,255,255,0.45)', backgroundColor: 'rgba(255,255,255,0.15)' }}
+                            source={{ uri: (()=>{const a=user.avatar; if(!a) return "https://www.w3schools.com/w3images/avatar3.png"; if(/^https?:\/\//.test(a)) return a; const h=(urls.host||'').replace(/\/$/,''); return h+(a.startsWith('/')?a:'/'+a);})() }}
+                            onError={() => {}}
                         />
                         <View style={{ marginStart: 13, flex: 1 }}>
-                            <Text style={{ fontSize: 13, color: 'rgba(255,255,255,0.80)', fontFamily: 'Cairo, sans-serif' }}>
+                            <Text style={{ fontSize: 13, color: 'rgba(255,255,255,0.80)', fontFamily: 'Cairo' }}>
                                 {lang === 'ar' ? 'مرحبًا بعودتك 👋' : 'Welcome back 👋'}
                             </Text>
-                            <Text numberOfLines={1} style={{ fontSize: isSmall ? 18 : 20, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo, sans-serif', marginTop: 2 }}>
+                            <Text numberOfLines={1} style={{ fontSize: isSmall ? 18 : 20, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', marginTop: 2 }}>
                                 {user.name}
                             </Text>
                         </View>
@@ -262,11 +265,11 @@ const Dashboard = (props) => {
 
                 {/* Nearby section */}
                 <View style={{ paddingHorizontal: 20, marginTop: 22, marginBottom: 6, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <Text style={{ fontSize: 17, fontWeight: '800', color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+                    <Text style={{ fontSize: 17, fontWeight: '800', color: T.text, fontFamily: 'Cairo' }}>
                         {lang === 'ar' ? '📍 مواقف قريبة منك' : '📍 Nearby parking'}
                     </Text>
                     <Pressable onPress={() => props.navigation.navigate('SearchLocations')}>
-                        <Text style={{ fontSize: 13, fontWeight: '700', color: T.primaryLight, fontFamily: 'Cairo, sans-serif' }}>
+                        <Text style={{ fontSize: 13, fontWeight: '700', color: T.primaryLight, fontFamily: 'Cairo' }}>
                             {lang === 'ar' ? 'عرض الكل ←' : 'See all →'}
                         </Text>
                     </Pressable>

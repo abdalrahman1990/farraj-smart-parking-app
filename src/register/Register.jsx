@@ -14,6 +14,7 @@ import { useLang } from '../utils/useLabels';
 import { toast } from '../utils/toastBus';
 import { tmsg } from '../utils/msg';
 import AuthLayout from '../components/AuthLayout';
+import { isSmallScreen, fontSize } from '../utils/responsive';
 
 const Register = (props) => {
     const T = useTheme();
@@ -91,36 +92,60 @@ const Register = (props) => {
             <Input
                 value={name}
                 onChangeText={(e) => setName(e)}
-                placeholder={lables['full_name']}
-                leftIcon={<Icon name="person-outline" size={22} color={T.inactive} style={{ marginEnd: 8 }} />}
+                label={(lables['full_name'] || (lang==='ar'?'الاسم الكامل':'Full name')).toUpperCase()}
+                labelStyle={{ fontSize: 12.5, fontWeight: '800', color: T.textSecondary, fontFamily: 'Cairo', marginBottom: 6 }}
+                placeholder={lang==='ar'?'الاسم الكامل':'John Doe'}
+                placeholderTextColor={T.inactive}
+                containerStyle={{ paddingHorizontal: 0 }}
+                inputStyle={{ color: T.text, fontSize: 15, fontFamily: 'Cairo' }}
+                inputContainerStyle={{ backgroundColor: T.background, borderWidth: 1.5, borderColor: T.border, borderRadius: 14, paddingHorizontal: 12, height: 52, borderBottomWidth: 1.5 }}
+                leftIcon={<Icon name="person-outline" size={20} color={T.primary} style={{ marginEnd: 6 }} />}
             />
             <Input
                 value={phone}
                 onChangeText={(e) => setPhone(e)}
-                placeholder={lables['mobile']}
+                label={(lables['mobile'] || (lang==='ar'?'الجوال':'Mobile')).toUpperCase()}
+                labelStyle={{ fontSize: 12.5, fontWeight: '800', color: T.textSecondary, fontFamily: 'Cairo', marginBottom: 6 }}
+                placeholder="05xxxxxxxx"
+                placeholderTextColor={T.inactive}
+                containerStyle={{ paddingHorizontal: 0 }}
+                inputStyle={{ color: T.text, fontSize: 15, fontFamily: 'Cairo' }}
+                inputContainerStyle={{ backgroundColor: T.background, borderWidth: 1.5, borderColor: T.border, borderRadius: 14, paddingHorizontal: 12, height: 52, borderBottomWidth: 1.5 }}
                 keyboardType="number-pad"
                 returnKeyType="done"
-                leftIcon={<Icon name="call-outline" size={22} color={T.inactive} style={{ marginEnd: 8 }} />}
+                leftIcon={<Icon name="call-outline" size={20} color={T.primary} style={{ marginEnd: 6 }} />}
             />
             <Input
                 value={email}
                 onChangeText={(e) => setEmail(e)}
-                placeholder={lables['Email']}
+                label={(lables['Email'] || 'Email').toUpperCase()}
+                labelStyle={{ fontSize: 12.5, fontWeight: '800', color: T.textSecondary, fontFamily: 'Cairo', marginBottom: 6 }}
+                placeholder="name@mail.com"
+                placeholderTextColor={T.inactive}
+                containerStyle={{ paddingHorizontal: 0 }}
+                inputStyle={{ color: T.text, fontSize: 15, fontFamily: 'Cairo' }}
+                inputContainerStyle={{ backgroundColor: T.background, borderWidth: 1.5, borderColor: T.border, borderRadius: 14, paddingHorizontal: 12, height: 52, borderBottomWidth: 1.5 }}
                 keyboardType="email-address"
                 autoCapitalize="none"
-                leftIcon={<Icon name="mail-outline" size={22} color={T.inactive} style={{ marginEnd: 8 }} />}
+                leftIcon={<Icon name="mail-outline" size={20} color={T.primary} style={{ marginEnd: 6 }} />}
             />
             <Input
                 rightIcon={
                     <Pressable onPress={() => setShowPassword(!showPassword)}>
-                        <Icon name={showPassword ? 'eye-outline' : 'eye-off-outline'} size={24} color={T.inactive} />
+                        <Icon name={showPassword ? 'eye-outline' : 'eye-off-outline'} size={22} color={T.inactive} />
                     </Pressable>
                 }
                 value={password}
                 onChangeText={(e) => setPassword(e)}
-                placeholder={lables['password']}
+                label={(lables['password'] || (lang==='ar'?'كلمة المرور':'Password')).toUpperCase()}
+                labelStyle={{ fontSize: 12.5, fontWeight: '800', color: T.textSecondary, fontFamily: 'Cairo', marginBottom: 6 }}
+                placeholder="••••••••"
+                placeholderTextColor={T.inactive}
+                containerStyle={{ paddingHorizontal: 0 }}
+                inputStyle={{ color: T.text, fontSize: 15, fontFamily: 'Cairo' }}
+                inputContainerStyle={{ backgroundColor: T.background, borderWidth: 1.5, borderColor: T.border, borderRadius: 14, paddingHorizontal: 12, height: 52, borderBottomWidth: 1.5 }}
                 secureTextEntry={!showPassword}
-                leftIcon={<Icon name="lock-closed-outline" size={22} color={T.inactive} style={{ marginEnd: 8 }} />}
+                leftIcon={<Icon name="lock-closed-outline" size={20} color={T.primary} style={{ marginEnd: 6 }} />}
             />
 
             <View style={{
@@ -134,7 +159,7 @@ const Register = (props) => {
             }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 4 }}>
                     <Icon2 name='wheelchair' size={22} color={T.primary} style={{ marginEnd: 10 }} />
-                    <Text style={{ fontSize: 15, fontWeight: '700', color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+                    <Text style={{ fontSize: 15, fontWeight: '700', color: T.text, fontFamily: 'Cairo' }}>
                         {lables['Select_Handicap_Option']}
                     </Text>
                 </View>
@@ -146,7 +171,7 @@ const Register = (props) => {
                         uncheckedIcon="circle-o"
                         title={lables['no']}
                         containerStyle={{ backgroundColor: 'transparent', borderWidth: 0 }}
-                        textStyle={{ fontSize: 15, fontWeight: '600', color: T.text, fontFamily: 'Cairo, sans-serif' }}
+                        textStyle={{ fontSize: 15, fontWeight: '600', color: T.text, fontFamily: 'Cairo' }}
                     />
                     <CheckBox
                         checked={handicaped}
@@ -155,20 +180,20 @@ const Register = (props) => {
                         uncheckedIcon="circle-o"
                         title={lables['Yes']}
                         containerStyle={{ backgroundColor: 'transparent', borderWidth: 0 }}
-                        textStyle={{ fontSize: 15, fontWeight: '600', color: T.text, fontFamily: 'Cairo, sans-serif' }}
+                        textStyle={{ fontSize: 15, fontWeight: '600', color: T.text, fontFamily: 'Cairo' }}
                     />
                 </View>
             </View>
 
             <Button
                 loading={loading}
-                title={lables['signup']}
+                title={lables['signup'] || (lang==='ar'?'إنشاء حساب':'Sign Up')}
                 onPress={() => handleRegister()}
                 buttonStyle={{
                     backgroundColor: T.primary,
-                    paddingVertical: 16,
-                    borderRadius: 18,
-                    marginTop: 12,
+                    paddingVertical: isSmallScreen()?12:14,
+                    borderRadius: 14,
+                    marginTop: 8,
                     shadowColor: T.primary,
                     shadowOffset: { width: 0, height: 6 },
                     shadowOpacity: 0.45,
@@ -176,10 +201,10 @@ const Register = (props) => {
                     elevation: 8,
                 }}
                 titleStyle={{
-                    fontSize: 17,
+                    fontSize: isSmallScreen()?15:16,
                     fontWeight: '800',
                     letterSpacing: 0.3,
-                    fontFamily: 'Cairo, sans-serif',
+                    fontFamily: 'Cairo',
                 }}
             />
             <Pressable
@@ -194,7 +219,7 @@ const Register = (props) => {
                     paddingVertical: 14,
                 }}
             >
-                <Text style={{ fontSize: 15, fontWeight: '800', color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+                <Text style={{ fontSize: 15, fontWeight: '800', color: T.text, fontFamily: 'Cairo' }}>
                     {lables['login']}
                 </Text>
             </Pressable>

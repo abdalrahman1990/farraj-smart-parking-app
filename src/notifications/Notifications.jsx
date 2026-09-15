@@ -157,12 +157,12 @@ const Notifications = (props) => {
                                         </View>
                                         <View style={{ flex: 1 }}>
                                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                                <Text style={{ fontWeight: '800', fontSize: 15, color: T.text, flex: 1, fontFamily: 'Cairo, sans-serif' }}>
+                                                <Text style={{ fontWeight: '800', fontSize: 15, color: T.text, flex: 1, fontFamily: 'Cairo' }}>
                                                     {lang == "en" ? item.title : (item.ar_title || item.title)}
                                                 </Text>
                                                 {unread && <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: T.primary, marginStart: 8 }} />}
                                             </View>
-                                            <Text style={{ color: T.textSecondary, fontSize: 13, marginTop: 4, fontFamily: 'Cairo, sans-serif' }}>
+                                            <Text style={{ color: T.textSecondary, fontSize: 13, marginTop: 4, fontFamily: 'Cairo' }}>
                                                 {lang == "en" ? item.description : (item.ar_desc || item.description)}
                                             </Text>
                                             <Text style={{ color: T.inactive, fontSize: 12, marginTop: 6 }}>

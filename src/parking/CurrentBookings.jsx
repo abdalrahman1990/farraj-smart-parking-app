@@ -126,10 +126,10 @@ const CurrentBookings = (props) => {
                                             <ListItem.Subtitle>{item.reservation_date} • {item.block + ',' + item.level}</ListItem.Subtitle>
                                         </ListItem.Content>
                                         <View style={{ alignItems: 'flex-end' }}>
-                                            <Text style={{ fontWeight: '800', color: T.primary, fontFamily: 'Cairo, sans-serif' }}>{String(item.start_time).slice(0, 5)}</Text>
+                                            <Text style={{ fontWeight: '800', color: T.primary, fontFamily: 'Cairo' }}>{String(item.start_time).slice(0, 5)}</Text>
                                             <Text style={{ fontSize: 12, color: T.textSecondary }}>{item.hours + ' ' + lables['hours']}</Text>
                                             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 4 }}>
-                                                <Text style={{ fontSize: 12, fontWeight: '700', color: T.primary, fontFamily: 'Cairo, sans-serif' }}>
+                                                <Text style={{ fontSize: 12, fontWeight: '700', color: T.primary, fontFamily: 'Cairo' }}>
                                                     {lables['control'] || (rtl ? 'تحكم' : 'Control')}
                                                 </Text>
                                                 <Icon name={rtl ? 'chevron-back' : 'chevron-forward'} size={16} color={T.primary} />

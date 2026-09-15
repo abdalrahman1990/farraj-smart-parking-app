@@ -88,7 +88,7 @@ const ViewLocation = (props) => {
                                     fontSize: 22,
                                     flexShrink: 1,
                                     color: T.text,
-                                    fontFamily: 'Cairo, sans-serif',
+                                    fontFamily: 'Cairo',
                                 }}
                             >
                                 {lang === "en" ? location.location_name : location.location_name_ar}
@@ -104,7 +104,7 @@ const ViewLocation = (props) => {
                                 fontWeight: '700',
                                 color: T.primaryLight,
                                 fontSize: 13,
-                                fontFamily: 'Cairo, sans-serif',
+                                fontFamily: 'Cairo',
                             }}
                         >{formattedStartTime + ' - ' + formattedCloseTime}</Text>
                     </ListItem>
@@ -136,7 +136,7 @@ const ViewLocation = (props) => {
                                     fontWeight: '700',
                                     marginStart: 6,
                                     color: T.text,
-                                    fontFamily: 'Cairo, sans-serif',
+                                    fontFamily: 'Cairo',
                                 }}
                             >{slots} {lables['available']}</Text>
                         </View>
@@ -161,7 +161,7 @@ const ViewLocation = (props) => {
                                     fontWeight: '700',
                                     marginStart: 6,
                                     color: T.text,
-                                    fontFamily: 'Cairo, sans-serif',
+                                    fontFamily: 'Cairo',
                                 }}
                             >{'SAR ' + (Number(location?.hour_charge) || 0).toFixed(3)}/hr</Text>
                         </View>
@@ -172,7 +172,7 @@ const ViewLocation = (props) => {
                             fontWeight: '800',
                             color: T.text,
                             marginTop: 20,
-                            fontFamily: 'Cairo, sans-serif',
+                            fontFamily: 'Cairo',
                         }}
                     >{lables['description']}</Text>
                     <Text
@@ -181,7 +181,7 @@ const ViewLocation = (props) => {
                             marginTop: 6,
                             lineHeight: 22,
                             fontSize: 14,
-                            fontFamily: 'Cairo, sans-serif',
+                            fontFamily: 'Cairo',
                         }}
                     >{lang === "en" ? location.location_description : location.location_description_ar}</Text>
                     <Button
@@ -200,7 +200,7 @@ const ViewLocation = (props) => {
                             shadowRadius: 14,
                             elevation: 8,
                         }}
-                        titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo, sans-serif' }}
+                        titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo' }}
                     />
                 </View>
             </ScrollView>

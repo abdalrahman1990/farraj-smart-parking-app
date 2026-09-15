@@ -84,8 +84,8 @@ const ViewPayment = (props) => {
 
 const DetailRow = ({ T, rtl, label, value, last }) => (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 12, borderBottomWidth: last ? 0 : 1, borderBottomColor: T.border }}>
-        <Text style={{ fontSize: 13.5, color: T.textSecondary, fontWeight: '600', fontFamily: 'Cairo, sans-serif', flexShrink: 0 }}>{label}</Text>
-        <Text numberOfLines={2} style={{ fontSize: 14, color: T.text, fontWeight: '700', fontFamily: 'Cairo, sans-serif', marginStart: 12, flexShrink: 1, textAlign: rtl ? 'left' : 'right' }}>{value}</Text>
+        <Text style={{ fontSize: 13.5, color: T.textSecondary, fontWeight: '600', fontFamily: 'Cairo', flexShrink: 0 }}>{label}</Text>
+        <Text numberOfLines={2} style={{ fontSize: 14, color: T.text, fontWeight: '700', fontFamily: 'Cairo', marginStart: 12, flexShrink: 1, textAlign: rtl ? 'left' : 'right' }}>{value}</Text>
     </View>
 );
 
@@ -111,13 +111,13 @@ const getStyles = (T) => StyleSheet.create({
         fontSize: 17,
         fontWeight: '800',
         marginTop: 10,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     amountBig: {
         fontSize: 26,
         fontWeight: '800',
         color: T.text,
         marginTop: 6,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
 });

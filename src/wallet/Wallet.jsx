@@ -1,6 +1,6 @@
 import { Button, Input, Text, ListItem } from '@rneui/themed';
 import React, { useState, useRef, useEffect } from 'react';
-import { View, ScrollView, Pressable, StyleSheet, Dimensions, I18nManager, RefreshControl } from 'react-native';
+import { View, ScrollView, Pressable, StyleSheet, Dimensions, I18nManager, RefreshControl, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import RBSheet from "react-native-raw-bottom-sheet";
 import { useStore } from 'react-redux';
@@ -67,12 +67,18 @@ const Wallet = (props) => {
                         elevation: 10,
                         overflow: 'hidden',
                     }}>
+                        <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: T.primary, opacity: 0.92 }} />
+                        <Image
+                            source={require('../assets/images/riyadh-skyline.png')}
+                            style={{ position: 'absolute', left: 0, right: 0, bottom: 0, width: '100%', height: 90, opacity: 0.32 }}
+                            resizeMode="cover"
+                        />
                         <View style={{ position: 'absolute', top: -50, right: -50, width: 160, height: 160, borderRadius: 80, backgroundColor: 'rgba(14,165,233,0.35)' }} />
                         <View style={{ position: 'absolute', bottom: -40, left: 30, width: 110, height: 110, borderRadius: 55, backgroundColor: 'rgba(255,255,255,0.08)' }} />
-                        <Text style={{ color: 'rgba(255,255,255,0.8)', fontSize: 14, fontWeight: '600' }}>
-                            {lables['balance']}
+                        <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: 14, fontWeight: '600', fontFamily: 'Cairo' }}>
+                            {lables['balance'] || (lang === 'ar' ? 'الرصيد' : 'Balance')}
                         </Text>
-                        <Text style={{ color: '#FFF', fontSize: 36, fontWeight: '800', marginTop: 6 }}>
+                        <Text style={{ color: '#FFF', fontSize: 36, fontWeight: '800', marginTop: 6, fontFamily: 'Cairo' }}>
                             SAR {wallet?.balance?.toFixed(3) || '0.000'}
                         </Text>
                         <Button
@@ -182,7 +188,7 @@ const Wallet = (props) => {
                         <ScrollView showsVerticalScrollIndicator={false}>
                         <View style={{ padding: 24 }}>
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
-                                <Text style={{ fontWeight: '800', fontSize: 22, color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+                                <Text style={{ fontWeight: '800', fontSize: 22, color: T.text, fontFamily: 'Cairo' }}>
                                     {lables['recharge']}
                                 </Text>
                                 <Pressable onPress={() => refRBSheet.current.close()} hitSlop={12}>
@@ -191,7 +197,7 @@ const Wallet = (props) => {
                                     </View>
                                 </Pressable>
                             </View>
-                            <Text style={{ fontSize: 13.5, color: T.textSecondary, marginBottom: 18, fontFamily: 'Cairo, sans-serif', textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                            <Text style={{ fontSize: 13.5, color: T.textSecondary, marginBottom: 18, fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                 {lables['recharge_hint'] || (lang === 'ar' ? 'اختر مبلغاً أو أدخل مبلغاً مخصصاً' : 'Pick an amount or enter a custom one')}
                             </Text>
 
@@ -220,7 +226,7 @@ const Wallet = (props) => {
                                             }}
                                             onPress={() => setAmount(val)}
                                         >
-                                            <Text style={{ fontWeight: '800', fontSize: 15, fontFamily: 'Cairo, sans-serif', color: selected ? '#FFFFFF' : T.text }}>
+                                            <Text style={{ fontWeight: '800', fontSize: 15, fontFamily: 'Cairo', color: selected ? '#FFFFFF' : T.text }}>
                                                 {val}
                                             </Text>
                                             <Text style={{ fontSize: 11, fontWeight: '600', color: selected ? 'rgba(255,255,255,0.85)' : T.textSecondary }}>
@@ -243,7 +249,7 @@ const Wallet = (props) => {
                                     const n = parseFloat(String(e).replace(/[^0-9.]/g, ''));
                                     setAmount(isNaN(n) ? '' : n);
                                 }}
-                                inputStyle={{ textAlign: 'center', fontWeight: '800', fontSize: 20, fontFamily: 'Cairo, sans-serif', color: T.text }}
+                                inputStyle={{ textAlign: 'center', fontWeight: '800', fontSize: 20, fontFamily: 'Cairo', color: T.text }}
                                 inputContainerStyle={{
                                     borderWidth: 1.5,
                                     borderColor: Number(amount) > 0 ? T.primary : T.border,
@@ -260,10 +266,10 @@ const Wallet = (props) => {
                                 backgroundColor: T.primaryBg, borderWidth: 1, borderColor: T.primary,
                                 borderRadius: 16, padding: 14, marginTop: 4,
                             }}>
-                                <Text style={{ fontSize: 14, fontWeight: '700', color: T.text, fontFamily: 'Cairo, sans-serif' }}>
+                                <Text style={{ fontSize: 14, fontWeight: '700', color: T.text, fontFamily: 'Cairo' }}>
                                     {lables['total_pay'] || (lang === 'ar' ? 'الإجمالي' : 'Total to pay')}
                                 </Text>
-                                <Text style={{ fontSize: 20, fontWeight: '800', color: T.primary, fontFamily: 'Cairo, sans-serif' }}>
+                                <Text style={{ fontSize: 20, fontWeight: '800', color: T.primary, fontFamily: 'Cairo' }}>
                                     SAR {(Number(amount) || 0).toFixed(3)}
                                 </Text>
                             </View>
@@ -287,7 +293,7 @@ const Wallet = (props) => {
                                     shadowRadius: 14,
                                     elevation: 8,
                                 }}
-                                titleStyle={{ fontWeight: '800', fontSize: 17, fontFamily: 'Cairo, sans-serif' }}
+                                titleStyle={{ fontWeight: '800', fontSize: 17, fontFamily: 'Cairo' }}
                             />
                         </View>
                         </ScrollView>
@@ -306,7 +312,7 @@ const getStyles = (T) => StyleSheet.create({
         color: T.text,
         marginBottom: 10,
         marginTop: 8,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     pressable: {
         borderRadius: 10,

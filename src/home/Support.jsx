@@ -49,7 +49,7 @@ const Support = (props) => {
                             fontWeight: '800',
                             fontSize: 20,
                             color: T.text,
-                            fontFamily: 'Cairo, sans-serif',
+                            fontFamily: 'Cairo',
                         }}
                     >
                         If need any support, please contact us on the below.
@@ -68,7 +68,7 @@ const Support = (props) => {
                                 fontWeight: '700',
                                 color: '#FFF',
                                 marginStart: 10,
-                                fontFamily: 'Cairo, sans-serif',
+                                fontFamily: 'Cairo',
                             }}>{links.support_email}</Text>
                         </Pressable>
                         <Pressable
@@ -84,7 +84,7 @@ const Support = (props) => {
                                 fontWeight: '700',
                                 color: '#FFF',
                                 marginStart: 10,
-                                fontFamily: 'Cairo, sans-serif',
+                                fontFamily: 'Cairo',
                             }}>Call us at {links.contact_phone}</Text>
                         </Pressable>
                     </View>

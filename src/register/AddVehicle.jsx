@@ -236,7 +236,7 @@ const AddVehicle = (props) => {
                         >
                             <Avatar source={{ uri: absolutizeUrl(item.image) }} size={40} rounded containerStyle={{ backgroundColor: T.background }} />
                             <ListItem.Content>
-                                <ListItem.Title style={{ fontFamily: 'Cairo, sans-serif', color: T.text, textAlign: rtl ? 'right' : 'left' }}>
+                                <ListItem.Title style={{ fontFamily: 'Cairo', color: T.text, textAlign: rtl ? 'right' : 'left' }}>
                                     {item.name}
                                 </ListItem.Title>
                             </ListItem.Content>
@@ -276,7 +276,7 @@ const AddVehicle = (props) => {
                                 <Text style={styles.flagText}>{item.code.slice(0, 2)}</Text>
                             </View>
                             <ListItem.Content>
-                                <ListItem.Title style={{ fontFamily: 'Cairo, sans-serif', color: T.text, textAlign: rtl ? 'right' : 'left' }}>
+                                <ListItem.Title style={{ fontFamily: 'Cairo', color: T.text, textAlign: rtl ? 'right' : 'left' }}>
                                     {rtl ? item.name_ar : item.name}
                                 </ListItem.Title>
                             </ListItem.Content>
@@ -294,7 +294,7 @@ const AddVehicle = (props) => {
 };
 
 const FieldLabel = ({ T, rtl, text }) => (
-    <Text style={{ fontSize: 13, fontWeight: '700', color: T.textSecondary, marginTop: 14, marginBottom: 6, marginHorizontal: 4, fontFamily: 'Cairo, sans-serif', textAlign: rtl ? 'right' : 'left' }}>
+    <Text style={{ fontSize: 13, fontWeight: '700', color: T.textSecondary, marginTop: 14, marginBottom: 6, marginHorizontal: 4, fontFamily: 'Cairo', textAlign: rtl ? 'right' : 'left' }}>
         {text}
     </Text>
 );
@@ -334,13 +334,13 @@ const getStyles = (T) => StyleSheet.create({
         color: '#FFFFFF',
         fontSize: fontSize(19),
         fontWeight: '800',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     heroSub: {
         color: 'rgba(255,255,255,0.85)',
         fontSize: 13,
         marginTop: 3,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     card: {
         backgroundColor: T.card,
@@ -362,7 +362,7 @@ const getStyles = (T) => StyleSheet.create({
         paddingVertical: 10,
     },
     rowTitle: {
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
         fontWeight: '700',
         fontSize: 15,
         color: T.text,
@@ -376,7 +376,7 @@ const getStyles = (T) => StyleSheet.create({
         color: '#FFFFFF',
         fontWeight: '800',
         fontSize: 14,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     brandPlaceholder: {
         width: 40, height: 40, borderRadius: 20,
@@ -397,7 +397,7 @@ const getStyles = (T) => StyleSheet.create({
         alignItems: 'center',
     },
     inputText: {
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
         fontSize: 15,
         color: T.text,
         textAlign: 'center',
@@ -426,7 +426,7 @@ const getStyles = (T) => StyleSheet.create({
     saveTitle: {
         fontWeight: '800',
         fontSize: 16,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     dialog: {
         backgroundColor: T.card,
@@ -442,7 +442,7 @@ const getStyles = (T) => StyleSheet.create({
         fontWeight: '800',
         color: T.text,
         marginBottom: 8,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Cairo',
     },
     dialogBtn: {
         borderRadius: 16,

@@ -19,7 +19,7 @@ export const screenHeader = ({ title, back, navigation, showHome = false }) => (
   headerTitleStyle: {
     fontWeight: '800',
     fontSize: fontSize(18),
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Cairo',
     color: HEADER_TINT,
   },
   ...(showHome

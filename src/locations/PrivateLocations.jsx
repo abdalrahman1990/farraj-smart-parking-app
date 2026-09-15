@@ -98,7 +98,7 @@ const PrivateLocations = (props) => {
                                 marginHorizontal: 14,
                                 flexShrink: 1,
                                 color: T.text,
-                                fontFamily: 'Cairo, sans-serif',
+                                fontFamily: 'Cairo',
                             }}
                         >{lang === "en" ? item.location.location_name : item.location.location_name_ar}</Text>
                     </View>
@@ -178,7 +178,7 @@ const PrivateLocations = (props) => {
                                 color: T.primary,
                                 fontWeight: '800',
                                 fontSize: 16,
-                                fontFamily: 'Cairo, sans-serif',
+                                fontFamily: 'Cairo',
                             }}
                         >
                             {lables['book_now']}
@@ -209,7 +209,7 @@ const PrivateLocations = (props) => {
                                 fontSize: 16,
                                 padding: 10,
                                 color: T.textSecondary,
-                                fontFamily: 'Cairo, sans-serif',
+                                fontFamily: 'Cairo',
                             }}
                         >{lables['no_locations_exist_for_search']}</Text>
                     }
