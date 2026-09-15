@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, I18nManager, SafeAreaView, Pressable, Dimensions } from 'react-native';
 import { useStore } from 'react-redux';
 import Geolocation from '@react-native-community/geolocation';
-import { Input, ListItem, Text } from '@rneui/themed';
+import { Input, Text } from '@rneui/themed';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Image } from '@rneui/base';
 import { getAllLocations } from '../apis/apis';
 import LocationImage from '../components/LocationImage';
 import BrandLoader from '../components/BrandLoader';
+import { FadeIn } from '../components/Entrance';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
+import { fontSize, isSmallScreen } from '../utils/responsive';
 
 const SearchLocations = (props) => {
     const T = useTheme();
@@ -67,139 +68,66 @@ const SearchLocations = (props) => {
             setLocations(searched);
         }
     }
-    const renderLocation = ({ item }) => {
+    const renderLocation = ({ item, index }) => {
+        const loc = item.location || {};
+        const spots = item.free_spots != null ? item.free_spots : 0;
+        const rtl = lang === 'ar';
+        const name = lang === "en" ? loc.location_name : loc.location_name_ar;
         return (
-            <View
-                style={{
-                marginBottom: 16,
-                marginHorizontal: 20,
-                backgroundColor: T.card,
-                borderRadius: RADIUS.xl,
-                borderWidth: 1,
-                borderColor: T.border,
-                ...SHADOW.card,
-                overflow: 'hidden',
-            }}
+            <FadeIn delay={Math.min(index, 8) * 60}>
+            <Pressable
+                onPress={() => props.navigation.navigate('ViewLocation', item)}
+                style={({ pressed }) => [{
+                    marginBottom: 12,
+                    marginHorizontal: isSmallScreen() ? 14 : 18,
+                    backgroundColor: T.card,
+                    borderRadius: 20,
+                    borderWidth: 1,
+                    borderColor: T.border,
+                    ...SHADOW.card,
+                    overflow: 'hidden',
+                    transform: [{ scale: pressed ? 0.98 : 1 }],
+                }]}
             >
-                <View
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        padding: 15,
-                        alignItems: 'center',
-
-                    }}
-                >
-
-                    <View
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                            flex: 1,
-                        }}
-                    >
-                        <LocationImage
-                            uri={item.location.location_image}
-                            name={lang === 'en' ? item.location.location_name : item.location.location_name_ar}
-                            style={{ width: 64, height: 64, borderRadius: 32 }}
-                        />
-                        <Text
-                            style={{
-                                fontWeight: '800',
-                                fontSize: 19,
-                                marginHorizontal: 14,
-                                flexShrink: 1,
-                                color: T.text,
-                                fontFamily: 'Cairo',
-                            }}
-                        >{lang === "en" ? item.location.location_name : item.location.location_name_ar}</Text>
+                <View style={{ position: 'relative', width: '100%', height: isSmallScreen() ? 118 : 132 }}>
+                    <LocationImage
+                        uri={loc.location_image}
+                        name={name}
+                        style={{ width: '100%', height: '100%' }}
+                    />
+                    <View style={{ position: 'absolute', top: 8, start: 8, flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(5,15,28,0.55)', paddingHorizontal: 9, paddingVertical: 5, borderRadius: 11, borderWidth: 1, borderColor: 'rgba(255,255,255,0.30)' }}>
+                        <Icon name="navigate-outline" size={11} color="#FFFFFF" />
+                        <Text style={{ color: '#FFFFFF', fontWeight: '700', fontSize: 10.5, fontFamily: 'Cairo', marginStart: 4 }}>{loc.distance != null ? `${loc.distance} KM` : '—'}</Text>
                     </View>
-                    <View
-                        style={{
-                            borderWidth: 1,
-                            borderTopWidth: 0,
-                            borderBottomWidth: 0,
-                            borderRightWidth: 0,
-                            paddingLeft: 10,
-                            borderColor: '#CCCC'
-                        }}
-                    >
-                        <View
-                            style={{
-                                borderWidth: 1,
-                                borderTopWidth: 0,
-                                borderRightWidth: 0,
-                                borderLeftWidth: 0,
-                                borderColor: '#CCC'
-                            }}
-                        >
-                            <Text
-                                style={{
-                                    paddingVertical: 5,
-                                    fontSize: 20,
-                                    fontWeight: 'bold'
-                                }}
-                            >
-                                {'SAR ' + (item.location.hour_charge != null ? item.location.hour_charge.toFixed(3) : '0.000')}
-                            </Text>
+                    <View style={{ position: 'absolute', top: 8, end: 8, flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(5,15,28,0.55)', paddingHorizontal: 9, paddingVertical: 5, borderRadius: 11, borderWidth: 1, borderColor: 'rgba(255,255,255,0.30)' }}>
+                        <View style={{ width: 7, height: 7, borderRadius: 3.5, backgroundColor: spots > 0 ? '#34D399' : '#F87171', marginEnd: 5 }} />
+                        <Text style={{ color: '#FFFFFF', fontWeight: '700', fontSize: 10.5, fontFamily: 'Cairo' }}>{spots} {lables['spots_available'] || lables['available'] || (rtl ? 'متاح' : 'free')}</Text>
+                    </View>
+                </View>
+                <View style={{ padding: 12 }}>
+                    <Text numberOfLines={1} style={{ color: T.text, fontWeight: '800', fontSize: fontSize(14.5), fontFamily: 'Cairo', textAlign: rtl ? 'right' : 'left' }}>{name}</Text>
+                    {!!loc.location_address && (
+                        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 3 }}>
+                            <Icon name="location-outline" size={12} color={T.textSecondary} />
+                            <Text numberOfLines={1} style={{ color: T.textSecondary, fontSize: 11.5, marginStart: 4, flexShrink: 1, fontFamily: 'Cairo', textAlign: rtl ? 'right' : 'left' }}>{loc.location_address}</Text>
                         </View>
-                        <View
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                            }}
-                        >
-                            <Image source={require('./../assets/images/pin.png')} style={{
-                                width: 20,
-                                height: 20,
-                            }} />
-                            <Text
-                                style={{
-                                    fontWeight: 'bold',
-                                    fontSize: 20,
-                                    paddingVertical: 5,
-                                }}
-                            >{(item.free_spots != null ? item.free_spots : 0) + ' ' + lables['available']}</Text>
+                    )}
+                    <View style={{ flexDirection: rtl ? 'row-reverse' : 'row', alignItems: 'center', marginTop: 9 }}>
+                        <View style={{ flexDirection: 'row', alignItems: 'baseline', backgroundColor: T.primaryBg, borderWidth: 1, borderColor: T.primary, paddingHorizontal: 10, paddingVertical: 5, borderRadius: 10 }}>
+                            <Text style={{ color: T.primary, fontWeight: '800', fontSize: 13.5, fontFamily: 'Cairo' }}>SAR {(loc.hour_charge != null ? Number(loc.hour_charge) : 0).toFixed(3)}</Text>
+                            <Text style={{ color: T.primary, fontSize: 10, fontWeight: '600', marginStart: 3, fontFamily: 'Cairo' }}>/{lables['hour'] || (rtl ? 'ساعة' : 'hr')}</Text>
+                        </View>
+                        <View style={{ flex: 1 }} />
+                        <Text style={{ fontSize: 11.5, fontWeight: '800', fontFamily: 'Cairo', color: spots > 0 ? T.success : T.error }}>
+                            {spots > 0 ? (rtl ? `${spots} شاغر` : `${spots} free`) : (rtl ? 'ممتلئ' : 'Full')}
+                        </Text>
+                        <View style={{ width: 38, height: 38, borderRadius: 19, backgroundColor: T.primary, alignItems: 'center', justifyContent: 'center', marginStart: 10, shadowColor: T.primary, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 8, elevation: 5 }}>
+                            <Icon name={rtl ? 'arrow-back' : 'arrow-forward'} size={18} color="#FFFFFF" />
                         </View>
                     </View>
                 </View>
-                <ListItem
-                    containerStyle={{
-                        backgroundColor: T.primary,
-                        paddingVertical: 12,
-                    }}
-                    onPress={() => {
-                        props.navigation.navigate('ViewLocation', item);
-                    }}
-                >
-                    <ListItem.Content>
-
-
-                    </ListItem.Content>
-                    <View
-                        style={{
-                            borderRadius: 12,
-                            backgroundColor: "#fff",
-                            paddingHorizontal: 14,
-                            paddingVertical: 6,
-                        }}
-                    >
-                        <Text
-                            style={{
-                                color: T.primary,
-                                fontWeight: '800',
-                                fontSize: 16,
-                                fontFamily: 'Cairo',
-                            }}
-                        >
-                            {lables['book_now']}
-                        </Text>
-                    </View>
-                </ListItem>
-            </View>
+            </Pressable>
+            </FadeIn>
         );
     }
     return (
@@ -216,29 +144,30 @@ const SearchLocations = (props) => {
                 }}
             >
                 <Input
-                    placeholder={lables['search']}
+                    placeholder={lables['search'] || (lang === 'ar' ? 'ابحث باسم الموقع…' : 'Search by location name…')}
                     leftIcon={
-                        <Icon name='search-outline' size={28} color={"#000"} />
+                        <Icon name='search-outline' size={22} color={T.primary} />
                     }
                     autoFocus
-                    containerStyle={{
-                        height: 100,
-                    }}
+                    containerStyle={{ paddingHorizontal: isSmallScreen() ? 14 : 18 }}
                     inputContainerStyle={{
                         backgroundColor: T.card,
-                        borderWidth: 1,
+                        borderWidth: 1.5,
                         borderColor: T.border,
-                        margin: 15,
-                        borderRadius: RADIUS.lg,
-                        padding: 8,
+                        borderBottomWidth: 1.5,
+                        marginTop: 12,
+                        borderRadius: 16,
+                        paddingHorizontal: 12,
+                        height: 50,
                     }}
                     returnKeyType='done'
                     inputStyle={{
-                        color: '#000',
-                        fontWeight: 'bold'
+                        color: T.text,
+                        fontWeight: '600',
+                        fontSize: 14,
+                        fontFamily: 'Cairo',
                     }}
-
-                    placeholderTextColor={'#CCC'}
+                    placeholderTextColor={T.inactive}
                     onChangeText={(e) => {
                         setSearching(true);
                         searchLocationsByName(e);

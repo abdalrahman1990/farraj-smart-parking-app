@@ -143,11 +143,11 @@ const getStyles = (T) => StyleSheet.create({
     imageWrap: {
         position: 'relative',
         width: '100%',
-        height: 190,
+        height: 160,
     },
     image: {
         width: '100%',
-        height: 190,
+        height: 160,
     },
     badge: {
         position: 'absolute',
@@ -177,7 +177,7 @@ const getStyles = (T) => StyleSheet.create({
     badgeText: {
         color: '#FFFFFF',
         fontWeight: '700',
-        fontSize: 12,
+        fontSize: 11,
         fontFamily: 'Cairo',
     },
     floatPanel: {
@@ -204,12 +204,12 @@ const getStyles = (T) => StyleSheet.create({
     title: {
         color: T.text,
         fontWeight: '800',
-        fontSize: 17,
+        fontSize: 15,
         fontFamily: 'Cairo',
     },
     subtitle: {
         color: T.textSecondary,
-        fontSize: 12.5,
+        fontSize: 11.5,
         marginStart: 5,
         flexShrink: 1,
         fontFamily: 'Cairo',
@@ -232,7 +232,7 @@ const getStyles = (T) => StyleSheet.create({
     price: {
         color: T.primary,
         fontWeight: '800',
-        fontSize: 16,
+        fontSize: 14,
         fontFamily: 'Cairo',
     },
     perHour: {
@@ -243,12 +243,12 @@ const getStyles = (T) => StyleSheet.create({
         fontFamily: 'Cairo',
     },
     freeText: {
-        fontSize: 13,
+        fontSize: 12,
         fontWeight: '800',
         fontFamily: 'Cairo',
     },
     goBtn: {
-        width: 48, height: 48, borderRadius: 24,
+        width: 42, height: 42, borderRadius: 21,
         backgroundColor: T.primary,
         alignItems: 'center',
         justifyContent: 'center',
