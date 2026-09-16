@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete Account – Smart Parking</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;max-width:720px;margin:0 auto;padding:24px;color:#0F172A;line-height:1.7;background:#F4F6FB}
+.wrap{background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:28px;box-shadow:0 4px 16px rgba(8,148,158,.08)}
+h1{color:#08949E;margin-top:0}h2{color:#066F77}
+label{display:block;font-weight:700;font-size:13px;margin:14px 0 5px}
+input,textarea{width:100%;box-sizing:border-box;border:1.5px solid #E2E8F0;border-radius:12px;padding:11px 13px;font-size:15px;font-family:inherit;background:#F8FAFC;color:#0F172A}
+button{background:#08949E;color:#fff;border:0;border-radius:14px;padding:14px 22px;font-size:16px;font-weight:800;width:100%;margin-top:18px;cursor:pointer}
+button:active{transform:scale(.98)}
+.note{background:#D7F0F2;border:1px solid #08949E;border-radius:12px;padding:12px 16px;margin-top:18px}
+footer{margin-top:20px;color:#64748B;font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Delete Your Account</h1>
+<p>You can delete your <strong>Smart Parking</strong> account and all associated data (profile, vehicles, bookings, wallet history) in either way:</p>
+<h2>Option 1 – In the app (fastest)</h2>
+<p>Open the app → <strong>Profile → Delete Account</strong> → confirm. Your data is removed immediately.</p>
+<h2>Option 2 – Request by web</h2>
+<p>Fill the form below. It opens your email app with a pre-written deletion request to our support team. We process requests within <strong>7 days</strong> and confirm by email.</p>
+<form onsubmit="return sendRequest(event)">
+<label for="name">Full name</label>
+<input id="name" required placeholder="Your name">
+<label for="email">Account email</label>
+<input id="email" type="email" required placeholder="name@mail.com">
+<label for="phone">Phone (optional)</label>
+<input id="phone" placeholder="05xxxxxxxx">
+<label for="reason">Reason (optional)</label>
+<textarea id="reason" rows="3" placeholder="Why are you leaving?"></textarea>
+<button type="submit">Send deletion request</button>
+</form>
+<div class="note">Prefer email directly? Write to <strong>support@nextgen6th.com</strong> with subject “Delete my Smart Parking account” and include your account email.</div>
+<hr>
+<p dir="rtl" lang="ar">يمكنك حذف حسابك نهائيًا من التطبيق: الملف الشخصي ← حذف الحساب، أو املأ النموذج أعلاه وسيصلك تأكيد بالبريد خلال ٧ أيام.</p>
+</div>
+<footer>© 2026 Smart Parking – com.bluebyte.smart_parking</footer>
+<script>
+function sendRequest(e){
+e.preventDefault();
+var n=document.getElementById('name').value.trim();
+var m=document.getElementById('email').value.trim();
+var p=document.getElementById('phone').value.trim();
+var r=document.getElementById('reason').value.trim();
+var body='Hello Smart Parking team,%0D%0A%0D%0APlease delete my account and all associated data.%0D%0A%0D%0AName: '+encodeURIComponent(n)+'%0D%0AEmail: '+encodeURIComponent(m)+'%0D%0APhone: '+encodeURIComponent(p)+'%0D%0AReason: '+encodeURIComponent(r);
+window.location.href='mailto:support@nextgen6th.com?subject='+encodeURIComponent('Delete my Smart Parking account')+'&body='+body;
+return false;
+}
+</script>
+</body>
+</html>
