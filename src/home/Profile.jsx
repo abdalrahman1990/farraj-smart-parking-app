@@ -11,9 +11,11 @@ import { useTheme } from '../utils/useTheme';
 import { restartApp } from '../utils/restartApp';
 import { resetPassword } from './../apis/apis';
 import { Dialog } from '@rneui/themed';
+import { isSmallScreen } from '../utils/responsive';
 const Profile = (props) => {
     const T = useTheme();
     const style = getStyles(T);
+    const compact = isSmallScreen();
     useFocusEffect(() => {
         props.navigation.getParent().setOptions({
             headerTitle: lables['profile']
@@ -79,27 +81,27 @@ const Profile = (props) => {
                     <View style={{ position: 'absolute', top: -60, right: -60, width: 180, height: 180, borderRadius: 90, backgroundColor: 'rgba(8,148,158,0.18)' }} />
                     <View style={{ alignSelf: 'center' }}>
                         <BrandLogo
-                            size={100}
-                            radius={28}
+                            size={compact ? 86 : 100}
+                            radius={compact ? 24 : 28}
                             padding={0}
                             borderColor="rgba(255,255,255,0.72)"
                         />
                     </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14 }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14, paddingHorizontal: 18, maxWidth: '100%' }}>
                         <Icon name='person' size={18} color="rgba(255,255,255,0.9)" />
-                        <Text style={{ color: '#FFF', fontSize: 22, fontWeight: '700', marginStart: 8 }}>
+                        <Text numberOfLines={1} style={{ color: '#FFF', fontSize: compact ? 19 : 22, fontWeight: '700', marginStart: 8, flexShrink: 1, fontFamily: 'Cairo' }}>
                             {user.name}
                         </Text>
                     </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 6 }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 6, paddingHorizontal: 18, maxWidth: '100%' }}>
                         <Icon name='mail' size={16} color="rgba(255,255,255,0.75)" />
-                        <Text style={{ color: 'rgba(255,255,255,0.85)', fontSize: 14, marginStart: 8 }}>
+                        <Text numberOfLines={1} style={{ color: 'rgba(255,255,255,0.85)', fontSize: compact ? 12.5 : 14, marginStart: 8, flexShrink: 1, fontFamily: 'Cairo' }}>
                             {user.email}
                         </Text>
                     </View>
                 </View>
 
-                <View style={{ marginTop: -30, paddingHorizontal: 16 }}>
+                <View style={{ marginTop: -30, paddingHorizontal: compact ? 12 : 16 }}>
                     <View style={style.card}>
                         <ListItem containerStyle={style.listItemInner}>
                             <Icon name='call-outline' size={22} color={T.primary} />

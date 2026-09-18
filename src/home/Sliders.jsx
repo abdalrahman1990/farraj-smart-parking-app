@@ -13,20 +13,23 @@ const RIYADH_IMAGES = [
 
 const HowToUseSlide = ({ lables }) => {
     const T = useTheme();
+    const screenWidth = Dimensions.get('window').width;
+    const itemWidth = Math.max(280, screenWidth - 32);
+    const compact = screenWidth < 360;
     const steps = [
         { icon: 'search', label: lables['nearby_parking'] || 'Find a spot' },
         { icon: 'bookmark-outline', label: lables['book_now'] || 'Book' },
         { icon: 'wallet-outline', label: lables['wallet'] || 'Pay' },
     ];
-    const h = Dimensions.get('screen').width > 600 ? 230 : 170;
+    const h = screenWidth > 600 ? 230 : compact ? 154 : 170;
     return (
         <View
             style={{
-                width: Dimensions.get('screen').width - 20,
+                width: itemWidth,
                 height: h,
                 borderRadius: 24,
                 backgroundColor: T.primary,
-                padding: 20,
+                padding: compact ? 16 : 20,
                 justifyContent: 'center',
                 overflow: 'hidden',
             }}
@@ -42,7 +45,7 @@ const HowToUseSlide = ({ lables }) => {
                     backgroundColor: 'rgba(8,148,158,0.35)',
                 }}
             />
-            <Text style={{ color: '#FFFFFF', fontSize: 18, fontWeight: '800', marginBottom: 14 }}>
+            <Text numberOfLines={1} style={{ color: '#FFFFFF', fontSize: compact ? 16 : 18, fontWeight: '800', marginBottom: 14 }}>
                 {lables['how_parking_work'] || 'How to use KIC'}
             </Text>
             <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
@@ -50,18 +53,18 @@ const HowToUseSlide = ({ lables }) => {
                     <View key={i} style={{ alignItems: 'center', flex: 1 }}>
                         <View
                             style={{
-                                width: 52,
-                                height: 52,
-                                borderRadius: 26,
+                                width: compact ? 44 : 52,
+                                height: compact ? 44 : 52,
+                                borderRadius: compact ? 22 : 26,
                                 backgroundColor: 'rgba(255,255,255,0.18)',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 marginBottom: 8,
                             }}
                         >
-                            <Icon name={s.icon} size={26} color="#FFFFFF" />
+                            <Icon name={s.icon} size={compact ? 22 : 26} color="#FFFFFF" />
                         </View>
-                        <Text style={{ color: '#FFFFFF', fontSize: 12, fontWeight: '600', textAlign: 'center' }}>{s.label}</Text>
+                        <Text numberOfLines={2} style={{ color: '#FFFFFF', fontSize: compact ? 11 : 12, fontWeight: '600', textAlign: 'center' }}>{s.label}</Text>
                     </View>
                 ))}
             </View>
@@ -77,6 +80,9 @@ const Sliders = () => {
         ...RIYADH_IMAGES.map((uri) => ({ uri })),
         { info: true },
     ];
+    const screenWidth = Dimensions.get('window').width;
+    const itemWidth = Math.max(280, screenWidth - 32);
+    const slideHeight = screenWidth > 600 ? 230 : screenWidth < 360 ? 154 : 170;
     const [activeIndex, setActiveIndex] = useState(0);
     const ref = useRef();
     const renderItem = ({ item }) => {
@@ -88,22 +94,23 @@ const Sliders = () => {
                 <Image
                     source={{ uri: item.uri }}
                     style={{
-                        width: Dimensions.get('screen').width - 20,
-                        height: Dimensions.get('screen').width > 600 ? 230 : 170,
+                        width: itemWidth,
+                        height: slideHeight,
                         borderRadius: 24,
                     }}
+                    resizeMode="cover"
                 />
             </View>
         );
     }
     return (
-        <View>
+        <View style={{ alignItems: 'center' }}>
             <Carousel
                 ref={ref}
                 data={sliders}
                 renderItem={renderItem}
-                sliderWidth={Dimensions.get('screen').width}
-                itemWidth={Dimensions.get('screen').width - 20}
+                sliderWidth={screenWidth}
+                itemWidth={itemWidth}
                 hasParallaxImages={true}
                 inactiveSlideScale={0.94}
                 inactiveSlideOpacity={0.7}

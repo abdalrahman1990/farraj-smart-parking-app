@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, Platform, View } from 'react-native';
-import { SHADOW } from '../theme/tokens';
 
 const STATIC_LOGO = require('../assets/images/smart-parking-logo.png');
 const ANIMATED_LOGO = require('../assets/images/logo.gif');
@@ -21,21 +20,34 @@ const BrandLogo = ({
       height: size,
       borderRadius: radius,
       backgroundColor,
-      borderWidth: 1,
-      borderColor,
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding,
-      overflow: 'hidden',
-      ...(shadow ? SHADOW.card : {}),
-      ...(Platform.OS === 'android' ? { elevation: shadow ? 8 : 0 } : {}),
+      shadowColor: '#0F172A',
+      shadowOffset: { width: 0, height: 10 },
+      shadowOpacity: shadow ? 0.22 : 0,
+      shadowRadius: 18,
+      elevation: shadow ? 10 : 0,
     }}
   >
-    <Image
-      source={animated ? ANIMATED_LOGO : STATIC_LOGO}
-      style={{ width: '100%', height: '100%', borderRadius: Math.max(radius - padding - 1, 0) }}
-      resizeMode={resizeMode || (animated ? 'contain' : 'cover')}
-    />
+    <View
+      style={{
+        width: '100%',
+        height: '100%',
+        borderRadius: radius,
+        backgroundColor,
+        borderWidth: 1,
+        borderColor,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding,
+        overflow: 'hidden',
+        ...(Platform.OS === 'android' ? { backgroundColor } : {}),
+      }}
+    >
+      <Image
+        source={animated ? ANIMATED_LOGO : STATIC_LOGO}
+        style={{ width: '100%', height: '100%', borderRadius: Math.max(radius - padding - 1, 0) }}
+        resizeMode={resizeMode || (animated ? 'contain' : 'cover')}
+      />
+    </View>
   </View>
 );
 

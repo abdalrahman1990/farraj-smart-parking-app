@@ -17,6 +17,8 @@ import { fontSize, isSmallScreen } from '../utils/responsive';
 
 const { width } = Dimensions.get('window');
 const isSmall = width < 360;
+const pagePadding = isSmall ? 16 : 20;
+const quickGap = isSmall ? 10 : 12;
 
 const QuickAction = ({ icon, title, subtitle, onPress, accent }) => {
     const T = useTheme();
@@ -26,11 +28,11 @@ const QuickAction = ({ icon, title, subtitle, onPress, accent }) => {
         style={({ pressed, hovered }) => ({
             flex: 1,
             flexGrow: 1,
-            flexBasis: isSmall ? '30%' : 0,
-            minWidth: isSmall ? 96 : 0,
+            flexBasis: isSmall ? '47%' : 0,
+            minWidth: isSmall ? Math.floor((width - pagePadding * 2 - quickGap) / 2) : 0,
             backgroundColor: T.card,
             borderRadius: RADIUS.xl,
-            padding: 16,
+            padding: isSmall ? 13 : 16,
             borderWidth: 1,
             borderColor: hovered ? accent : T.border,
             transform: [{ scale: pressed ? 0.96 : 1 }],
@@ -59,7 +61,7 @@ const QuickAction = ({ icon, title, subtitle, onPress, accent }) => {
         >
             <Icon name={icon} size={23} color="#FFFFFF" />
         </View>
-        <Text style={{ fontSize: 14, fontWeight: '700', color: T.text, fontFamily: 'Cairo' }}>
+        <Text numberOfLines={1} style={{ fontSize: isSmall ? 13 : 14, fontWeight: '700', color: T.text, fontFamily: 'Cairo' }}>
             {title}
         </Text>
         <Text
@@ -118,7 +120,7 @@ const Dashboard = (props) => {
                         borderBottomRightRadius: 32,
                         paddingTop: 20,
                         paddingBottom: 26,
-                        paddingHorizontal: 20,
+                        paddingHorizontal: pagePadding,
                         overflow: 'hidden',
                     }}
                 >
@@ -186,13 +188,14 @@ const Dashboard = (props) => {
                                     flexDirection: 'row',
                                     alignItems: 'center',
                                     backgroundColor: 'rgba(255,255,255,0.16)',
-                                    paddingHorizontal: isSmall ? 10 : 14,
+                                    paddingHorizontal: isSmall ? 9 : 14,
                                     paddingVertical: 9,
                                     borderRadius: 15,
+                                    maxWidth: isSmall ? 132 : 180,
                                 }}
                             >
                                 <Icon name='wallet-outline' size={isSmall ? 15 : 17} color="#FFFFFF" />
-                                <Text style={{ marginStart: 6, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', fontSize: isSmall ? 13 : 14 }}>
+                                <Text numberOfLines={1} style={{ marginStart: 6, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', fontSize: isSmall ? 12.5 : 14, flexShrink: 1 }}>
                                     {(Number(balance) || 0).toFixed(3)}
                                 </Text>
                             </Pressable>
@@ -222,7 +225,7 @@ const Dashboard = (props) => {
                             borderColor="rgba(255,255,255,0.72)"
                         />
                         <View style={{ marginStart: 13, flex: 1 }}>
-                            <Text style={{ fontSize: 13, color: 'rgba(255,255,255,0.80)', fontFamily: 'Cairo' }}>
+                            <Text numberOfLines={1} style={{ fontSize: 13, color: 'rgba(255,255,255,0.80)', fontFamily: 'Cairo' }}>
                                 {lang === 'ar' ? 'مرحبًا بعودتك 👋' : 'Welcome back 👋'}
                             </Text>
                             <Text numberOfLines={1} style={{ fontSize: isSmall ? 18 : 20, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', marginTop: 2 }}>
@@ -238,7 +241,7 @@ const Dashboard = (props) => {
                 </View>
 
                 {/* Quick actions grid */}
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 20, marginTop: 12, gap: 12 }}>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: pagePadding, marginTop: 12, gap: quickGap }}>
                     <QuickAction
                         icon="bookmark"
                         title={lang === 'ar' ? 'حجوزاتك' : (lables['current_parkings'] || 'Bookings')}
@@ -263,12 +266,12 @@ const Dashboard = (props) => {
                 </View>
 
                 {/* Nearby section */}
-                <View style={{ paddingHorizontal: 20, marginTop: 22, marginBottom: 6, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <Text style={{ fontSize: 17, fontWeight: '800', color: T.text, fontFamily: 'Cairo' }}>
+                <View style={{ paddingHorizontal: pagePadding, marginTop: 22, marginBottom: 6, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
+                    <Text numberOfLines={1} style={{ fontSize: isSmall ? 15 : 17, fontWeight: '800', color: T.text, fontFamily: 'Cairo', flex: 1 }}>
                         {lang === 'ar' ? '📍 مواقف قريبة منك' : '📍 Nearby parking'}
                     </Text>
                     <Pressable onPress={() => props.navigation.navigate('SearchLocations')}>
-                        <Text style={{ fontSize: 13, fontWeight: '700', color: T.primaryLight, fontFamily: 'Cairo' }}>
+                        <Text numberOfLines={1} style={{ fontSize: isSmall ? 12 : 13, fontWeight: '700', color: T.primaryLight, fontFamily: 'Cairo' }}>
                             {lang === 'ar' ? 'عرض الكل ←' : 'See all →'}
                         </Text>
                     </Pressable>

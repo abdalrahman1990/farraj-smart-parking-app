@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, I18nManager, StyleSheet, Dimensions, Pressable, Alert } from 'react-native';
+import { View, ScrollView, I18nManager, StyleSheet, Pressable, Alert } from 'react-native';
 import { useStore } from 'react-redux';
 import { Text, ListItem, Avatar, Button, Dialog, Overlay } from '@rneui/themed';
 import { getVehicles } from '../apis/apis';
@@ -11,9 +11,11 @@ import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
 import { toast } from '../utils/toastBus';
 import { tmsg } from '../utils/msg';
+import { isSmallScreen, screenHeight } from '../utils/responsive';
 const BookParking = (props) => {
     const T = useTheme();
-    const styles = getStyles(T);
+    const compact = isSmallScreen();
+    const styles = getStyles(T, compact);
     const store = useStore();
     const lables = store.getState().app.trans;
     const user = store.getState().app.user;
@@ -235,7 +237,7 @@ const BookParking = (props) => {
                         </View>
                         <View style={{ flex: 1, marginStart: 10 }}>
                             <Text style={{ fontSize: 15, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo' }}>{lables['date'] || (lang === 'ar' ? 'تاريخ الحجز' : 'Booking date')}</Text>
-                            <Text style={{ fontSize: 12.5, color: 'rgba(255,255,255,0.85)', fontFamily: 'Cairo', marginTop: 1 }}>{bookingDate} • {lables['select'] || (lang === 'ar' ? 'اختر اليوم' : 'Pick a day')}</Text>
+                            <Text numberOfLines={1} style={{ fontSize: compact ? 11.5 : 12.5, color: 'rgba(255,255,255,0.85)', fontFamily: 'Cairo', marginTop: 1 }}>{bookingDate} • {lables['select'] || (lang === 'ar' ? 'اختر اليوم' : 'Pick a day')}</Text>
                         </View>
                         <View style={{ backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: 12, paddingHorizontal: 12, paddingVertical: 8, borderWidth: 1, borderColor: 'rgba(255,255,255,0.35)' }}>
                             <Text style={{ color: '#FFF', fontWeight: '800', fontSize: 14, fontFamily: 'Cairo' }}>{String(bookingDate).slice(8, 10)}/{String(bookingDate).slice(5, 7)}</Text>
@@ -285,15 +287,17 @@ const BookParking = (props) => {
                 <View
                     style={{
                         flexDirection: 'row',
+                        flexWrap: compact ? 'wrap' : 'nowrap',
                         justifyContent: 'space-between',
                         marginTop: 20,
-                        paddingHorizontal: 18,
-                        gap: 12,
+                        paddingHorizontal: compact ? 14 : 18,
+                        gap: compact ? 10 : 12,
                     }}
                 >
                     <View
                         style={{
                             flex: 1,
+                            minWidth: compact ? '100%' : 0,
                         }}
                     >
                         <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo' }}>{lables['start_time']}</Text>
@@ -302,15 +306,16 @@ const BookParking = (props) => {
                                 setShowStartTimeDialog(true);
                             }}
                         >
-                            <Text style={{ fontWeight: '800', fontSize: 20, marginStart: 10, marginEnd: 10, color: T.text, fontFamily: 'Cairo' }}>
+                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 8, marginEnd: 8, color: T.text, fontFamily: 'Cairo', flexShrink: 1 }}>
                                 {startTime}
                             </Text>
-                            <Icon name='time-outline' size={28} color={T.primaryLight} />
+                            <Icon name='time-outline' size={compact ? 24 : 28} color={T.primaryLight} />
                         </Pressable>
                     </View>
                     <View
                         style={{
                             flex: 1,
+                            minWidth: compact ? '100%' : 0,
                         }}
                     >
                         <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo' }}>{lables['end_time']}</Text>
@@ -320,10 +325,10 @@ const BookParking = (props) => {
                                 setShowEndTimeDialog(true);
                             }}
                         >
-                            <Text style={{ fontWeight: '800', fontSize: 20, marginStart: 10, marginEnd: 10, color: T.text, fontFamily: 'Cairo' }}>
+                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 8, marginEnd: 8, color: T.text, fontFamily: 'Cairo', flexShrink: 1 }}>
                                 {endTime}
                             </Text>
-                            <Icon name='time-outline' size={28} color={T.primaryLight} />
+                            <Icon name='time-outline' size={compact ? 24 : 28} color={T.primaryLight} />
                         </Pressable>
                     </View>
                 </View>
@@ -397,7 +402,8 @@ const BookParking = (props) => {
                 <Dialog
                     isVisible={showVehicleDialog}
                     overlayStyle={{
-                        height: Dimensions.get('screen').height - 450,
+                        maxHeight: Math.max(260, screenHeight() - 220),
+                        width: '88%',
                         backgroundColor: T.card,
                         borderRadius: RADIUS.xl,
                         borderWidth: 1,
@@ -562,13 +568,13 @@ const ConfirmRow = ({ label, value, T, last, rtl }) => (
         <Text numberOfLines={1} style={{ color: T.text, fontSize: 14, fontWeight: '800', fontFamily: 'Cairo', marginStart: 12, flexShrink: 1, textAlign: rtl ? 'left' : 'right' }}>{value ?? '-'}</Text>
     </View>
 );
-const getStyles = (T) => StyleSheet.create({
+const getStyles = (T, compact = false) => StyleSheet.create({
     dateHero: {
         backgroundColor: T.primary,
         borderRadius: RADIUS.xl,
-        marginHorizontal: 18,
+        marginHorizontal: compact ? 14 : 18,
         marginTop: 16,
-        padding: 16,
+        padding: compact ? 14 : 16,
         borderWidth: 1,
         borderColor: T.primary,
         shadowColor: T.primary,
@@ -581,10 +587,10 @@ const getStyles = (T) => StyleSheet.create({
     calendarWrap: {
         backgroundColor: T.card,
         borderRadius: RADIUS.xl,
-        margin: 18,
+        margin: compact ? 14 : 18,
         marginBottom: 4,
         marginTop: 12,
-        padding: 10,
+        padding: compact ? 6 : 10,
         borderWidth: 1.5,
         borderColor: T.primary,
         ...SHADOW.card,
@@ -596,7 +602,7 @@ const getStyles = (T) => StyleSheet.create({
         borderWidth: 1,
         borderColor: T.border,
         ...SHADOW.card,
-        margin: 18,
+        margin: compact ? 14 : 18,
         marginTop: 14,
         padding: 6,
         overflow: 'hidden',
@@ -614,6 +620,7 @@ const getStyles = (T) => StyleSheet.create({
         borderWidth: 1,
         borderColor: T.border,
         ...SHADOW.card,
-        padding: 14,
+        padding: compact ? 12 : 14,
+        minHeight: compact ? 58 : 64,
     }
 });
