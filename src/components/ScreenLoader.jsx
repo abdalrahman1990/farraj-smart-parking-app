@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from 'react';
-import { View, Image, Animated, Easing } from 'react-native';
+import { View, Animated, Easing } from 'react-native';
 import { Text } from '@rneui/themed';
 import { useTheme } from '../utils/useTheme';
-import { RADIUS, SHADOW } from '../theme/tokens';
 import { fontSize } from '../utils/responsive';
 import BrandLoader from './BrandLoader';
+import BrandLogo from './BrandLogo';
 
 const ScreenLoader = ({ message }) => {
     const T = useTheme();
@@ -28,19 +28,12 @@ const ScreenLoader = ({ message }) => {
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 32 }}>
             <Animated.View
                 style={{
-                    width: 132, height: 132, borderRadius: 32,
-                    backgroundColor: '#FFFFFF',
-                    borderWidth: 1, borderColor: T.border,
-                    alignItems: 'center', justifyContent: 'center', padding: 16,
+                    width: 132, height: 132,
+                    alignItems: 'center', justifyContent: 'center',
                     transform: [{ scale: tileScale }],
-                    ...SHADOW.card,
                 }}
             >
-                <Image
-                    source={require('../assets/images/smart-parking-logo.png')}
-                    style={{ width: 88, height: 88 }}
-                    resizeMode="contain"
-                />
+                <BrandLogo size={132} animated radius={32} padding={0} borderColor={T.border} />
                 <View style={{ position: 'absolute', bottom: 10 }}>
                     <BrandLoader size={22} color={T.primary} />
                 </View>

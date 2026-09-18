@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, ScrollView, StyleSheet, I18nManager, Alert, Image } from 'react-native';
 import { useStore } from 'react-redux';
 import { ListItem, Text, Input, Button } from '@rneui/themed';
-import UserAvatar from '../components/UserAvatar';
+import BrandLogo from '../components/BrandLogo';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -78,7 +78,12 @@ const Profile = (props) => {
                     />
                     <View style={{ position: 'absolute', top: -60, right: -60, width: 180, height: 180, borderRadius: 90, backgroundColor: 'rgba(8,148,158,0.18)' }} />
                     <View style={{ alignSelf: 'center' }}>
-                        <UserAvatar uri={user.avatar} size={100} borderWidth={4} borderColor="rgba(255,255,255,0.6)" />
+                        <BrandLogo
+                            size={100}
+                            radius={28}
+                            padding={0}
+                            borderColor="rgba(255,255,255,0.72)"
+                        />
                     </View>
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14 }}>
                         <Icon name='person' size={18} color="rgba(255,255,255,0.9)" />

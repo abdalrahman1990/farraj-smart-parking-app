@@ -22,6 +22,7 @@ import { useTheme, useIsDark } from '../utils/useTheme';
 import { getTranslations } from '../apis/apis';
 import { drawerBus } from '../utils/drawerBus';
 import { fontSize } from '../utils/responsive';
+import BrandLogo from '../components/BrandLogo';
 
 const NAV = [
   { key: 'Home', icon: 'grid-outline', activeIcon: 'grid', labelKey: 'home', nav: 'Home' },
@@ -99,13 +100,7 @@ const Sidemenu = (props) => {
           <View style={styles.skylineShade} />
           <View style={styles.orbA} />
           <View style={[styles.brandRow, { flexDirection: isRTL ? "row-reverse" : "row" }]}>
-            <View style={[styles.logoTile, { backgroundColor: '#FFFFFF', padding: 6 }]}>
-              <Image
-                source={require('./../assets/images/smart-parking-logo.png')}
-                style={styles.brandLogo}
-                resizeMode="contain"
-              />
-            </View>
+            <BrandLogo size={68} radius={20} padding={0} shadow={false} borderColor="rgba(255,255,255,0.72)" />
             <View style={styles.brandText}>
               <Text style={styles.brandName}>
                 {lang === 'ar' ? 'المواقف الذكية' : 'Smart Parking'}

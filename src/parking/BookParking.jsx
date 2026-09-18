@@ -31,6 +31,59 @@ const BookParking = (props) => {
     const [showConfirmDialog, setShowConfirmDialog] = useState(false);
     const [bookingDate, setBookingDate] = useState(new Date().toISOString().split('T')[0]);
     const lang = I18nManager.isRTL ? "ar" : "en";
+    const timerPickerLabels = {
+        hour: lang === 'ar' ? 'س' : 'h',
+        minute: lang === 'ar' ? 'د' : 'm',
+    };
+    const timerPickerStyles = {
+        theme: "light",
+        backgroundColor: T.card,
+        textColor: T.text,
+        primaryColor: T.primary,
+        confirmButtonColor: T.primary,
+        cancelButtonColor: T.textSecondary,
+        pickerContainer: {
+            marginRight: 0,
+            alignSelf: 'center',
+            direction: 'ltr',
+        },
+        pickerItemContainer: {
+            width: 96,
+            height: 54,
+        },
+        pickerItem: {
+            fontSize: 28,
+            fontFamily: 'Cairo',
+            fontWeight: '800',
+            color: T.text,
+            textAlign: 'center',
+        },
+        pickerLabelContainer: {
+            right: 6,
+            minWidth: 20,
+            alignItems: 'center',
+        },
+        pickerLabel: {
+            fontSize: 13,
+            lineHeight: 18,
+            marginTop: 2,
+            fontFamily: 'Cairo',
+            fontWeight: '800',
+            color: T.primary,
+            textAlign: 'center',
+        },
+        modalTitle: {
+            color: T.text,
+            fontFamily: 'Cairo',
+            fontWeight: '800',
+            textAlign: 'center',
+            writingDirection: lang === 'ar' ? 'rtl' : 'ltr',
+        },
+        button: {
+            fontFamily: 'Cairo',
+            fontWeight: '800',
+        },
+    };
     const formatTime = ({
         hours,
         minutes,
@@ -447,8 +500,8 @@ const BookParking = (props) => {
                 </Dialog>
                 <TimerPickerModal
                     visible={showStartTimeDialog}
-                    hourLabel={lang === 'ar' ? ' ساعة' : ' Hr'}
-                    minuteLabel={lang === 'ar' ? ' دقيقة' : ' Min'}
+                    hourLabel={timerPickerLabels.hour}
+                    minuteLabel={timerPickerLabels.minute}
                     hideSeconds
                     minuteInterval={5}
                     setIsVisible={setShowStartTimeDialog}
@@ -469,19 +522,12 @@ const BookParking = (props) => {
                     confirmButtonText={lables['confirm'] || (lang === 'ar' ? 'تأكيد' : 'Confirm')}
                     cancelButtonText={lables['cancel'] || (lang === 'ar' ? 'إلغاء' : 'Cancel')}
                     closeOnOverlayPress
-                    styles={{
-                        theme: "light",
-                        backgroundColor: T.card,
-                        textColor: T.text,
-                        primaryColor: T.primary,
-                        confirmButtonColor: T.primary,
-                        cancelButtonColor: T.textSecondary,
-                    }}
+                    styles={timerPickerStyles}
                 />
                 <TimerPickerModal
                     visible={showEndTimeDialog}
-                    hourLabel={lang === 'ar' ? ' ساعة' : ' Hr'}
-                    minuteLabel={lang === 'ar' ? ' دقيقة' : ' Min'}
+                    hourLabel={timerPickerLabels.hour}
+                    minuteLabel={timerPickerLabels.minute}
                     hideSeconds
                     minuteInterval={5}
                     setIsVisible={setShowEndTimeDialog}
@@ -501,14 +547,7 @@ const BookParking = (props) => {
                     confirmButtonText={lables['confirm'] || (lang === 'ar' ? 'تأكيد' : 'Confirm')}
                     cancelButtonText={lables['cancel'] || (lang === 'ar' ? 'إلغاء' : 'Cancel')}
                     closeOnOverlayPress
-                    styles={{
-                        theme: "light",
-                        backgroundColor: T.card,
-                        textColor: T.text,
-                        primaryColor: T.primary,
-                        confirmButtonColor: T.primary,
-                        cancelButtonColor: T.textSecondary,
-                    }}
+                    styles={timerPickerStyles}
                 />
             </ScrollView>
         </View>

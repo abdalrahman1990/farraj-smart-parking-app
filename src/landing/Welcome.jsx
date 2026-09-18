@@ -46,9 +46,10 @@ const Welcome = (props) => {
                         <Image
                             source={require('./../assets/images/logowhite.png')}
                             style={{
-                                width: 200,
-                                height: 65,
+                                width: 96,
+                                height: 96,
                                 alignSelf: 'center',
+                                borderRadius: 22,
                             }}
                             resizeMode="contain"
                         />

@@ -13,13 +13,19 @@ export const absolutizeAvatar = (u) => {
 
 const FALLBACK = require('../assets/images/smart-parking-logo.png');
 
-const UserAvatar = ({ uri, size = 52, borderColor = 'rgba(255,255,255,0.45)', borderWidth = 2.5 }) => {
+const UserAvatar = ({
+  uri,
+  size = 52,
+  borderColor = 'rgba(255,255,255,0.45)',
+  borderWidth = 2.5,
+  roundedSquare = false,
+}) => {
   const [failed, setFailed] = useState(false);
   const finalUri = absolutizeAvatar(uri);
   const style = {
     width: size,
     height: size,
-    borderRadius: size / 2,
+    borderRadius: roundedSquare ? Math.round(size * 0.28) : size / 2,
     borderWidth,
     borderColor,
     backgroundColor: '#FFFFFF',

@@ -5,6 +5,7 @@ import { getTranslations } from './../apis/apis';
 import { setTrans, setUser,setLinks, setRTL, setTheme } from './../redux/reducer';
 import { useStore } from 'react-redux';
 import { loadUser } from './../apis/apis';
+import BrandLogo from '../components/BrandLogo';
 const Landing = (props) => {
     const store = useStore();
     useEffect(() => {
@@ -75,6 +76,7 @@ const Landing = (props) => {
             <View style={[StyleSheet.absoluteFillObject, { backgroundColor: 'rgba(10, 20, 40, 0.55)' }]} />
             <StatusBar
                 barStyle="light-content"
+                backgroundColor="#0A1428"
             />
             <View
                 style={{
@@ -84,29 +86,14 @@ const Landing = (props) => {
                     paddingHorizontal: 24,
                 }}
             >
-                <View
-                    style={{
-                        width: 230, height: 150,
-                        borderRadius: 32,
-                        backgroundColor: '#FFFFFF',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: 16,
-                        shadowColor: '#000',
-                        shadowOffset: { width: 0, height: 10 },
-                        shadowOpacity: 0.4,
-                        shadowRadius: 24,
-                        elevation: 12,
-                    }}
-                >
-                    <Image source={require('./../assets/images/smart-parking-logo.png')}
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                        }}
-                        resizeMode="contain"
-                    />
-                </View>
+                <BrandLogo
+                    size={168}
+                    animated
+                    radius={36}
+                    padding={0}
+                    backgroundColor="#FFFFFF"
+                    borderColor="rgba(255,255,255,0.74)"
+                />
                 <Text style={{ color: '#FFFFFF', marginTop: 22, fontSize: 18, fontWeight: '800', letterSpacing: 1, fontFamily: 'Cairo', textShadowColor: 'rgba(0,0,0,0.5)', textShadowOffset: { width: 0, height: 1 }, textShadowRadius: 6 }}>
                     المملكة العربية السعودية
                 </Text>

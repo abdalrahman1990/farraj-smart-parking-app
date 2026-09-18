@@ -45,10 +45,11 @@ const SetupAccount = (props) => {
                 <View>
                     <Image source={require('./../assets/images/logowhite.png')}
                         style={{
-                            width: 220,
-                            height: 80,
+                            width: 96,
+                            height: 96,
                             alignSelf: 'center',
                             margin: 24,
+                            borderRadius: 22,
                         }}
                         resizeMode="contain"
                     />

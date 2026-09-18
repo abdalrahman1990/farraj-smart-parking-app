@@ -34,12 +34,12 @@ const Support = (props) => {
                 <View>
                     <Image
                         style={{
-                            width: 220,
-                            height: 90,
+                            width: 96,
+                            height: 96,
                             alignSelf: 'center',
                             marginTop: 40,
                             marginBottom: 24,
-                            borderRadius: 14,
+                            borderRadius: 22,
                         }}
                         source={require('./../assets/images/logowhite.png')}
                     />

@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, ScrollView, Image, Platform } from 'react-native';
+import { View, ScrollView, Image } from 'react-native';
 import { Text } from '@rneui/themed';
 import { useTheme } from '../utils/useTheme';
 import { useLang } from '../utils/useLabels';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { fontSize, isSmallScreen } from '../utils/responsive';
 import { FadeIn, Pulse } from './Entrance';
+import BrandLogo from './BrandLogo';
 
 const AuthLayout = ({ title, subtitle, children, footer }) => {
   const T = useTheme();
@@ -53,25 +54,7 @@ const AuthLayout = ({ title, subtitle, children, footer }) => {
           <View style={{ position: 'absolute', bottom: -60, start: -40, width: 150, height: 150, borderRadius: 75, backgroundColor: 'rgba(0,0,0,0.12)' }} />
           <View style={{ alignItems: 'center' }}>
             <Pulse>
-            <View
-              style={{
-                width: compact ? 76 : 84, height: compact ? 76 : 84, borderRadius: 26,
-                backgroundColor: '#FFFFFF',
-                alignItems: 'center', justifyContent: 'center', padding: 10,
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 6 },
-                shadowOpacity: 0.3,
-                shadowRadius: 12,
-                elevation: 8,
-                overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
-              }}
-            >
-              <Image
-                source={require('../assets/images/smart-parking-logo.png')}
-                style={{ width: '100%', height: '100%' }}
-                resizeMode="contain"
-              />
-            </View>
+              <BrandLogo size={compact ? 76 : 84} radius={24} padding={0} borderColor="rgba(255,255,255,0.72)" />
             </Pulse>
             <Text style={{ color: '#FFFFFF', fontSize: compact ? fontSize(21) : fontSize(23), fontWeight: '800', fontFamily: 'Cairo', marginTop: 12, textAlign: 'center' }}>
               {title}

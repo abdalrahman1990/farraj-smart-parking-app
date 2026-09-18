@@ -57,10 +57,11 @@ const ForgotPassword = (props) => {
                 <View>
                     <Image source={require('./../assets/images/logowhite.png')}
                         style={{
-                            width: 180,
-                            height: 60,
+                            width: 96,
+                            height: 96,
                             alignSelf: 'center',
                             marginBottom: 12,
+                            borderRadius: 22,
                         }}
                         resizeMode="contain"
                     />

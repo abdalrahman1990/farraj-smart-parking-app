@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView, Dimensions, Pressable, StatusBar, Image } from 'react-native';
 import { Text } from '@rneui/themed';
-import UserAvatar from '../components/UserAvatar';
+import BrandLogo from '../components/BrandLogo';
 import Sliders from './Sliders';
 import NearByLocations from './../locations/NearByLocations';
 import { useStore } from 'react-redux';
@@ -215,7 +215,12 @@ const Dashboard = (props) => {
                     </View>
                     {/* Identity */}
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: isSmallScreen() ? 14 : 20 }}>
-                        <UserAvatar uri={user.avatar} size={isSmall ? 40 : 52} />
+                        <BrandLogo
+                            size={isSmall ? 54 : 64}
+                            radius={isSmall ? 18 : 22}
+                            padding={0}
+                            borderColor="rgba(255,255,255,0.72)"
+                        />
                         <View style={{ marginStart: 13, flex: 1 }}>
                             <Text style={{ fontSize: 13, color: 'rgba(255,255,255,0.80)', fontFamily: 'Cairo' }}>
                                 {lang === 'ar' ? 'مرحبًا بعودتك 👋' : 'Welcome back 👋'}

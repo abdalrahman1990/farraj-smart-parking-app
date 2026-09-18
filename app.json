@@ -1,14 +1,14 @@
 {
-  "name": "kic",
-  "displayName": "kic",
+  "name": "smart_parking",
+  "displayName": "Smart Parking",
   "expo": {
-    "name": "kic",
-    "slug": "kic",
-    "version": "1.0.0",
+    "name": "Smart Parking",
+    "slug": "smart-parking",
+    "version": "1.4.0",
     "orientation": "portrait",
     "android": {
       "package": "com.bluebyte.smart_parking",
-      "versionCode": 1
+      "versionCode": 4
     },
     "ios": {
       "bundleIdentifier": "com.ebaa.app.smartparking",
