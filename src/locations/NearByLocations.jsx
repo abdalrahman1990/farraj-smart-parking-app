@@ -10,11 +10,13 @@ import { FadeIn } from '../components/Entrance';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
 import { useLabels, useLang } from '../utils/useLabels';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const NearByLocations = (props) => {
     const T = useTheme();
     const styles = getStyles(T);
     const store = useStore();
+    const insets = useSafeAreaInsets();
     const [filtered, setFiltered] = useState([]);
     const [locations, setLocations] = useState([]);
     const lang = useLang();
@@ -49,7 +51,7 @@ const NearByLocations = (props) => {
     const priceOf = (item) => 'SAR ' + (Number(item.location.hour_charge) || 0).toFixed(3);
     return (
         <View>
-            <View style={{ paddingHorizontal: 16 }}>
+            <View style={{ paddingHorizontal: 16, paddingBottom: 8 }}>
                 {
                     filtered.map((item, index) => {
                         const spots = item.free_spots ?? 0;
@@ -99,7 +101,7 @@ const NearByLocations = (props) => {
                                 <View style={styles.floatPanel}>
                                     <View style={styles.bodyText}>
                                         <Text numberOfLines={1} style={[styles.title, { textAlign: rtl ? 'right' : 'left' }]}>{nameOf(item)}</Text>
-                                        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 5 }}>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 5, gap: rtl ? 8 : 5 }}>
                                             <Icon name='location-outline' size={14} color={T.textSecondary} />
                                             <Text numberOfLines={1} style={[styles.subtitle, { textAlign: rtl ? 'right' : 'left' }]}>{item.location.location_address || ''}</Text>
                                         </View>
@@ -157,6 +159,7 @@ const getStyles = (T) => StyleSheet.create({
         paddingHorizontal: 11,
         paddingVertical: 7,
         borderRadius: 13,
+        gap: 6,
     },
     badgeDistance: {
         start: 12,
@@ -173,6 +176,7 @@ const getStyles = (T) => StyleSheet.create({
     dot: {
         width: 8, height: 8, borderRadius: 4,
         marginEnd: 6,
+        marginStart: 0,
     },
     badgeText: {
         color: '#FFFFFF',

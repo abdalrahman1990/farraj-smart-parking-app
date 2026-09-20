@@ -13,6 +13,7 @@ import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
 import { drawerBus } from '../utils/drawerBus';
 import { useLabels } from '../utils/useLabels';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Tab = createBottomTabNavigator();
 Icon.loadFont();
@@ -80,6 +81,7 @@ const SideBar = (props) => {
 const BottomBar = () => {
     const T = useTheme();
     const lables = useLabels();
+    const insets = useSafeAreaInsets();
     const tabIcon = (focused, name, outlineName) => (
         <View
             style={{
@@ -112,8 +114,8 @@ const BottomBar = () => {
                     backgroundColor: T.surface,
                     borderTopWidth: 1,
                     borderTopColor: T.border,
-                    height: 84,
-                    paddingBottom: 14,
+                    height: 84 + insets.bottom,
+                    paddingBottom: 14 + insets.bottom,
                     paddingTop: 8,
                     paddingHorizontal: 8,
                 },

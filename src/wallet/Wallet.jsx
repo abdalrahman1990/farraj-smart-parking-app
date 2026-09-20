@@ -8,11 +8,13 @@ import { setWallet } from './../redux/reducer';
 import { getLatestTransactions } from './../apis/apis';
 import { useFocusEffect } from '@react-navigation/native';
 import { useTheme } from '../utils/useTheme';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const Wallet = (props) => {
     const T = useTheme();
     const styles = getStyles(T);
     const store = useStore();
     const refRBSheet = useRef();
+    const insets = useSafeAreaInsets();
     const [wallet, setUserWallet] = useState(store.getState().app.wallet);
     const lables = store.getState().app.trans;
     const [amount, setAmount] = useState('');
@@ -45,6 +47,7 @@ const Wallet = (props) => {
             }}
         >
             <ScrollView showsVerticalScrollIndicator={false}
+                contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}
                 refreshControl={
                     <RefreshControl
                         refreshing={loading}
@@ -55,7 +58,7 @@ const Wallet = (props) => {
                     />
                 }
             >
-                <View style={{ paddingHorizontal: 16, paddingTop: 16 }}>
+                <View style={{ paddingHorizontal: 16, paddingTop: insets.top + 16 }}>
                     <View style={{
                         backgroundColor: T.primary,
                         borderRadius: 26,
@@ -94,6 +97,11 @@ const Wallet = (props) => {
                                 paddingHorizontal: 22,
                                 marginTop: 20,
                                 alignSelf: 'flex-start',
+                                shadowColor: '#000',
+                                shadowOffset: { width: 0, height: 4 },
+                                shadowOpacity: 0.2,
+                                shadowRadius: 8,
+                                elevation: 4,
                             }}
                             titleStyle={{
                                 color: T.primary,
@@ -222,7 +230,10 @@ const Wallet = (props) => {
                                                 ...(selected ? {
                                                     shadowColor: T.primary, shadowOffset: { width: 0, height: 4 },
                                                     shadowOpacity: 0.4, shadowRadius: 10, elevation: 5,
-                                                } : {}),
+                                                } : {
+                                                    shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+                                                    shadowOpacity: 0.1, shadowRadius: 4, elevation: 2,
+                                                }),
                                             }}
                                             onPress={() => setAmount(val)}
                                         >

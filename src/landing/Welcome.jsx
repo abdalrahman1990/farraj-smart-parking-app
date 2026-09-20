@@ -1,14 +1,26 @@
 import React, { useState, useRef } from 'react';
-import { View, ScrollView, Dimensions, Image, SafeAreaView } from 'react-native';
+import { View, ScrollView, Image, SafeAreaView } from 'react-native';
 import { Text, Button } from '@rneui/themed';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { useStore } from 'react-redux';
 import { useTheme } from '../utils/useTheme';
+import BrandLogo from '../components/BrandLogo';
+import { screenWidth, screenHeight, isSmallScreen, isMediumScreen, isLargeScreen, getResponsivePadding } from '../utils/responsive';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Welcome = (props) => {
     const T = useTheme();
     const store = useStore();
     const lables = store.getState().app.trans || {};
+    const compact = isSmallScreen();
+    const medium = isMediumScreen();
+    const large = isLargeScreen();
+    const shortScreen = screenHeight() < 700;
+    const insets = useSafeAreaInsets();
+    const width = screenWidth();
+    const padding = getResponsivePadding();
+    const slideWidth = Math.max(240, width - (compact ? 16 : (medium ? 20 : 28)));
+    const slideHeight = Math.max(200, Math.min(screenHeight() - 260, compact ? 280 : (medium ? 320 : 360)));
     const sliders = [
         'https://nextgen6th.com/assets/img/howto/img1.png',
         'https://nextgen6th.com/assets/img/howto/img2.png',
@@ -22,10 +34,11 @@ const Welcome = (props) => {
                 <Image
                     source={{ uri: item.item }}
                     style={{
-                        width: Dimensions.get('screen').width - 20,
-                        height: Dimensions.get('screen').height - 300,
+                        width: slideWidth,
+                        height: slideHeight,
                         borderRadius: 10,
                     }}
+                    resizeMode="contain"
                 />
             </View>
         );
@@ -39,28 +52,26 @@ const Welcome = (props) => {
         >
             <SafeAreaView style={{ flex: 1 }}>
                 <ScrollView
-                    contentContainerStyle={{ flexGrow: 1, paddingBottom: 30 }}
+                    contentContainerStyle={{ flexGrow: 1, paddingBottom: insets.bottom + 30 }}
                     showsVerticalScrollIndicator={false}
                 >
-                    <View style={{ alignItems: 'center', marginTop: 40, marginBottom: 20 }}>
-                        <Image
-                            source={require('./../assets/images/logowhite.png')}
-                            style={{
-                                width: 96,
-                                height: 96,
-                                alignSelf: 'center',
-                                borderRadius: 22,
-                            }}
-                            resizeMode="contain"
+                    <View style={{ alignItems: 'center', marginTop: insets.top + (shortScreen ? 12 : (compact ? 16 : (medium ? 24 : 32))), marginBottom: shortScreen ? 8 : (compact ? 10 : (medium ? 14 : 18)) }}>
+                        <BrandLogo
+                            size={compact ? 56 : (medium ? 64 : 72)}
+                            radius={16}
+                            padding={0}
+                            borderColor="rgba(255,255,255,0.72)"
                         />
                     </View>
                     <Text
+                        numberOfLines={2}
                         style={{
                             textAlign: 'center',
                             fontWeight: '800',
-                            fontSize: 24,
+                            fontSize: compact ? 14 : (medium ? 16 : 18),
                             color: T.text,
-                            marginBottom: 20,
+                            marginBottom: shortScreen ? 8 : (compact ? 10 : (medium ? 14 : 18)),
+                            paddingHorizontal: compact ? 12 : 14,
                         }}
                     >
                         {lables['how_parking_work']}
@@ -74,8 +85,8 @@ const Welcome = (props) => {
                             ref={ref}
                             data={sliders}
                             renderItem={renderItem}
-                            sliderWidth={Dimensions.get('screen').width}
-                            itemWidth={Dimensions.get('screen').width - 40}
+                            sliderWidth={width}
+                            itemWidth={slideWidth}
                             hasParallaxImages={true}
                             inactiveSlideScale={0.92}
                             inactiveSlideOpacity={0.6}
@@ -120,14 +131,14 @@ const Welcome = (props) => {
                             carouselRef={ref}
                         />
                     </View>
-                    <View style={{ paddingHorizontal: 24, marginTop: 10 }}>
+                    <View style={{ paddingHorizontal: padding, marginTop: 10 }}>
                         <Button
                             onPress={() => props.navigation.navigate('Register')}
                             title={lables['get_started'] || lables['register']}
                             buttonStyle={{
                                 backgroundColor: T.primary,
-                                paddingVertical: 16,
-                                borderRadius: 18,
+                                paddingVertical: shortScreen ? 10 : (compact ? 12 : 14),
+                                borderRadius: compact ? 12 : 14,
                                 shadowColor: T.primary,
                                 shadowOffset: { width: 0, height: 6 },
                                 shadowOpacity: 0.45,
@@ -135,7 +146,7 @@ const Welcome = (props) => {
                                 elevation: 8,
                             }}
                             titleStyle={{
-                                fontSize: 18,
+                                fontSize: compact ? 14 : 16,
                                 fontWeight: '700',
                                 letterSpacing: 0.5,
                             }}
@@ -147,14 +158,14 @@ const Welcome = (props) => {
                             buttonStyle={{
                                 borderColor: T.primary,
                                 borderWidth: 2,
-                                paddingVertical: 16,
-                                borderRadius: 18,
-                                marginTop: 12,
+                                paddingVertical: shortScreen ? 10 : (compact ? 12 : 14),
+                                borderRadius: compact ? 12 : 14,
+                                marginTop: 8,
                                 backgroundColor: 'transparent',
                             }}
                             titleStyle={{
                                 color: T.primaryLight,
-                                fontSize: 18,
+                                fontSize: compact ? 14 : 16,
                                 fontWeight: '700',
                             }}
                         />

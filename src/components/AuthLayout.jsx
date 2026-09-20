@@ -4,20 +4,26 @@ import { Text } from '@rneui/themed';
 import { useTheme } from '../utils/useTheme';
 import { useLang } from '../utils/useLabels';
 import { RADIUS, SHADOW } from '../theme/tokens';
-import { fontSize, isSmallScreen } from '../utils/responsive';
+import { fontSize, isSmallScreen, isMediumScreen, isLargeScreen, screenHeight, getResponsivePadding } from '../utils/responsive';
 import { FadeIn, Pulse } from './Entrance';
 import BrandLogo from './BrandLogo';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const AuthLayout = ({ title, subtitle, children, footer }) => {
   const T = useTheme();
   const lang = useLang();
   const rtl = lang === 'ar';
   const compact = isSmallScreen();
+  const medium = isMediumScreen();
+  const large = isLargeScreen();
+  const shortScreen = screenHeight() < 700;
+  const padding = getResponsivePadding();
+  const insets = useSafeAreaInsets();
   return (
     <View style={{ flex: 1, backgroundColor: T.background }}>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ flexGrow: 1, paddingBottom: 28 }}
+        contentContainerStyle={{ flexGrow: 1, paddingBottom: insets.bottom + 28 }}
         keyboardShouldPersistTaps="handled"
       >
         <View
@@ -25,9 +31,9 @@ const AuthLayout = ({ title, subtitle, children, footer }) => {
             backgroundColor: T.primary,
             borderBottomLeftRadius: 32,
             borderBottomRightRadius: 32,
-            paddingTop: compact ? 34 : 44,
-            paddingBottom: 72,
-            paddingHorizontal: compact ? 20 : 24,
+            paddingTop: insets.top + (shortScreen ? 20 : (compact ? 26 : (medium ? 32 : 38))),
+            paddingBottom: shortScreen ? 40 : (compact ? 52 : 60),
+            paddingHorizontal: padding,
             overflow: 'hidden',
           }}
         >
@@ -54,13 +60,13 @@ const AuthLayout = ({ title, subtitle, children, footer }) => {
           <View style={{ position: 'absolute', bottom: -60, start: -40, width: 150, height: 150, borderRadius: 75, backgroundColor: 'rgba(0,0,0,0.12)' }} />
           <View style={{ alignItems: 'center' }}>
             <Pulse>
-              <BrandLogo size={compact ? 76 : 84} radius={24} padding={0} borderColor="rgba(255,255,255,0.72)" />
+              <BrandLogo size={compact ? 52 : (medium ? 60 : 68)} radius={16} padding={0} borderColor="rgba(255,255,255,0.72)" />
             </Pulse>
-            <Text style={{ color: '#FFFFFF', fontSize: compact ? fontSize(21) : fontSize(23), fontWeight: '800', fontFamily: 'Cairo', marginTop: 12, textAlign: 'center' }}>
+            <Text style={{ color: '#FFFFFF', fontSize: compact ? fontSize(15) : (medium ? fontSize(17) : fontSize(19)), fontWeight: '800', fontFamily: 'Cairo', marginTop: shortScreen ? 6 : (compact ? 8 : 10), textAlign: 'center' }}>
               {title}
             </Text>
             {!!subtitle && (
-              <Text style={{ color: 'rgba(255,255,255,0.88)', fontSize: compact ? 12.5 : 13.5, marginTop: 6, lineHeight: 19, fontFamily: 'Cairo', textAlign: 'center', paddingHorizontal: 12 }}>
+              <Text style={{ color: 'rgba(255,255,255,0.88)', fontSize: compact ? 9.5 : (medium ? 10.5 : 11.5), marginTop: 3, lineHeight: 16, fontFamily: 'Cairo', textAlign: 'center', paddingHorizontal: 12 }}>
                 {subtitle}
               </Text>
             )}
@@ -72,14 +78,14 @@ const AuthLayout = ({ title, subtitle, children, footer }) => {
           </View>
         </View>
 
-        <FadeIn delay={120} style={{ marginHorizontal: compact ? 16 : 20, marginTop: -44 }}>
+        <FadeIn delay={120} style={{ marginHorizontal: padding, marginTop: shortScreen ? -32 : -40 }}>
         <View
           style={{
             backgroundColor: T.card,
             borderRadius: 28,
             borderWidth: 1,
             borderColor: T.border,
-            padding: compact ? 18 : 22,
+            padding: compact ? 12 : (medium ? 14 : 18),
             ...SHADOW.card,
           }}
         >

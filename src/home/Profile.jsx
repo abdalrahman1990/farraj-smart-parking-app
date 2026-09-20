@@ -81,21 +81,21 @@ const Profile = (props) => {
                     <View style={{ position: 'absolute', top: -60, right: -60, width: 180, height: 180, borderRadius: 90, backgroundColor: 'rgba(8,148,158,0.18)' }} />
                     <View style={{ alignSelf: 'center' }}>
                         <BrandLogo
-                            size={compact ? 86 : 100}
-                            radius={compact ? 24 : 28}
+                            size={compact ? 80 : 92}
+                            radius={20}
                             padding={0}
                             borderColor="rgba(255,255,255,0.72)"
                         />
                     </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14, paddingHorizontal: 18, maxWidth: '100%' }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14, paddingHorizontal: 18, maxWidth: '100%', gap: lang === 'ar' ? 12 : 8 }}>
                         <Icon name='person' size={18} color="rgba(255,255,255,0.9)" />
-                        <Text numberOfLines={1} style={{ color: '#FFF', fontSize: compact ? 19 : 22, fontWeight: '700', marginStart: 8, flexShrink: 1, fontFamily: 'Cairo' }}>
+                        <Text numberOfLines={1} style={{ color: '#FFF', fontSize: compact ? 19 : 22, fontWeight: '700', flexShrink: 1, fontFamily: 'Cairo' }}>
                             {user.name}
                         </Text>
                     </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 6, paddingHorizontal: 18, maxWidth: '100%' }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 6, paddingHorizontal: 18, maxWidth: '100%', gap: lang === 'ar' ? 12 : 8 }}>
                         <Icon name='mail' size={16} color="rgba(255,255,255,0.75)" />
-                        <Text numberOfLines={1} style={{ color: 'rgba(255,255,255,0.85)', fontSize: compact ? 12.5 : 14, marginStart: 8, flexShrink: 1, fontFamily: 'Cairo' }}>
+                        <Text numberOfLines={1} style={{ color: 'rgba(255,255,255,0.85)', fontSize: compact ? 12.5 : 14, flexShrink: 1, fontFamily: 'Cairo' }}>
                             {user.email}
                         </Text>
                     </View>
@@ -103,7 +103,7 @@ const Profile = (props) => {
 
                 <View style={{ marginTop: -30, paddingHorizontal: compact ? 12 : 16 }}>
                     <View style={style.card}>
-                        <ListItem containerStyle={style.listItemInner}>
+                        <ListItem containerStyle={[style.listItemInner, { gap: lang === 'ar' ? 12 : 16 }]}>
                             <Icon name='call-outline' size={22} color={T.primary} />
                             <ListItem.Content>
                                 <ListItem.Title style={{ fontSize: 16, fontWeight: '600', color: T.text, fontFamily: 'Cairo' }}>{user.phone || '-'}</ListItem.Title>
@@ -117,7 +117,7 @@ const Profile = (props) => {
                     </Text>
 
                     <View style={style.card}>
-                        <ListItem containerStyle={style.listItemInner}
+                        <ListItem containerStyle={[style.listItemInner, { gap: lang === 'ar' ? 12 : 16 }]}
                             onPress={() => props.navigation.navigate('MyDevices')}
                         >
                             <Icon name='heart-outline' size={24} color={T.primary} />
@@ -126,7 +126,7 @@ const Profile = (props) => {
                             </ListItem.Content>
                             <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                         </ListItem>
-                        <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0 }]}
+                        <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0, gap: lang === 'ar' ? 12 : 16 }]}
                             onPress={() => props.navigation.navigate('MyParkings')}
                         >
                             <Icon name='calendar-outline' size={24} color={T.primary} />
@@ -135,7 +135,7 @@ const Profile = (props) => {
                             </ListItem.Content>
                             <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                         </ListItem>
-                        <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0 }]}
+                        <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0, gap: lang === 'ar' ? 12 : 16 }]}
                             onPress={() => props.navigation.navigate('notifications')}
                         >
                             <Icon name='notifications-outline' size={24} color={T.primary} />
@@ -145,7 +145,7 @@ const Profile = (props) => {
                             <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                         </ListItem>
                         {user.role === "admin" &&
-                            <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0 }]}
+                            <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0, gap: lang === 'ar' ? 12 : 16 }]}
                                 onPress={() => props.navigation.navigate('admin')}
                             >
                                 <Icon name='options-outline' size={24} color={T.primary} />
@@ -162,7 +162,7 @@ const Profile = (props) => {
                     </Text>
 
                     <View style={style.card}>
-                        <ListItem containerStyle={style.listItemInner}
+                        <ListItem containerStyle={[style.listItemInner, { gap: lang === 'ar' ? 12 : 16 }]}
                             onPress={() => setShowDialog(true)}
                         >
                             <Icon name='lock-closed-outline' size={24} color={T.primary} />
@@ -171,7 +171,7 @@ const Profile = (props) => {
                             </ListItem.Content>
                             <Icon name={lang === 'ar' ? 'chevron-back' : 'chevron-forward'} size={20} color={T.inactive} />
                         </ListItem>
-                        <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0 }]}
+                        <ListItem containerStyle={[style.listItemInner, { borderTopWidth: 0, gap: lang === 'ar' ? 12 : 16 }]}
                             onPress={() => {
                                 Alert.alert(
                                     lang === 'ar' ? 'حذف الحساب' : 'Delete Account',

@@ -13,12 +13,16 @@ import { useTheme } from '../utils/useTheme';
 import { useFocusEffect } from '@react-navigation/native';
 import { drawerBus } from '../utils/drawerBus';
 import { useLabels, useLang } from '../utils/useLabels';
-import { fontSize, isSmallScreen } from '../utils/responsive';
+import { fontSize, isSmallScreen, isMediumScreen, isLargeScreen, getResponsivePadding, getResponsiveSpacing, getResponsiveVerticalSpacing, screenHeight } from '../utils/responsive';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width } = Dimensions.get('window');
 const isSmall = width < 360;
-const pagePadding = isSmall ? 16 : 20;
-const quickGap = isSmall ? 10 : 12;
+const isMedium = width >= 360 && width < 400;
+const isLarge = width >= 400;
+const isShortScreen = screenHeight() < 700;
+const pagePadding = getResponsivePadding();
+const quickGap = getResponsiveSpacing();
 
 const QuickAction = ({ icon, title, subtitle, onPress, accent }) => {
     const T = useTheme();
@@ -32,7 +36,7 @@ const QuickAction = ({ icon, title, subtitle, onPress, accent }) => {
             minWidth: isSmall ? Math.floor((width - pagePadding * 2 - quickGap) / 2) : 0,
             backgroundColor: T.card,
             borderRadius: RADIUS.xl,
-            padding: isSmall ? 13 : 16,
+            padding: isSmall ? 8 : (isMedium ? 10 : 12),
             borderWidth: 1,
             borderColor: hovered ? accent : T.border,
             transform: [{ scale: pressed ? 0.96 : 1 }],
@@ -50,23 +54,23 @@ const QuickAction = ({ icon, title, subtitle, onPress, accent }) => {
     >
         <View
             style={{
-                width: 46,
-                height: 46,
-                borderRadius: 15,
+                width: isSmall ? 36 : (isMedium ? 40 : 42),
+                height: isSmall ? 36 : (isMedium ? 40 : 42),
+                borderRadius: isSmall ? 10 : 12,
                 backgroundColor: accent,
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: 12,
+                marginBottom: isSmall ? 6 : 8,
             }}
         >
-            <Icon name={icon} size={23} color="#FFFFFF" />
+            <Icon name={icon} size={isSmall ? 18 : 20} color="#FFFFFF" />
         </View>
-        <Text numberOfLines={1} style={{ fontSize: isSmall ? 13 : 14, fontWeight: '700', color: T.text, fontFamily: 'Cairo' }}>
+        <Text numberOfLines={1} style={{ fontSize: isSmall ? 10 : (isMedium ? 11 : 12), fontWeight: '700', color: T.text, fontFamily: 'Cairo' }}>
             {title}
         </Text>
         <Text
             numberOfLines={1}
-            style={{ fontSize: 12, color: T.textSecondary, marginTop: 3, fontFamily: 'Cairo' }}
+            style={{ fontSize: isSmall ? 9 : 10, color: T.textSecondary, marginTop: 2, fontFamily: 'Cairo' }}
         >
             {subtitle}
         </Text>
@@ -80,6 +84,7 @@ const Dashboard = (props) => {
     const lables = useLabels();
     const user = store.getState().app.user;
     const lang = useLang();
+    const insets = useSafeAreaInsets();
     const [balance, setBalance] = useState(store.getState().app.wallet?.balance || 0);
 
     useFocusEffect(() => {
@@ -111,15 +116,15 @@ const Dashboard = (props) => {
     return (
         <View style={{ flex: 1, backgroundColor: T.background }}>
             <StatusBar barStyle="light-content" backgroundColor={GRADIENT.start} />
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom }}>
                 {/* Hero header */}
                 <View
                     style={{
                         backgroundColor: GRADIENT.start,
                         borderBottomLeftRadius: 32,
                         borderBottomRightRadius: 32,
-                        paddingTop: 20,
-                        paddingBottom: 26,
+                        paddingTop: insets.top + 12,
+                        paddingBottom: isShortScreen ? 14 : 22,
                         paddingHorizontal: pagePadding,
                         overflow: 'hidden',
                     }}
@@ -166,20 +171,20 @@ const Dashboard = (props) => {
                         }}
                     />
                     {/* Top row */}
-                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <View style={{ flexDirection: lang === 'ar' ? 'row-reverse' : 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                         <Pressable
                             onPress={() => drawerBus.openDrawer()}
                             style={{
-                                width: 44,
-                                height: 44,
-                                borderRadius: 15,
+                                width: isSmall ? 32 : 36,
+                                height: isSmall ? 32 : 36,
+                                borderRadius: isSmall ? 10 : 12,
                                 backgroundColor: 'rgba(255,255,255,0.16)',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                             }}
                             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                         >
-                            <Icon name='menu' size={22} color="#FFFFFF" />
+                            <Icon name='menu' size={isSmall ? 16 : 18} color="#FFFFFF" />
                         </Pressable>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <Pressable
@@ -188,47 +193,47 @@ const Dashboard = (props) => {
                                     flexDirection: 'row',
                                     alignItems: 'center',
                                     backgroundColor: 'rgba(255,255,255,0.16)',
-                                    paddingHorizontal: isSmall ? 9 : 14,
-                                    paddingVertical: 9,
-                                    borderRadius: 15,
-                                    maxWidth: isSmall ? 132 : 180,
+                                    paddingHorizontal: isSmall ? 5 : (isMedium ? 7 : 10),
+                                    paddingVertical: isSmall ? 5 : 7,
+                                    borderRadius: isSmall ? 10 : 12,
+                                    maxWidth: isSmall ? 90 : (isMedium ? 120 : 150),
                                 }}
                             >
-                                <Icon name='wallet-outline' size={isSmall ? 15 : 17} color="#FFFFFF" />
-                                <Text numberOfLines={1} style={{ marginStart: 6, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', fontSize: isSmall ? 12.5 : 14, flexShrink: 1 }}>
+                                <Icon name='wallet-outline' size={isSmall ? 11 : (isMedium ? 13 : 15)} color="#FFFFFF" />
+                                <Text numberOfLines={1} style={{ marginStart: 4, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', fontSize: isSmall ? 10 : (isMedium ? 11 : 12), flexShrink: 1 }}>
                                     {(Number(balance) || 0).toFixed(3)}
                                 </Text>
                             </Pressable>
                             <Pressable
                                 onPress={() => props.navigation.navigate('notifications')}
                                 style={{
-                                    marginStart: 10,
-                                    width: 44,
-                                    height: 44,
-                                    borderRadius: 15,
+                                    marginStart: isSmall ? 5 : 7,
+                                    width: isSmall ? 32 : 36,
+                                    height: isSmall ? 32 : 36,
+                                    borderRadius: isSmall ? 10 : 12,
                                     backgroundColor: 'rgba(255,255,255,0.16)',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                 }}
                                 hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                             >
-                                <Icon name='notifications-outline' size={20} color="#FFFFFF" />
+                                <Icon name='notifications-outline' size={isSmall ? 14 : 16} color="#FFFFFF" />
                             </Pressable>
                         </View>
                     </View>
                     {/* Identity */}
-                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: isSmallScreen() ? 14 : 20 }}>
+                    <View style={{ flexDirection: lang === 'ar' ? 'row-reverse' : 'row', alignItems: 'center', marginTop: isShortScreen ? 6 : (isSmall ? 10 : (isMedium ? 14 : 18)) }}>
                         <BrandLogo
-                            size={isSmall ? 54 : 64}
-                            radius={isSmall ? 18 : 22}
+                            size={isSmall ? 44 : (isMedium ? 52 : 60)}
+                            radius={16}
                             padding={0}
                             borderColor="rgba(255,255,255,0.72)"
                         />
-                        <View style={{ marginStart: 13, flex: 1 }}>
-                            <Text numberOfLines={1} style={{ fontSize: 13, color: 'rgba(255,255,255,0.80)', fontFamily: 'Cairo' }}>
+                        <View style={{ marginStart: lang === 'ar' ? 0 : (isSmall ? 8 : 10), marginEnd: lang === 'ar' ? (isSmall ? 8 : 10) : 0, flex: 1 }}>
+                            <Text numberOfLines={1} style={{ fontSize: isSmall ? 11 : 12, color: 'rgba(255,255,255,0.80)', fontFamily: 'Cairo' }}>
                                 {lang === 'ar' ? 'مرحبًا بعودتك 👋' : 'Welcome back 👋'}
                             </Text>
-                            <Text numberOfLines={1} style={{ fontSize: isSmall ? 18 : 20, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', marginTop: 2 }}>
+                            <Text numberOfLines={1} style={{ fontSize: isSmall ? 14 : (isMedium ? 16 : 18), fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', marginTop: 2 }}>
                                 {user.name}
                             </Text>
                         </View>
@@ -236,12 +241,12 @@ const Dashboard = (props) => {
                 </View>
 
                 {/* Hero carousel */}
-                <View style={{ marginTop: 16, paddingBottom: 4 }}>
+                <View style={{ marginTop: isShortScreen ? 8 : 14, paddingBottom: 4 }}>
                     <Sliders />
                 </View>
 
                 {/* Quick actions grid */}
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: pagePadding, marginTop: 12, gap: quickGap }}>
+                <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: pagePadding, marginTop: isShortScreen ? 6 : 10, gap: quickGap }}>
                     <QuickAction
                         icon="bookmark"
                         title={lang === 'ar' ? 'حجوزاتك' : (lables['current_parkings'] || 'Bookings')}
@@ -266,17 +271,17 @@ const Dashboard = (props) => {
                 </View>
 
                 {/* Nearby section */}
-                <View style={{ paddingHorizontal: pagePadding, marginTop: 22, marginBottom: 6, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
-                    <Text numberOfLines={1} style={{ fontSize: isSmall ? 15 : 17, fontWeight: '800', color: T.text, fontFamily: 'Cairo', flex: 1 }}>
+                <View style={{ paddingHorizontal: pagePadding, marginTop: isShortScreen ? 10 : (isSmall ? 16 : 20), marginBottom: 6, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
+                    <Text numberOfLines={1} style={{ fontSize: isSmall ? 12 : (isMedium ? 13 : 15), fontWeight: '800', color: T.text, fontFamily: 'Cairo', flex: 1 }}>
                         {lang === 'ar' ? '📍 مواقف قريبة منك' : '📍 Nearby parking'}
                     </Text>
                     <Pressable onPress={() => props.navigation.navigate('SearchLocations')}>
-                        <Text numberOfLines={1} style={{ fontSize: isSmall ? 12 : 13, fontWeight: '700', color: T.primaryLight, fontFamily: 'Cairo' }}>
+                        <Text numberOfLines={1} style={{ fontSize: isSmall ? 9 : (isMedium ? 10 : 11), fontWeight: '700', color: T.primaryLight, fontFamily: 'Cairo' }}>
                             {lang === 'ar' ? 'عرض الكل ←' : 'See all →'}
                         </Text>
                     </Pressable>
                 </View>
-                <View style={{ paddingBottom: 30 }}>
+                <View>
                     <NearByLocations {...props} />
                 </View>
             </ScrollView>

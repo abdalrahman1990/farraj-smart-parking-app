@@ -4,15 +4,22 @@
   "expo": {
     "name": "Smart Parking",
     "slug": "smart-parking",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "orientation": "portrait",
     "android": {
       "package": "com.bluebyte.smart_parking",
-      "versionCode": 4
+      "versionCode": 5,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "INTERNET",
+        "POST_NOTIFICATIONS",
+        "VIBRATE"
+      ]
     },
     "ios": {
       "bundleIdentifier": "com.ebaa.app.smartparking",
-      "buildNumber": "1"
+      "buildNumber": "5"
     },
     "runtimeVersion": "1.0.0",
     "updates": {

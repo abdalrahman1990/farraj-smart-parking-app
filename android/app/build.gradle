@@ -79,8 +79,8 @@ android {
         applicationId "com.bluebyte.smart_parking"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
-        versionName "1.4"
+        versionCode 5
+        versionName "1.5.0"
     }
 
     buildFeatures {
@@ -131,6 +131,10 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    
+    // Update Google Play Services to include latest reCAPTCHA
+    implementation 'com.google.android.gms:play-services-base:18.3.0'
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
 }
 
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"

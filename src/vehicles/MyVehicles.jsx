@@ -9,11 +9,13 @@ import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
 import { useLang } from '../utils/useLabels';
 import urls from '../apis/urls';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const MyVehicles = (props) => {
     const T = useTheme();
-    const styles = getStyles(T);
     const store = useStore();
+    const insets = useSafeAreaInsets();
+    const styles = getStyles(T, insets);
     const user = store.getState().app.user;
     const lables = store.getState().app.trans;
     const [vehicles, setVehicles] = useState([]);
@@ -22,7 +24,7 @@ const MyVehicles = (props) => {
 
     useFocusEffect(useCallback(() => {
         props.navigation.getParent().setOptions({
-            headerTitle: lables['my_vehicles']
+            headerShown: false,
         });
     }, []));
 
@@ -157,17 +159,19 @@ const VehicleAvatar = ({ uri }) => {
     );
 };
 
-const getStyles = (T) => StyleSheet.create({
+const getStyles = (T, insets) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: T.background,
     },
     scrollContent: {
-        paddingBottom: 30,
+        paddingBottom: insets.bottom + 30,
     },
     headerCard: {
         backgroundColor: T.primary,
-        margin: 16,
+        marginTop: insets.top + 8,
+        marginHorizontal: 16,
+        marginBottom: 16,
         borderRadius: RADIUS.xl,
         padding: 20,
         flexDirection: 'row',

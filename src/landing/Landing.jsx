@@ -88,7 +88,6 @@ const Landing = (props) => {
             >
                 <BrandLogo
                     size={168}
-                    animated
                     radius={36}
                     padding={0}
                     backgroundColor="#FFFFFF"

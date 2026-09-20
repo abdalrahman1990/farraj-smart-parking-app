@@ -23,6 +23,7 @@ import { getTranslations } from '../apis/apis';
 import { drawerBus } from '../utils/drawerBus';
 import { fontSize } from '../utils/responsive';
 import BrandLogo from '../components/BrandLogo';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const NAV = [
   { key: 'Home', icon: 'grid-outline', activeIcon: 'grid', labelKey: 'home', nav: 'Home' },
@@ -41,6 +42,7 @@ const Sidemenu = (props) => {
   const lables = useLabels();
   const lang = useLang();
   const isRTL = useIsRTL();
+  const insets = useSafeAreaInsets();
   const user = store.getState().app.user;
   const [activeKey, setActiveKey] = React.useState('Home');
   const toggleLock = React.useRef(0);
@@ -99,8 +101,8 @@ const Sidemenu = (props) => {
           />
           <View style={styles.skylineShade} />
           <View style={styles.orbA} />
-          <View style={[styles.brandRow, { flexDirection: isRTL ? "row-reverse" : "row" }]}>
-            <BrandLogo size={68} radius={20} padding={0} shadow={false} borderColor="rgba(255,255,255,0.72)" />
+          <View style={[styles.brandRow, { flexDirection: isRTL ? "row-reverse" : "row", paddingTop: insets.top }]}>
+            <BrandLogo size={64} radius={16} padding={0} shadow={false} borderColor="rgba(255,255,255,0.72)" />
             <View style={styles.brandText}>
               <Text style={styles.brandName}>
                 {lang === 'ar' ? 'المواقف الذكية' : 'Smart Parking'}
@@ -113,7 +115,7 @@ const Sidemenu = (props) => {
               </View>
             </View>
           </View>
-          <Pressable onPress={closeDrawer} style={styles.closeBtn} hitSlop={12}>
+          <Pressable onPress={closeDrawer} style={[styles.closeBtn, { top: insets.top + 16 }]} hitSlop={12}>
             <Icon name="close" size={20} color="#FFFFFF" />
           </Pressable>
         </View>
@@ -142,12 +144,14 @@ const Sidemenu = (props) => {
                         {
                           backgroundColor: active ? T.primary : hovered ? T.primaryBg : T.card,
                           borderColor: active ? T.primary : hovered ? T.primary : T.border,
+                          flexDirection: isRTL ? "row-reverse" : "row",
                           transform: [{ scale: pressed ? 0.97 : 1 }],
                           shadowColor: active ? T.primary : '#000',
                           shadowOffset: { width: 0, height: active ? 8 : 4 },
                           shadowOpacity: active ? 0.45 : 0.14,
                           shadowRadius: active ? 16 : 10,
                           elevation: active ? 8 : 4,
+                          gap: isRTL ? 12 : 10,
                         },
                       ]}
                     >
@@ -163,7 +167,7 @@ const Sidemenu = (props) => {
                           color={active || hovered ? '#FFFFFF' : T.primary}
                         />
                       </View>
-                      <Text style={[styles.sideLabel, { color: active ? '#FFFFFF' : T.text, textAlign: isRTL ? "center" : "left" }]}>
+                      <Text style={[styles.sideLabel, { color: active ? '#FFFFFF' : T.text }]}>
                         {labelOf(item)}
                       </Text>
                       {active && <View style={styles.activeDot} />}
@@ -192,13 +196,15 @@ const Sidemenu = (props) => {
                   {
                     borderColor: hovered ? T.primary : T.border,
                     backgroundColor: hovered ? T.primaryBg : T.card,
+                    flexDirection: isRTL ? "row-reverse" : "row",
+                    gap: isRTL ? 12 : 10,
                   },
                 ]}
               >
                 <View style={[styles.navIcon, { backgroundColor: hovered ? T.primary : T.primaryBg }]}>
                   <Icon name="language" size={20} color={hovered ? '#FFFFFF' : T.primary} />
                 </View>
-                <Text style={[styles.sideLabel, { color: T.text, textAlign: isRTL ? "center" : "left" }]}>
+                <Text style={[styles.sideLabel, { color: T.text }]}>
                   {lang === 'ar' ? 'العربية' : 'English'}
                 </Text>
                 <Text style={[styles.prefValue, { color: T.textSecondary }]}>
@@ -222,13 +228,15 @@ const Sidemenu = (props) => {
                   {
                     borderColor: hovered ? T.primary : T.border,
                     backgroundColor: hovered ? T.primaryBg : T.card,
+                    flexDirection: isRTL ? "row-reverse" : "row",
+                    gap: isRTL ? 12 : 10,
                   },
                 ]}
               >
                 <View style={[styles.navIcon, { backgroundColor: hovered ? T.primary : T.primaryBg }]}>
                   <Icon name={isDark ? 'sunny' : 'moon'} size={20} color={hovered ? '#FFFFFF' : T.primary} />
                 </View>
-                <Text style={[styles.sideLabel, { color: T.text, textAlign: isRTL ? "center" : "left" }]}>
+                <Text style={[styles.sideLabel, { color: T.text }]}>
                   {lang === 'ar' ? 'المظهر' : 'Appearance'}
                 </Text>
                 <Switch
@@ -244,7 +252,7 @@ const Sidemenu = (props) => {
         </View>
 
         {/* Footer — logout only */}
-        <View style={[styles.footer, { borderTopColor: T.border }]}>
+        <View style={[styles.footer, { borderTopColor: T.border, paddingBottom: insets.bottom + 20 }]}>
           <Pressable
             onPress={() => {
               AsyncStorage.removeItem('_user');
