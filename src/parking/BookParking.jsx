@@ -52,7 +52,7 @@ const BookParking = (props) => {
         pickerContainer: {
             marginRight: 0,
             alignSelf: 'center',
-            direction: 'ltr',
+            direction: lang === 'ar' ? 'rtl' : 'ltr',
         },
         pickerItemContainer: {
             width: 96,

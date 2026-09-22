@@ -51,7 +51,7 @@ const NearByLocations = (props) => {
     const priceOf = (item) => 'SAR ' + (Number(item.location.hour_charge) || 0).toFixed(3);
     return (
         <View>
-            <View style={{ paddingHorizontal: 16, paddingBottom: 0 }}>
+            <View style={{ paddingHorizontal: 16, paddingBottom: 16 }}>
                 {
                     filtered.map((item, index) => {
                         const spots = item.free_spots ?? 0;

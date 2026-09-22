@@ -111,7 +111,7 @@ const Sliders = () => {
                 renderItem={renderItem}
                 sliderWidth={screenWidth}
                 itemWidth={itemWidth}
-                hasParallaxImages={true}
+                hasParallaxImages={false}
                 inactiveSlideScale={0.94}
                 inactiveSlideOpacity={0.7}
                 loop={true}
