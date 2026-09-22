@@ -6,11 +6,15 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import LocationImage from '../components/LocationImage';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useLang } from '../utils/useLabels';
+import { StyleSheet } from 'react-native';
 const ViewLocation = (props) => {
     const T = useTheme();
     const store = useStore();
     const lables = store.getState().app.trans;
-    const lang = I18nManager.isRTL ? 'ar' : 'en';
+    const lang = useLang();
+    const insets = useSafeAreaInsets();
     const location = props.route.params.location;
     const slots = props.route.params.free_spots;
     const [hours, minutes, seconds] = location.start_time.split(':');
@@ -57,7 +61,7 @@ const ViewLocation = (props) => {
                 backgroundColor: T.background
             }}
         >
-            <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
+            <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 30 }}>
                 <View
                     style={{
                         marginTop: 18,
@@ -65,14 +69,20 @@ const ViewLocation = (props) => {
                     }}
                 >
                     <View style={{ borderRadius: RADIUS.xl, overflow: 'hidden', ...SHADOW.card }}>
-                        <LocationImage
-                            uri={location.location_image}
-                            name={lang === "en" ? location.location_name : location.location_name_ar}
-                            style={{
-                                width: '100%',
-                                height: 210,
-                            }}
-                        />
+                        <View style={{ position: 'relative' }}>
+                            <LocationImage
+                                uri={location.location_image}
+                                name={lang === "en" ? location.location_name : location.location_name_ar}
+                                style={{
+                                    width: '100%',
+                                    height: 210,
+                                }}
+                            />
+                            <View style={styles.headerBadge}>
+                                <View style={[styles.dot, { backgroundColor: slots > 0 ? '#34D399' : '#F87171' }]} />
+                                <Text style={styles.badgeText}>{slots} {lables['available']}</Text>
+                            </View>
+                        </View>
                     </View>
                     <ListItem
                         containerStyle={{
@@ -115,31 +125,6 @@ const ViewLocation = (props) => {
                             marginTop: 16,
                         }}
                     >
-                        <View
-                            style={{
-                                flex: 1,
-                                flexDirection: 'row',
-                                backgroundColor: T.card,
-                                borderWidth: 1,
-                                borderColor: T.border,
-                                borderRadius: RADIUS.lg,
-                                paddingVertical: 12,
-                                paddingHorizontal: 10,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <Icon name='location-outline' size={20} color={T.primaryLight} />
-                            <Text
-                                style={{
-                                    fontSize: 15,
-                                    fontWeight: '700',
-                                    marginStart: 6,
-                                    color: T.text,
-                                    fontFamily: 'Cairo',
-                                }}
-                            >{slots} {lables['available']}</Text>
-                        </View>
                         <View
                             style={{
                                 flex: 1,
@@ -207,5 +192,33 @@ const ViewLocation = (props) => {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    headerBadge: {
+        position: 'absolute',
+        top: 12,
+        end: 12,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 11,
+        paddingVertical: 7,
+        borderRadius: 13,
+        gap: 6,
+        backgroundColor: 'rgba(5,15,28,0.55)',
+        borderWidth: 1,
+        borderColor: 'rgba(255,255,255,0.30)',
+    },
+    dot: {
+        width: 8, height: 8, borderRadius: 4,
+        marginEnd: 6,
+        marginStart: 0,
+    },
+    badgeText: {
+        color: '#FFFFFF',
+        fontWeight: '700',
+        fontSize: 11,
+        fontFamily: 'Cairo',
+    },
+});
 
 export default ViewLocation;

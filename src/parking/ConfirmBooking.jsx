@@ -10,9 +10,10 @@ import { setWallet } from './../redux/reducer';
 import { toast } from '../utils/toastBus';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
-import { useLang } from '../utils/useLabels';
+import { useLang, useLabels } from '../utils/useLabels';
 import { tmsg } from '../utils/msg';
 import { columnsFor, tileSize, fontSize } from '../utils/responsive';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const LegendDot = ({ color, label, T, icon }) => (
     <View style={{ flexDirection: 'row', alignItems: 'center', marginEnd: 14, marginBottom: 4 }}>
@@ -42,9 +43,10 @@ const ConfirmParking = (props) => {
     const T = useTheme();
     const store = useStore();
     const user = store.getState().app.user;
-    const lables = store.getState().app.trans;
+    const lables = useLabels();
     const lang = useLang();
     const rtl = lang === 'ar';
+    const insets = useSafeAreaInsets();
     const location = props.route.params.location;
     const bookingDate = props.route.params.bookingDate;
     const startTime = props.route.params.startTime;
@@ -178,7 +180,7 @@ const ConfirmParking = (props) => {
 
     return (
         <View style={{ flex: 1, backgroundColor: T.background }}>
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 110 }}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom + 110 }}>
                 {/* Booking infographic */}
                 <View
                     style={{
@@ -394,7 +396,7 @@ const ConfirmParking = (props) => {
                         borderTopColor: T.border,
                         paddingHorizontal: 16,
                         paddingTop: 12,
-                        paddingBottom: 20,
+                        paddingBottom: insets.bottom + 20,
                         flexDirection: 'row',
                         alignItems: 'center',
                         shadowColor: '#000',
@@ -422,10 +424,10 @@ const ConfirmParking = (props) => {
                             paddingVertical: 15,
                             paddingHorizontal: 34,
                             shadowColor: T.primary,
-                            shadowOffset: { width: 0, height: 5 },
-                            shadowOpacity: selectedDevice.id ? 0.45 : 0,
-                            shadowRadius: 12,
-                            elevation: selectedDevice.id ? 7 : 0,
+                            shadowOffset: { width: 0, height: 6 },
+                            shadowOpacity: selectedDevice.id ? 0.4 : 0,
+                            shadowRadius: 14,
+                            elevation: selectedDevice.id ? 8 : 0,
                         }}
                         titleStyle={{ fontWeight: '800', fontSize: 16, fontFamily: 'Cairo' }}
                     />

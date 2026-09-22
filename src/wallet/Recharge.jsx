@@ -6,6 +6,7 @@ import { WebView } from 'react-native-webview';
 import { useStore } from 'react-redux';
 import urls from '../apis/urls';
 import ScreenLoader from '../components/ScreenLoader';
+import { useLabels } from '../utils/useLabels';
 
 if (!global.btoa) {
     global.btoa = encode;
@@ -17,7 +18,7 @@ const Recharge = (props) => {
     let tapKey = "sk_live_xfrXJU51NvdAKSmLkYQ7u3lO";
     const amount = props.route.params;
     const store = useStore();
-    const lables = store.getState().app.trans;
+    const lables = useLabels();
     const [tapUrl, setTapUrl] = useState();
     const [loading, setLoading] = useState(true);
     const user = store.getState().app.user;

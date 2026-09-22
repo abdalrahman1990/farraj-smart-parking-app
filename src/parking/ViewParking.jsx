@@ -10,6 +10,7 @@ import { useTheme } from '../utils/useTheme';
 import { toast } from '../utils/toastBus';
 import { tmsg } from '../utils/msg';
 import { RADIUS, SHADOW } from '../theme/tokens';
+import { useLang } from '../utils/useLabels';
 
 const SoftCard = ({ children, T, style }) => (
     <View
@@ -80,7 +81,7 @@ const ViewParking = (props) => {
     const store = useStore();
     const lables = store.getState().app.trans;
     const parking = props.route.params;
-    const lang = I18nManager.isRTL ? 'ar' : 'en';
+    const lang = useLang();
     const [ledOn, setLedOn] = useState(false);
     const [opening, setOpening] = useState(false);
     const [gateOpen, setGateOpen] = useState(false);

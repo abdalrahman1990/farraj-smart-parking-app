@@ -13,7 +13,7 @@ import { tmsg } from '../utils/msg';
 import AuthLayout from '../components/AuthLayout';
 import ScreenLoader from '../components/ScreenLoader';
 import { Overlay } from '@rneui/themed';
-import { isSmallScreen, fontSize } from '../utils/responsive';
+import { isSmallScreen, fontSize, screenWidth } from '../utils/responsive';
 
 const Login = (props) => {
     const T = useTheme();
@@ -161,7 +161,7 @@ const Login = (props) => {
                     backgroundColor: T.card,
                     borderRadius: 28,
                     padding: 12,
-                    width: 280,
+                    width: Math.min(280, screenWidth() - 32),
                 }}
             >
                 <ScreenLoader message={lables['signing_in'] || (lang === 'ar' ? 'جارٍ تسجيل الدخول…' : 'Signing you in…')} />

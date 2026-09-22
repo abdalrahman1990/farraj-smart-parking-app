@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from 'react';
-import { View, Animated, Easing } from 'react-native';
+import { View, Animated, Easing, Image } from 'react-native';
 import { Text } from '@rneui/themed';
 import { useTheme } from '../utils/useTheme';
 import { fontSize } from '../utils/responsive';
-import BrandLoader from './BrandLoader';
-import BrandLogo from './BrandLogo';
+
+const LOADING_GIF = require('../assets/images/logo.gif');
 
 const ScreenLoader = ({ message }) => {
     const T = useTheme();
@@ -33,10 +33,11 @@ const ScreenLoader = ({ message }) => {
                     transform: [{ scale: tileScale }],
                 }}
             >
-                <BrandLogo size={132} animated radius={32} padding={0} borderColor={T.border} />
-                <View style={{ position: 'absolute', bottom: 10 }}>
-                    <BrandLoader size={22} color={T.primary} />
-                </View>
+                <Image
+                    source={LOADING_GIF}
+                    style={{ width: 132, height: 132 }}
+                    resizeMode="contain"
+                />
             </Animated.View>
             {!!message && (
                 <Animated.Text

@@ -12,7 +12,7 @@ import Wallet from './../wallet/Wallet';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
 import { drawerBus } from '../utils/drawerBus';
-import { useLabels } from '../utils/useLabels';
+import { useLabels, useLang } from '../utils/useLabels';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const Tab = createBottomTabNavigator();
@@ -36,7 +36,8 @@ const Home = (props) => {
 }
 const SideBar = (props) => {
     const T = useTheme();
-    const isRTL = I18nManager.isRTL;
+    const lang = useLang();
+    const isRTL = lang === 'ar';
     const [drawerOpen, setDrawerOpen] = useState(drawerBus.open);
     useEffect(() => drawerBus.subscribe(() => setDrawerOpen(drawerBus.open)), []);
     return (

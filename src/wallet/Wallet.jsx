@@ -9,6 +9,7 @@ import { getLatestTransactions } from './../apis/apis';
 import { useFocusEffect } from '@react-navigation/native';
 import { useTheme } from '../utils/useTheme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useLang, useLabels } from '../utils/useLabels';
 const Wallet = (props) => {
     const T = useTheme();
     const styles = getStyles(T);
@@ -16,11 +17,11 @@ const Wallet = (props) => {
     const refRBSheet = useRef();
     const insets = useSafeAreaInsets();
     const [wallet, setUserWallet] = useState(store.getState().app.wallet);
-    const lables = store.getState().app.trans;
+    const lables = useLabels();
     const [amount, setAmount] = useState('');
     const [loading, setLoading] = useState(false);
     const [transactions, setTransactions] = useState([]);
-    const lang = I18nManager.isRTL ? 'ar' : 'en';
+    const lang = useLang();
     const user = store.getState().app.user;
 
     useFocusEffect(() => {
@@ -98,10 +99,10 @@ const Wallet = (props) => {
                                 marginTop: 20,
                                 alignSelf: 'flex-start',
                                 shadowColor: '#000',
-                                shadowOffset: { width: 0, height: 4 },
-                                shadowOpacity: 0.2,
-                                shadowRadius: 8,
-                                elevation: 4,
+                                shadowOffset: { width: 0, height: 6 },
+                                shadowOpacity: 0.25,
+                                shadowRadius: 14,
+                                elevation: 6,
                             }}
                             titleStyle={{
                                 color: T.primary,
@@ -193,7 +194,7 @@ const Wallet = (props) => {
                                 }
                             }}
                     >
-                        <ScrollView showsVerticalScrollIndicator={false}>
+                        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}>
                         <View style={{ padding: 24 }}>
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
                                 <Text style={{ fontWeight: '800', fontSize: 22, color: T.text, fontFamily: 'Cairo' }}>
@@ -205,10 +206,6 @@ const Wallet = (props) => {
                                     </View>
                                 </Pressable>
                             </View>
-                            <Text style={{ fontSize: 13.5, color: T.textSecondary, marginBottom: 18, fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>
-                                {lables['recharge_hint'] || (lang === 'ar' ? 'اختر مبلغاً أو أدخل مبلغاً مخصصاً' : 'Pick an amount or enter a custom one')}
-                            </Text>
-
                             <Text style={styles.sheetLabel}>
                                 {lables['select_amount'] || 'Select Amount'}
                             </Text>

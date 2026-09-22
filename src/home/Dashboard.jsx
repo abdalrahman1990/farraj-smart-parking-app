@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView, Dimensions, Pressable, StatusBar, Image } from 'react-native';
 import { Text } from '@rneui/themed';
-import BrandLogo from '../components/BrandLogo';
+import UserAvatar from '../components/UserAvatar';
 import Sliders from './Sliders';
 import NearByLocations from './../locations/NearByLocations';
 import { useStore } from 'react-redux';
@@ -116,7 +116,7 @@ const Dashboard = (props) => {
     return (
         <View style={{ flex: 1, backgroundColor: T.background }}>
             <StatusBar barStyle="light-content" backgroundColor={GRADIENT.start} />
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom }}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}>
                 {/* Hero header */}
                 <View
                     style={{
@@ -223,13 +223,13 @@ const Dashboard = (props) => {
                     </View>
                     {/* Identity */}
                     <View style={{ flexDirection: lang === 'ar' ? 'row-reverse' : 'row', alignItems: 'center', marginTop: isShortScreen ? 6 : (isSmall ? 10 : (isMedium ? 14 : 18)) }}>
-                        <BrandLogo
-                            size={isSmall ? 44 : (isMedium ? 52 : 60)}
-                            radius={16}
-                            padding={0}
-                            borderColor="rgba(255,255,255,0.72)"
+                        <UserAvatar
+                            uri={user.avatar}
+                            size={isSmall ? 48 : (isMedium ? 56 : 64)}
+                            borderColor="rgba(255,255,255,0.85)"
+                            borderWidth={2}
                         />
-                        <View style={{ marginStart: lang === 'ar' ? 0 : (isSmall ? 8 : 10), marginEnd: lang === 'ar' ? (isSmall ? 8 : 10) : 0, flex: 1 }}>
+                        <View style={{ marginStart: lang === 'ar' ? 0 : (isSmall ? 10 : 12), marginEnd: lang === 'ar' ? (isSmall ? 10 : 12) : 0, flex: 1 }}>
                             <Text numberOfLines={1} style={{ fontSize: isSmall ? 11 : 12, color: 'rgba(255,255,255,0.80)', fontFamily: 'Cairo' }}>
                                 {lang === 'ar' ? 'مرحبًا بعودتك 👋' : 'Welcome back 👋'}
                             </Text>

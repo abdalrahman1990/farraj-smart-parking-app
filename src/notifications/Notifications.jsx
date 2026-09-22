@@ -8,6 +8,7 @@ import { getNotifications, readNotification, deleteNotification } from '../apis/
 import { useTheme } from '../utils/useTheme';
 import { useFocusEffect } from '@react-navigation/native';
 import ScreenLoader from '../components/ScreenLoader';
+import { useLang } from '../utils/useLabels';
 
 const typeIcon = {
     booking: 'calendar',
@@ -20,7 +21,7 @@ const Notifications = (props) => {
     const store = useStore();
     const lables = store.getState().app.trans;
     const user = store.getState().app.user;
-    const lang = I18nManager.isRTL ? 'ar' : 'en';
+    const lang = useLang();
     const [loading, setLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
     const [notifications, setNotifications] = useState([]);

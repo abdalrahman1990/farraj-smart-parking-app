@@ -31,7 +31,7 @@ const LocationImage = ({ uri, name, style }) => {
     <Image
       source={Platform.OS === 'android'
         ? { uri: finalUri, headers: { 'User-Agent': 'SmartParking/1.0 (Android)', Referer: 'https://nextgen6th.com/' } }
-        : { uri: finalUri }}
+        : { uri: finalUri, headers: { 'User-Agent': 'SmartParking/1.0 (iOS)', Referer: 'https://nextgen6th.com/' } }}
       defaultSource={Platform.OS === 'android' ? FALLBACK : undefined}
       onError={() => setBroken(true)}
       style={style}

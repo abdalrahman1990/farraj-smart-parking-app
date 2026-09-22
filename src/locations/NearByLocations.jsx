@@ -21,6 +21,7 @@ const NearByLocations = (props) => {
     const [locations, setLocations] = useState([]);
     const lang = useLang();
     const lables = useLabels();
+    const rtl = lang === 'ar';
     useEffect(() => {
         Geolocation.getCurrentPosition(info => {
             let latitude = info.coords.latitude;
@@ -36,7 +37,7 @@ const NearByLocations = (props) => {
                 lng: '',
             });
         });
-    }, []);
+    }, [lang]);
     const loadLocations = async (data) => {
         try {
             let res = await getNearByLocations(data);
@@ -47,11 +48,10 @@ const NearByLocations = (props) => {
         } catch (e) {}
     }
     const nameOf = (item) => lang === 'en' ? item.location.location_name : item.location.location_name_ar;
-    const rtl = lang === 'ar';
     const priceOf = (item) => 'SAR ' + (Number(item.location.hour_charge) || 0).toFixed(3);
     return (
         <View>
-            <View style={{ paddingHorizontal: 16, paddingBottom: 8 }}>
+            <View style={{ paddingHorizontal: 16, paddingBottom: 0 }}>
                 {
                     filtered.map((item, index) => {
                         const spots = item.free_spots ?? 0;
@@ -110,12 +110,6 @@ const NearByLocations = (props) => {
                                                 <Text style={styles.price}>{priceOf(item)}</Text>
                                                 <Text style={styles.perHour}>/{lables['hour'] || (rtl ? 'ساعة' : 'hr')}</Text>
                                             </View>
-                                            <View style={{ flex: 1 }} />
-                                            <Text style={[styles.freeText, { color: spots > 0 ? T.success : T.error }]}>
-                                                {spots > 0
-                                                    ? (rtl ? `${spots} شاغر` : `${spots} free`)
-                                                    : (rtl ? 'ممتلئ' : 'Full')}
-                                            </Text>
                                         </View>
                                     </View>
                                     <View style={styles.goBtn}>
@@ -136,7 +130,8 @@ const getStyles = (T) => StyleSheet.create({
     card: {
         backgroundColor: T.card,
         borderRadius: RADIUS.xl,
-        marginVertical: 9,
+        marginTop: 9,
+        marginBottom: 0,
         overflow: 'hidden',
         borderWidth: 1,
         borderColor: T.border,

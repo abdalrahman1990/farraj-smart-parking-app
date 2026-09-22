@@ -14,6 +14,7 @@ const BrandLogo = ({
   shadow = true,
   resizeMode,
   glow = false,
+  premium = false,
 }) => (
   <View
     style={{
@@ -21,15 +22,15 @@ const BrandLogo = ({
       height: size,
       borderRadius: radius,
       backgroundColor,
-      shadowColor: '#0F172A',
-      shadowOffset: { width: 0, height: 6 },
-      shadowOpacity: shadow ? 0.2 : 0,
-      shadowRadius: 12,
-      elevation: shadow ? 6 : 0,
+      shadowColor: premium ? '#0C9CCC' : '#0F172A',
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: premium ? 0.5 : 0.25,
+      shadowRadius: premium ? 20 : 16,
+      elevation: premium ? 12 : 8,
       ...(glow && {
         shadowColor: '#0C9CCC',
-        shadowOpacity: 0.4,
-        shadowRadius: 32,
+        shadowOpacity: 0.6,
+        shadowRadius: 40,
       }),
     }}
   >
@@ -39,13 +40,12 @@ const BrandLogo = ({
         height: '100%',
         borderRadius: radius,
         backgroundColor,
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor,
         alignItems: 'center',
         justifyContent: 'center',
         padding,
         overflow: 'hidden',
-        ...(Platform.OS === 'android' ? { backgroundColor } : {}),
       }}
     >
       <Image

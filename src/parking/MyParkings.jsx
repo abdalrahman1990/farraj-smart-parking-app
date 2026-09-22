@@ -6,12 +6,13 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { getParkings } from '../apis/apis';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
+import { useLang } from '../utils/useLabels';
 const MyParkings = (props) => {
     const T = useTheme();
     const store = useStore();
     const lables = store.getState().app.trans;
     const user = store.getState().app.user;
-    const lang = I18nManager.isRTL ? 'ar' : 'en';
+    const lang = useLang();
     let params = props.route.params !== undefined ? props.route.params.data : [];
     const [currentParkings, setCurrentParkings] = useState(params);
     useEffect(() => {

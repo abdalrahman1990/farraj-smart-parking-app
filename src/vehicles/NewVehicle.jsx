@@ -6,23 +6,24 @@ import { Input, ListItem, Dialog, Avatar, Button } from '@rneui/themed';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
+import { useLang, useLabels } from '../utils/useLabels';
 import urls from '../apis/urls';
 const NewVehicle = (props) => {
     const T = useTheme();
     const absolutizeUrl = (u) => { if (!u || /^https?:\/\//.test(u)) return u; const base = (urls.host || '').replace(/\/$/, ''); return base ? base + (u.startsWith('/') ? u : '/' + u) : u; };
     const styles = getStyles(T);
     const store = useStore();
-    const lables = store.getState().app.trans;
+    const lables = useLabels();
     const user = store.getState().app.user;
-    const lang = I18nManager.isRTL ? 'ar' : 'en';
+    const lang = useLang();
     const [brand, setBrand] = useState({ id: '' });
     const [brands, setBrands] = useState([]);
     const [showDialog, setShowDialog] = useState(false);
     const [showCountryDialog, setShowCountryDialog] = useState(false);
     const [country, setCountry] = useState({
-        name: 'Kuwait',
-        name_ar: 'الكويت',
-        code: 'KW',
+            'name': 'Saudi Arabia',
+            'name_ar': 'المملكة العربية السعودية',
+            'code': 'KSA',
     });
     const [loading, setLoading] = useState(false);
     const [plateCode, setPlateCode] = useState();
@@ -105,7 +106,7 @@ const NewVehicle = (props) => {
                     </ListItem>
                     <Input
                         inputStyle={styles.inputText}
-                        inputContainerStyle={styles.input}
+                        inputContainerStyle={[styles.input, styles.nickInput]}
                         placeholder={lables['vehicle_nick_name']}
                         onChangeText={(e) => {
                             setName(e);
@@ -200,10 +201,10 @@ const NewVehicle = (props) => {
                                             }}
                                             checked={brand.id === item.id ? true : false}
                                             checkedIcon={
-                                                <Icon name='checkbox-outline' size={22} />
+                                                <Icon name='checkbox-outline' size={22} color={T.primary} />
                                             }
                                             uncheckedIcon={
-                                                <Icon name='square-outline' size={22} />
+                                                <Icon name='square-outline' size={22} color={T.primary} />
                                             }
                                         />
                                     </ListItem>
@@ -317,7 +318,9 @@ const getStyles = (T) => StyleSheet.create({
         paddingVertical: 10,
         minHeight: 52,
         justifyContent: 'center',
-        alignItems: 'center',
+    },
+    nickInput: {
+        minHeight: 48,
     },
     inputText: {
         fontFamily: 'Cairo',

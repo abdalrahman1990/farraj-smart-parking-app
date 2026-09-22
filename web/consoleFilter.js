@@ -6,10 +6,13 @@ const LIB_NOISE = [
   /style props are deprecated/i,
   /props\.pointerEvents is deprecated/i,
   /BackHandler is not supported on web/i,
+  /BackHandler/i,
   /useNativeDriver/i,
   /style\.resizeMode is deprecated/i,
   /style\.tintColor is deprecated/i,
   /TouchableWithoutFeedback is deprecated/i,
+  /HardwareBackHandler/i,
+  /hardwareBackPress/i,
 ];
 console.warn = (...args) => {
   if (typeof args[0] === 'string' && LIB_NOISE.some((re) => re.test(args[0]))) return;

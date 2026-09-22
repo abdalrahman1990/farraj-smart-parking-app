@@ -11,6 +11,7 @@ import { FadeIn } from '../components/Entrance';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
 import { fontSize, isSmallScreen } from '../utils/responsive';
+import { useLang } from '../utils/useLabels';
 
 const SearchLocations = (props) => {
     const T = useTheme();
@@ -26,7 +27,7 @@ const SearchLocations = (props) => {
     });
     const [locations, setLocations] = useState([]);
     const [filtered, setFiltered] = useState([]);
-    const lang = I18nManager.isRTL ? 'ar' : 'en';
+    const lang = useLang();
     useEffect(() => {
         Geolocation.getCurrentPosition(info => {
             let latitude = info.coords.latitude;

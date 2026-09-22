@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { View, ScrollView, I18nManager, StyleSheet, Pressable, Alert } from 'react-native';
 import { useStore } from 'react-redux';
 import { Text, ListItem, Avatar, Button, Dialog, Overlay } from '@rneui/themed';
@@ -12,6 +12,8 @@ import { useTheme } from '../utils/useTheme';
 import { toast } from '../utils/toastBus';
 import { tmsg } from '../utils/msg';
 import { isSmallScreen, screenHeight } from '../utils/responsive';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useLang } from '../utils/useLabels';
 const BookParking = (props) => {
     const T = useTheme();
     const compact = isSmallScreen();
@@ -21,6 +23,7 @@ const BookParking = (props) => {
     const user = store.getState().app.user;
     const wallet = store.getState().app.wallet;
     const location = props.route.params;
+    const insets = useSafeAreaInsets();
     const [vehicles, setVehicles] = useState([]);
     const [vehicle, setVehicle] = useState({});
     const [startTime, setStartTime] = useState('00:00:00');
@@ -32,18 +35,20 @@ const BookParking = (props) => {
     const [loading, setLoading] = useState(false);
     const [showConfirmDialog, setShowConfirmDialog] = useState(false);
     const [bookingDate, setBookingDate] = useState(new Date().toISOString().split('T')[0]);
-    const lang = I18nManager.isRTL ? "ar" : "en";
-    const timerPickerLabels = {
+    const lang = useLang();
+    const timerPickerLabels = useMemo(() => ({
         hour: lang === 'ar' ? 'س' : 'h',
         minute: lang === 'ar' ? 'د' : 'm',
-    };
-    const timerPickerStyles = {
+    }), [lang]);
+    const timerPickerStyles = useMemo(() => ({
         theme: "light",
         backgroundColor: T.card,
         textColor: T.text,
         primaryColor: T.primary,
         confirmButtonColor: T.primary,
         cancelButtonColor: T.textSecondary,
+        confirmButtonTextColor: '#FFFFFF',
+        cancelButtonTextColor: T.text,
         pickerContainer: {
             marginRight: 0,
             alignSelf: 'center',
@@ -85,7 +90,7 @@ const BookParking = (props) => {
             fontFamily: 'Cairo',
             fontWeight: '800',
         },
-    };
+    }), [lang, T.card, T.text, T.primary, T.primaryBg, T.textSecondary]);
     const formatTime = ({
         hours,
         minutes,
@@ -229,15 +234,15 @@ const BookParking = (props) => {
                 backgroundColor: T.background,
             }}
         >
-            <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
+            <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + 30 }}>
                 <View style={styles.dateHero}>
-                    <View style={{ flexDirection: lang === 'ar' ? 'row-reverse' : 'row', alignItems: 'center' }}>
+                    <View style={{ flexDirection: lang === 'ar' ? 'row-reverse' : 'row', alignItems: 'center', gap: 10 }}>
                         <View style={{ width: 38, height: 38, borderRadius: 13, backgroundColor: T.primary, alignItems: 'center', justifyContent: 'center' }}>
                             <Icon name="calendar" size={19} color="#FFFFFF" />
                         </View>
-                        <View style={{ flex: 1, marginStart: 10 }}>
-                            <Text style={{ fontSize: 15, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo' }}>{lables['date'] || (lang === 'ar' ? 'تاريخ الحجز' : 'Booking date')}</Text>
-                            <Text numberOfLines={1} style={{ fontSize: compact ? 11.5 : 12.5, color: 'rgba(255,255,255,0.85)', fontFamily: 'Cairo', marginTop: 1 }}>{bookingDate} • {lables['select'] || (lang === 'ar' ? 'اختر اليوم' : 'Pick a day')}</Text>
+                        <View style={{ flex: 1 }}>
+                            <Text style={{ fontSize: 15, fontWeight: '800', color: '#FFFFFF', fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>{lables['date'] || (lang === 'ar' ? 'تاريخ الحجز' : 'Booking date')}</Text>
+                            <Text numberOfLines={1} style={{ fontSize: compact ? 11.5 : 12.5, color: 'rgba(255,255,255,0.85)', fontFamily: 'Cairo', marginTop: 1, textAlign: lang === 'ar' ? 'right' : 'left' }}>{bookingDate} • {lables['select'] || (lang === 'ar' ? 'اختر اليوم' : 'Pick a day')}</Text>
                         </View>
                         <View style={{ backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: 12, paddingHorizontal: 12, paddingVertical: 8, borderWidth: 1, borderColor: 'rgba(255,255,255,0.35)' }}>
                             <Text style={{ color: '#FFF', fontWeight: '800', fontSize: 14, fontFamily: 'Cairo' }}>{String(bookingDate).slice(8, 10)}/{String(bookingDate).slice(5, 7)}</Text>
@@ -427,10 +432,10 @@ const BookParking = (props) => {
                                                 setVehicle(item);
                                             }}
                                             uncheckedIcon={
-                                                <Icon name='square-outline' size={22} />
+                                                <Icon name='square-outline' size={22} color={T.primary} />
                                             }
                                             checkedIcon={
-                                                <Icon name='checkbox-outline' size={22} />
+                                                <Icon name='checkbox-outline' size={22} color={T.primary} />
                                             }
                                             checked={vehicle.id === item.id}
                                         />
@@ -481,7 +486,7 @@ const BookParking = (props) => {
                             title={lables['cancel']}
                             onPress={() => setShowConfirmDialog(false)}
                             containerStyle={{ flex: 1 }}
-                            buttonStyle={{ backgroundColor: T.background, borderWidth: 1.5, borderColor: T.border, borderRadius: RADIUS.lg, paddingVertical: 14 }}
+                            buttonStyle={{ backgroundColor: T.background, borderWidth: 1.5, borderColor: T.border, borderRadius: RADIUS.lg, paddingVertical: 14, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.15, shadowRadius: 10, elevation: 5 }}
                             titleStyle={{ color: T.text, fontWeight: '700', fontSize: 15, fontFamily: 'Cairo' }}
                         />
                         <Button
@@ -499,7 +504,7 @@ const BookParking = (props) => {
                                 });
                             }}
                             containerStyle={{ flex: 1 }}
-                            buttonStyle={{ backgroundColor: T.primary, borderRadius: RADIUS.lg, paddingVertical: 14, shadowColor: T.primary, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 10, elevation: 6 }}
+                            buttonStyle={{ backgroundColor: T.primary, borderRadius: RADIUS.lg, paddingVertical: 14, shadowColor: T.primary, shadowOffset: { width: 0, height: 6 }, shadowOpacity: 0.4, shadowRadius: 12, elevation: 8 }}
                             titleStyle={{ fontWeight: '800', fontSize: 15, fontFamily: 'Cairo' }}
                         />
                     </View>

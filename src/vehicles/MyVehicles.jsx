@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect } from "@react-navigation/native";
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
-import { useLang } from '../utils/useLabels';
+import { useLang, useLabels } from '../utils/useLabels';
 import urls from '../apis/urls';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -17,7 +17,7 @@ const MyVehicles = (props) => {
     const insets = useSafeAreaInsets();
     const styles = getStyles(T, insets);
     const user = store.getState().app.user;
-    const lables = store.getState().app.trans;
+    const lables = useLabels();
     const [vehicles, setVehicles] = useState([]);
     const [refresh, setRefresh] = useState(false);
     const lang = useLang();
@@ -77,7 +77,6 @@ const MyVehicles = (props) => {
                         <RNText style={styles.addButtonText}>{lables['add_vehicle'] || 'Add'}</RNText>
                     </Pressable>
                 </View>
-
                 {/* Vehicle Cards */}
                 <View style={styles.vehicleList}>
                     {vehicles.length === 0 ? (
@@ -141,21 +140,43 @@ const VehicleAvatar = ({ uri }) => {
         );
     }
     return (
-        <Avatar
-            source={Platform.OS === 'android' ? { uri: src, headers: { 'User-Agent': 'SmartParking/1.0 (Android)' } } : { uri: src }}
-            size={60}
-            rounded
-            containerStyle={{
+        failed ? (
+            <View style={{
+                width: 60,
+                height: 60,
+                borderRadius: 30,
                 borderWidth: 2,
                 borderColor: T.border,
+                backgroundColor: '#F0F0F0',
+                alignItems: 'center',
+                justifyContent: 'center',
                 shadowColor: '#000',
                 shadowOffset: { width: 0, height: 2 },
                 shadowOpacity: 0.2,
                 shadowRadius: 6,
                 elevation: 3,
-            }}
-            onError={() => setFailed(true)}
-        />
+            }}>
+                <Icon name="car" size={28} color="#9CA3AF" />
+            </View>
+        ) : (
+            <Avatar
+                source={Platform.OS === 'android' 
+                    ? { uri: src, headers: { 'User-Agent': 'SmartParking/1.0 (Android)' } } 
+                    : { uri: src, headers: { 'User-Agent': 'SmartParking/1.0 (iOS)' } }}
+                size={60}
+                rounded
+                containerStyle={{
+                    borderWidth: 2,
+                    borderColor: T.border,
+                    shadowColor: '#000',
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.2,
+                    shadowRadius: 6,
+                    elevation: 3,
+                }}
+                onError={() => setFailed(true)}
+            />
+        )
     );
 };
 
@@ -201,7 +222,7 @@ const getStyles = (T, insets) => StyleSheet.create({
         alignItems: 'center',
         paddingVertical: 9,
         paddingHorizontal: 15,
-        gap: 5,
+        gap: 6,
     },
     addButtonText: {
         color: '#FFF',

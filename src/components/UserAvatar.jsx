@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Image, Platform, View } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import urls from '../apis/urls';
 
 export const absolutizeAvatar = (u) => {
@@ -10,8 +11,6 @@ export const absolutizeAvatar = (u) => {
   const base = (urls.host || '').replace(/\/$/, '');
   return base ? base + (s.startsWith('/') ? s : '/' + s) : s;
 };
-
-const FALLBACK = require('../assets/images/smart-parking-logo.png');
 
 const UserAvatar = ({
   uri,
@@ -28,12 +27,12 @@ const UserAvatar = ({
     borderRadius: roundedSquare ? Math.round(size * 0.28) : size / 2,
     borderWidth,
     borderColor,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#F0F0F0',
   };
   if (!finalUri || failed) {
     return (
-      <View style={[style, { alignItems: 'center', justifyContent: 'center', padding: size * 0.14, overflow: 'hidden' }]}>
-        <Image source={FALLBACK} style={{ width: '100%', height: '100%' }} resizeMode="contain" />
+      <View style={[style, { alignItems: 'center', justifyContent: 'center' }]}>
+        <Icon name="person" size={size * 0.45} color="#9CA3AF" />
       </View>
     );
   }
@@ -41,8 +40,7 @@ const UserAvatar = ({
     <Image
       source={Platform.OS === 'android'
         ? { uri: finalUri, headers: { 'User-Agent': 'SmartParking/1.0 (Android)' } }
-        : { uri: finalUri }}
-      defaultSource={Platform.OS === 'android' ? FALLBACK : undefined}
+        : { uri: finalUri, headers: { 'User-Agent': 'SmartParking/1.0 (iOS)' } }}
       onError={() => setFailed(true)}
       style={style}
       resizeMode="cover"

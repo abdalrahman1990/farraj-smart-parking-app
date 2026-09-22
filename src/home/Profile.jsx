@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView, StyleSheet, I18nManager, Alert, Image } from 'react-native';
 import { useStore } from 'react-redux';
-import { ListItem, Text, Input, Button } from '@rneui/themed';
-import BrandLogo from '../components/BrandLogo';
+import { ListItem, Text, Input, Button, Avatar } from '@rneui/themed';
+import UserAvatar from '../components/UserAvatar';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -12,19 +12,20 @@ import { restartApp } from '../utils/restartApp';
 import { resetPassword } from './../apis/apis';
 import { Dialog } from '@rneui/themed';
 import { isSmallScreen } from '../utils/responsive';
+import { useLang, useLabels } from '../utils/useLabels';
 const Profile = (props) => {
     const T = useTheme();
     const style = getStyles(T);
     const compact = isSmallScreen();
+    const store = useStore();
+    const user = store.getState().app.user;
+    const lables = useLabels();
+    const lang = useLang();
     useFocusEffect(() => {
         props.navigation.getParent().setOptions({
             headerTitle: lables['profile']
         });
     });
-    const store = useStore();
-    const user = store.getState().app.user;
-    const lables = store.getState().app.trans;
-    const lang = I18nManager.isRTL ? 'ar' : 'en';
     const [showDialog, setShowDialog] = useState(false);
     const [loading, setLoading] = useState(false);
     const [password, setPassword] = useState(false);
@@ -80,11 +81,11 @@ const Profile = (props) => {
                     />
                     <View style={{ position: 'absolute', top: -60, right: -60, width: 180, height: 180, borderRadius: 90, backgroundColor: 'rgba(8,148,158,0.18)' }} />
                     <View style={{ alignSelf: 'center' }}>
-                        <BrandLogo
-                            size={compact ? 80 : 92}
-                            radius={20}
-                            padding={0}
-                            borderColor="rgba(255,255,255,0.72)"
+                        <UserAvatar
+                            uri={user.avatar}
+                            size={compact ? 90 : 100}
+                            borderColor="rgba(255,255,255,0.85)"
+                            borderWidth={3}
                         />
                     </View>
                     <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14, paddingHorizontal: 18, maxWidth: '100%', gap: lang === 'ar' ? 12 : 8 }}>
@@ -225,10 +226,34 @@ const Profile = (props) => {
                         onPress={() => {
                             updatePassword();
                         }}
+                        buttonStyle={{
+                            backgroundColor: T.primary,
+                            borderRadius: 12,
+                            paddingVertical: 12,
+                            paddingHorizontal: 20,
+                            shadowColor: T.primary,
+                            shadowOffset: { width: 0, height: 4 },
+                            shadowOpacity: 0.35,
+                            shadowRadius: 10,
+                            elevation: 6,
+                        }}
                     >Update</Button>
                     <Button
                         onPress={() => {
                             setShowDialog(false);
+                        }}
+                        buttonStyle={{
+                            backgroundColor: T.background,
+                            borderWidth: 1.5,
+                            borderColor: T.border,
+                            borderRadius: 12,
+                            paddingVertical: 12,
+                            paddingHorizontal: 20,
+                            shadowColor: '#000',
+                            shadowOffset: { width: 0, height: 4 },
+                            shadowOpacity: 0.15,
+                            shadowRadius: 10,
+                            elevation: 5,
                         }}
                     >Cancel</Button>
                 </View>

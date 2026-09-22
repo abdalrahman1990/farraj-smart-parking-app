@@ -8,6 +8,7 @@ import { Image } from '@rneui/base';
 import { getPrivateLocations } from '../apis/apis';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
+import { useLang } from '../utils/useLabels';
 
 const PrivateLocations = (props) => {
     const T = useTheme();
@@ -23,7 +24,7 @@ const PrivateLocations = (props) => {
         empty: false
     });
     const [locations, setLocations] = useState([]);
-    const lang = I18nManager.isRTL ? 'ar' : 'en';
+    const lang = useLang();
     useEffect(() => {
         Geolocation.getCurrentPosition(info => {
             setLocation({
