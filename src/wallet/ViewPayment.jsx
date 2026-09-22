@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useStore } from 'react-redux';
 import ScreenLoader from '../components/ScreenLoader';
 import { useTheme } from '../utils/useTheme';
-import { useLang } from '../utils/useLabels';
+import { useLang, useLabels } from '../utils/useLabels';
 import { RADIUS, SHADOW } from '../theme/tokens';
 
 const safeParse = (raw) => {
@@ -23,7 +23,7 @@ const ViewPayment = (props) => {
     const style = getStyles(T);
     const [loading, setLoading] = useState(true);
     const store = useStore();
-    const lables = store.getState().app.trans || {};
+    const lables = useLabels();
     const lang = useLang();
     const rtl = lang === 'ar';
     const t = (key, en, ar) => lables[key] || (rtl ? ar : en);

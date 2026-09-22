@@ -4,6 +4,7 @@ import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { useStore } from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useTheme } from '../utils/useTheme';
+import { useLabels } from '../utils/useLabels';
 
 const RIYADH_IMAGES = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Riyadh_Skyline.jpg/1280px-Riyadh_Skyline.jpg',
@@ -32,6 +33,11 @@ const HowToUseSlide = ({ lables }) => {
                 padding: compact ? 16 : 20,
                 justifyContent: 'center',
                 overflow: 'hidden',
+                shadowColor: T.primary,
+                shadowOffset: { width: 0, height: 8 },
+                shadowOpacity: 0.4,
+                shadowRadius: 16,
+                elevation: 8,
             }}
         >
             <View
@@ -75,7 +81,7 @@ const HowToUseSlide = ({ lables }) => {
 const Sliders = () => {
     const T = useTheme();
     const store = useStore();
-    const lables = store.getState().app.trans;
+    const lables = useLabels();
     const sliders = [
         ...RIYADH_IMAGES.map((uri) => ({ uri })),
         { info: true },
@@ -97,6 +103,11 @@ const Sliders = () => {
                         width: itemWidth,
                         height: slideHeight,
                         borderRadius: 24,
+                        shadowColor: '#000',
+                        shadowOffset: { width: 0, height: 6 },
+                        shadowOpacity: 0.3,
+                        shadowRadius: 12,
+                        elevation: 6,
                     }}
                     resizeMode="cover"
                 />

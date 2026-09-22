@@ -291,7 +291,7 @@ const BookParking = (props) => {
                 </View>
                 <View
                     style={{
-                        flexDirection: 'row',
+                        flexDirection: lang === 'ar' ? 'row-reverse' : 'row',
                         flexWrap: compact ? 'wrap' : 'nowrap',
                         justifyContent: 'space-between',
                         marginTop: 20,
@@ -305,13 +305,13 @@ const BookParking = (props) => {
                             minWidth: compact ? '100%' : 0,
                         }}
                     >
-                        <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo' }}>{lables['start_time']}</Text>
-                        <Pressable style={styles.pressableCard}
+                        <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>{lables['start_time']}</Text>
+                        <Pressable style={[styles.pressableCard, { flexDirection: lang === 'ar' ? 'row-reverse' : 'row' }]}
                             onPress={() => {
                                 setShowStartTimeDialog(true);
                             }}
                         >
-                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 8, marginEnd: 8, color: T.text, fontFamily: 'Cairo', flexShrink: 1 }}>
+                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 8, marginEnd: 8, color: T.text, fontFamily: 'Cairo', flexShrink: 1, textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                 {startTime}
                             </Text>
                             <Icon name='time-outline' size={compact ? 24 : 28} color={T.primaryLight} />
@@ -323,14 +323,14 @@ const BookParking = (props) => {
                             minWidth: compact ? '100%' : 0,
                         }}
                     >
-                        <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo' }}>{lables['end_time']}</Text>
-                        <Pressable style={styles.pressableCard}
+                        <Text style={{ marginBottom: 8, color: T.textSecondary, fontSize: 13, fontWeight: '700', fontFamily: 'Cairo', textAlign: lang === 'ar' ? 'right' : 'left' }}>{lables['end_time']}</Text>
+                        <Pressable style={[styles.pressableCard, { flexDirection: lang === 'ar' ? 'row-reverse' : 'row' }]}
                             disabled={startTime === "00:00:00" ? true : false}
                             onPress={() => {
                                 setShowEndTimeDialog(true);
                             }}
                         >
-                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 8, marginEnd: 8, color: T.text, fontFamily: 'Cairo', flexShrink: 1 }}>
+                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 8, marginEnd: 8, color: T.text, fontFamily: 'Cairo', flexShrink: 1, textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                 {endTime}
                             </Text>
                             <Icon name='time-outline' size={compact ? 24 : 28} color={T.primaryLight} />

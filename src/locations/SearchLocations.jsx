@@ -11,12 +11,12 @@ import { FadeIn } from '../components/Entrance';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
 import { fontSize, isSmallScreen } from '../utils/responsive';
-import { useLang } from '../utils/useLabels';
+import { useLang, useLabels } from '../utils/useLabels';
 
 const SearchLocations = (props) => {
     const T = useTheme();
     const store = useStore();
-    const lables = store.getState().app.trans;
+    const lables = useLabels();
     const [location, setLocation] = useState({
         lat: '29.3759',
         lng: '47.9774',

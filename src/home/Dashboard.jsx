@@ -116,7 +116,7 @@ const Dashboard = (props) => {
     return (
         <View style={{ flex: 1, backgroundColor: T.background }}>
             <StatusBar barStyle="light-content" backgroundColor={GRADIENT.start} />
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom + 50 }}>
                 {/* Hero header */}
                 <View
                     style={{

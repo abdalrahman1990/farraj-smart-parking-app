@@ -10,11 +10,11 @@ import { toast } from '../utils/toastBus';
 import { tmsg } from '../utils/msg';
 import { RADIUS, SHADOW } from '../theme/tokens';
 import { useTheme } from '../utils/useTheme';
-import { useLang } from '../utils/useLabels';
+import { useLang, useLabels } from '../utils/useLabels';
 const CurrentBookings = (props) => {
     const T = useTheme();
     const store = useStore();
-    const lables = store.getState().app.trans;
+    const lables = useLabels();
     const user = store.getState().app.user;
     const lang = useLang();
     const rtl = lang === 'ar';
