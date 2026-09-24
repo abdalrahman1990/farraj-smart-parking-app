@@ -311,7 +311,7 @@ const BookParking = (props) => {
                                 setShowStartTimeDialog(true);
                             }}
                         >
-                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 8, marginEnd: 8, color: T.text, fontFamily: 'Cairo', flexShrink: 1, textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 4, marginEnd: 4, color: T.text, fontFamily: 'Cairo', flexShrink: 1, textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                 {startTime}
                             </Text>
                             <Icon name='time-outline' size={compact ? 24 : 28} color={T.primaryLight} />
@@ -330,7 +330,7 @@ const BookParking = (props) => {
                                 setShowEndTimeDialog(true);
                             }}
                         >
-                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 8, marginEnd: 8, color: T.text, fontFamily: 'Cairo', flexShrink: 1, textAlign: lang === 'ar' ? 'right' : 'left' }}>
+                            <Text numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.82} style={{ fontWeight: '800', fontSize: compact ? 18 : 20, marginStart: 4, marginEnd: 4, color: T.text, fontFamily: 'Cairo', flexShrink: 1, textAlign: lang === 'ar' ? 'right' : 'left' }}>
                                 {endTime}
                             </Text>
                             <Icon name='time-outline' size={compact ? 24 : 28} color={T.primaryLight} />
@@ -468,13 +468,13 @@ const BookParking = (props) => {
                         {lables['confirm_parking']}
                     </Text>
                     <View style={{ marginTop: 16, backgroundColor: T.background, borderRadius: RADIUS.lg, padding: 14, borderWidth: 1, borderColor: T.border }}>
-                        <ConfirmRow label={lables['location'] || 'Location'} value={lang === 'ar' ? location?.location_name_ar : location?.location_name} T={T} />
-                        <ConfirmRow label={lables['date'] || 'Date'} value={bookingDate} T={T} />
-                        <ConfirmRow label={lables['start_time']} value={startTime} T={T} />
-                        <ConfirmRow label={lables['end_time']} value={endTime} T={T} />
-                        <ConfirmRow label={lables['hours']} value={String(hours)} T={T} />
-                        <ConfirmRow label={lables['vehicle']} value={vehicle?.name} T={T} />
-                        <ConfirmRow label={lables['balance'] || 'Charge'} value={'SAR ' + (Number(hours) * (Number(location?.hour_charge) || 0)).toFixed(3)} T={T} last />
+                        <ConfirmRow label={lables['location'] || 'Location'} value={lang === 'ar' ? location?.location_name_ar : location?.location_name} T={T} rtl={lang === 'ar'} />
+                        <ConfirmRow label={lables['date'] || 'Date'} value={bookingDate} T={T} rtl={lang === 'ar'} />
+                        <ConfirmRow label={lables['start_time']} value={startTime} T={T} rtl={lang === 'ar'} />
+                        <ConfirmRow label={lables['end_time']} value={endTime} T={T} rtl={lang === 'ar'} />
+                        <ConfirmRow label={lables['hours']} value={String(hours)} T={T} rtl={lang === 'ar'} />
+                        <ConfirmRow label={lables['vehicle']} value={vehicle?.name} T={T} rtl={lang === 'ar'} />
+                        <ConfirmRow label={lables['balance'] || 'Charge'} value={'SAR ' + (Number(hours) * (Number(location?.hour_charge) || 0)).toFixed(3)} T={T} rtl={lang === 'ar'} last />
                     </View>
                     <Text style={{ color: T.textSecondary, fontSize: 12, textAlign: 'center', marginTop: 12, fontFamily: 'Cairo' }}>
                         {lables['overtime_note'] || (lang === 'ar'
